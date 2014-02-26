@@ -1,5 +1,18 @@
 source 'https://rubygems.org'
 
+
+# Gems we decided upon:
+gem 'koala', '~> 1.8.0rc1'
+gem 'devise'
+gem 'httparty'
+gem 'omniauth-facebook'
+
+# For development
+gem 'pry'
+gem 'capybara'
+gem 'rspec-rails'
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
