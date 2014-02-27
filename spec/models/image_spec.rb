@@ -5,6 +5,7 @@ describe Image do
     before do
       @item_options1 = {name: "Shiny Necklace", url: ""}
       @item_options2 = {name: "Beady Necklace", url: ""}
+      @item1 = Item.create()
     end
     it 'the poll should be able to create items which know which poll they belong to' do
       @first_poll.createItem(@item_options1)
