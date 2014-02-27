@@ -1,6 +1,6 @@
 Giftr::Application.routes.draw do
 
-  root :to => 'musicians#index'
+  root :to => 'polls#index'
 
   devise_for :users
 
