@@ -30,6 +30,13 @@ $(document).ready(function() {
   });
 
   $(".bt-fs-dialog").fSelector({
+      max: 1,
+      lang: {
+        title: "Pick the friend whom you are buying a gift for", 
+        buttonSubmit: "Add Gift Recipient", 
+        selectedLimitResult: "Limit is {1} person."
+      },
+      closeOnSubmit: true,
       onSubmit: function(response){
         // example response usage
         alert(response);
