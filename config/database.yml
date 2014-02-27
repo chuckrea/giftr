@@ -1,18 +1,21 @@
 
 development:
   adapter: postgresql
+  host: localhost
   encoding: unicode
   database: giftr_development
   pool: 5
 
 test:
   adapter: postgresql
+  host: localhost
   encoding: unicode
   database: giftr_test
   pool: 5
 
 production:
   adapter: postgresql
+  host: localhost
   encoding: unicode
   database: giftr_production
   pool: 5
