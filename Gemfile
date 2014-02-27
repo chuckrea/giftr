@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 
 # Gems we decided upon:
 gem 'koala', '~> 1.8.0rc1'
-gem 'devise'
+gem 'devise', '~> 3.0.0.rc'
 gem 'httparty'
 gem 'omniauth-facebook'
 
