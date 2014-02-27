@@ -46,11 +46,10 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
-    devise (3.2.3)
+    devise (3.0.4)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
-      thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
     erubis (2.7.0)
@@ -182,7 +181,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   coffee-rails (~> 4.0.0)
-  devise
+  devise (~> 3.0.0.rc)
   httparty
   jbuilder (~> 1.2)
   jquery-rails
