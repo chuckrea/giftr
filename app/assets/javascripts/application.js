@@ -11,5 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require underscore
+//= require backbone.js
 //= require jquery_ujs
 //= require_tree .
