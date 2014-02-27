@@ -1,24 +1,18 @@
 
 development:
   adapter: postgresql
-  host: localhost
   encoding: unicode
   database: giftr_development
-  username: nhindman
   pool: 5
 
 test:
   adapter: postgresql
-  host: localhost
   encoding: unicode
   database: giftr_test
-  username: nhindman
   pool: 5
 
 production:
   adapter: postgresql
-  host: localhost
   encoding: unicode
   database: giftr_production
-  username: nhindman
   pool: 5
