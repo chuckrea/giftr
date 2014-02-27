@@ -4,6 +4,7 @@ development:
   host: localhost
   encoding: unicode
   database: giftr_development
+  username: nhindman
   pool: 5
 
 test:
@@ -11,6 +12,7 @@ test:
   host: localhost
   encoding: unicode
   database: giftr_test
+  username: nhindman
   pool: 5
 
 production:
@@ -18,4 +20,5 @@ production:
   host: localhost
   encoding: unicode
   database: giftr_production
+  username: nhindman
   pool: 5
