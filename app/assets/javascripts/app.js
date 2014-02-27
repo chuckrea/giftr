@@ -1,21 +1,21 @@
-var PotentialRecipientView = Backbone.View.extend({
-  render: function(){
-    FB.ui(
-      {method: 'apprequests',
-        message: 'My Great Request',
-        to: []
-      },
-      function(){
-        console.log(arguments)
-      }
-    );
-  }
-})
+// var PotentialRecipientView = Backbone.View.extend({
+//   render: function(){
+//     FB.ui(
+//       {method: 'apprequests',
+//         message: 'My Great Request',
+//         to: []
+//       },
+//       function(){
+//         console.log(arguments)
+//       }
+//     );
+//   }
+// })
 
 
-function showChoice(){
-  new PotentialRecipientView({el: $('#recipient')}).render();
-}
+// function showChoice(){
+//   new PotentialRecipientView({el: $('#recipient')}).render();
+// }
 
 $(document).ready(function() {  
 
@@ -25,8 +25,15 @@ $(document).ready(function() {
       appId: '294324634052609',
     });     
     $('#loginbutton,#feedbutton').removeAttr('disabled');
-    FB.getLoginStatus(showChoice);
+    FB.getLoginStatus($.noop);
   });
+
+  $(".bt-fs-dialog").fSelector({
+      onSubmit: function(response){
+        // example response usage
+        alert(response);
+      }
+    });
 });
 
 
