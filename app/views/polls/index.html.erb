@@ -1,18 +1,35 @@
 <%if current_user %>
-  <h4 class="center col-xs-12">Whom do you want to buy a gift for?</h4>
+  <div class="col-xs-12">
+    <h4><b>Whom do you want to buy a gift for?</b></h4>
+  
 
-  <a href="javascript:{}" class="bt-fs-dialog btn btn-lg btn-primary center col-xs-12">Select the Friend you want to Gift</a>
-  <div class="verticalspacer col-xs-12"></div>  
-  <a href="javascript:{}" id="mutual-friends-link"  class="btn btn-lg btn-primary center col-xs-12">Select Your Accomplices</a>
+    <div class="col-xs-10">
+      <div class="row">
+
+        <a href="javascript:{}" class="home-button bt-fs-dialog btn btn-lg btn-primary center col-xs-4">Select the Friend you want to Gift</a>
+
+        <!-- <div class="verticalspacer col-xs-4"></div>   -->
+
+        <a href="javascript:{}" id="mutual-friends-link"  class="home-button btn btn-lg btn-primary center col-xs-4">Select Your Accomplices</a>
+
+      </div>
+    </div>
+  </div>
+
 
   <div id="recipient"></div>
 
 <% end %> 
 
+<h1>Gift Formz</h1>
+  <form id="new_item_form">
+    <input type="text" id="new_item_name_input" name="new_item_name_input" placeholder="enter item name">
+    <!-- <input type="text" id="new_item_description_input" name="new_item_description_input" placeholder="enter item description"> -->
+    <input type="text" id="new_item_image_input" name="new_item_image_input" placeholder="enter item image">
+    <button class="add_item_button">Add Gift</button>
+  </form>
 
+  <div id="item_list"></div>
 
+  <%= render text: File.read("app/views/templates.txt").html_safe %>
 
-<!-- <form id='new_recipient_form'>
-      <input id="recipient_name_input" type="text" name="recipient_name" placeholder="Enter Name" />
-      <button class='search_button'>search</button>
-  </form> -->
