@@ -48,12 +48,11 @@ $(document).ready(function() {
         FB.api('/me', function(stuff){
           user_id = stuff.id
           console.log(stuff.id)
-          mutual_url = '/' + user_id + '/mutualfriends/' + friend_id
         });
 
-        // mutual_url = '/' + user_id + '/mutualfriends/' + friend_id;
+        mutual_url = '/' + user_id + '/mutualfriends/' + friend_id;
 
-        FB.api('/606833302/mutualfriends/811519',
+        FB.api(mutual_url,
               function (mutuals) {
                 if (mutuals && !mutuals.error) {
                   console.log(mutuals)
