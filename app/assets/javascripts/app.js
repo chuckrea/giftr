@@ -1,4 +1,3 @@
-
 // var PotentialRecipientView = Backbone.View.extend({
 //   render: function(){
 //     FB.ui(
@@ -20,7 +19,7 @@
 
 var mutual_friends_array = [];
 
-$(document).ready(function() {  
+$(document).ready(function() {    
 
   var user_id; 
   var friend_id;
@@ -33,11 +32,12 @@ $(document).ready(function() {
       appId: '294324634052609',
     });     
     $('#loginbutton,#feedbutton').removeAttr('disabled');
+
     FB.getLoginStatus(function(response){
       user_id = response.authResponse.userID
     });
-  });
 
+  });
   
   $(".bt-fs-dialog").fSelector({
       max: 1,
@@ -50,6 +50,7 @@ $(document).ready(function() {
       closeOnSubmit: true,
       onSubmit: function(response){
         friend_id = response[0];
+
         mutual_url = '/' + user_id + '/mutualfriends/' + friend_id;
 
         // This sets up an array containing ids of mutual friends with your
