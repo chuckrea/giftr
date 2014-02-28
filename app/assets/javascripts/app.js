@@ -18,12 +18,15 @@
 // }
 
 var mutual_friends_array = [];
+var my_friends = [];
+var exclusions;
 
 $(document).ready(function() {    
 
   var user_id; 
   var friend_id;
   var mutual_url;
+  
   
 
   $.ajaxSetup({ cache: true });
@@ -36,8 +39,11 @@ $(document).ready(function() {
     FB.getLoginStatus(function(response){
       user_id = response.authResponse.userID
       FB.api('/me/friends', function(response){
-        console.log(response)
-      })
+        _.each(response.data, function(friend){
+          my_friends.push(parseInt(friend.id))
+        });
+        
+      });
     });
 
   });
@@ -52,6 +58,7 @@ $(document).ready(function() {
       },
       closeOnSubmit: true,
       onSubmit: function(response){
+        
         friend_id = response[0];
 
         mutual_url = '/' + user_id + '/mutualfriends/' + friend_id;
@@ -64,7 +71,8 @@ $(document).ready(function() {
                 console.log(mutuals.data)
                 _.each(mutuals.data, function(friend){
                   mutual_friends_array.push(parseInt(friend.id))
-                })
+                });
+                exclusions = _.difference(my_friends, mutual_friends_array);
               }
         });
       }
@@ -73,8 +81,10 @@ $(document).ready(function() {
   // This doesn't totally work yet.  Need to compare mutual friends with your own friends
   // and only return mutuals
   $("#mutual-friends-link").fSelector({
-    max: 5,
-    getStoredFriends: mutual_friends_array,
+
+    // max: 5,
+    excludeIds: exclusions,
+    // getStoredFriends: mutual_friends_array,
     facebookInvite: false,
     lang: {
       title: "Pick your mutual friends who will vote on the gifts",
