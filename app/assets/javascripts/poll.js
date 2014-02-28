@@ -23,8 +23,7 @@ var ItemFormView = Backbone.View.extend({
 
     itemsListView.collection.create({
       name: $('#new_item_name_input').val(),
-      description: $('#new_item_description_input').val(),
-      image: $('#new_item_image_input').val()
+      url: $('#new_item_url_input').val()
     });
 
     this.resetValues();       
@@ -91,13 +90,14 @@ var ItemListView = Backbone.View.extend({
         model: item
       });
       self.itemViews.push(new_view)
-      self.$el.append(new_view.render().$el)
+      self.$el.prepend(new_view.render().$el)
     })
   }
 })
 
 $(function (){
   window.itemsListView = new ItemListView(); 
+  window.itemformView = new ItemFormView();
   window.item = new Item();
   window.itemView = new ItemView({model: item});
   
