@@ -336,6 +336,8 @@
     }
 
     _showFriendCount();
+
+    _showFriends();
   },
 
   _stopEvent = function() {
@@ -501,6 +503,16 @@
     selected_friend_count = 1;
   },
 
+  _showFriends = function() {
+    if ( selected_friend_count > 1 && fsOptions.showSelectedCount === true ){
+      var item = $('<span/>');
+      var container = $('#fs-user-list ul'),
+        selectedElements = container.find('li.checked');
+        item.append(selectedElements);
+    $('#fs-summary-box').append(item);
+    }
+  },
+
   _selectAll = function() {
     if (fsOptions.showButtonSelectAll === true && fsOptions.max === null) {
       $('#fs-show-selected').before('<a href="javascript:{}" id="fs-select-all"><span>'+fsOptions.lang.buttonSelectAll+'</span></a> - ');
@@ -588,7 +600,7 @@
       summaryBoxNoResult: "No results for {0}",
       searchText: "Enter a friend's name",
       fbConnectError: "You must connect to Facebook to see this.",
-      selectedCountResult: "You have choosen {0} people.",
+      selectedCountResult: "You have chosen {0} people.",
       selectedLimitResult: "Limit is {0} people.",
       facebookInviteMessage: "Invite message"
     },
