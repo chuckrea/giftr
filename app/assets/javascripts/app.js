@@ -1,4 +1,3 @@
-
 // var PotentialRecipientView = Backbone.View.extend({
 //   render: function(){
 //     FB.ui(
@@ -29,10 +28,19 @@ $(document).ready(function() {
     FB.getLoginStatus($.noop);
   });
 
-  $(".bt-fs-dialog").fSelector({
+  $(".bt-fs-dialog").fSelector({ 
+      lang: {title: "something", buttonSubmit: "thing"},
       onSubmit: function(response){
         // example response usage
         alert(response);
+        FB.api(
+          "/{user-id-a}/mutualfriends/"+response[0],
+          function (response) {
+            if (response && !response.error) {
+        /* handle the result */
+      }
+    }
+// );
       }
     });
 });
