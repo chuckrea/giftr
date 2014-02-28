@@ -1,3 +1,4 @@
+
 // var PotentialRecipientView = Backbone.View.extend({
 //   render: function(){
 //     FB.ui(
@@ -34,6 +35,14 @@ $(document).ready(function() {
 
   
   $(".bt-fs-dialog").fSelector({
+      max: 1,
+      facebookInvite: false,
+      lang: {
+        title: "Pick the friend whom you are buying a gift for", 
+        buttonSubmit: "Add Gift Recipient", 
+        selectedLimitResult: "Limit is {1} person."
+      },
+      closeOnSubmit: true,
       onSubmit: function(response){
         friend_id = response[0];
         FB.api('/me', function(stuff){
@@ -147,3 +156,4 @@ $(document).ready(function() {
 //   }
 
 // })
+

@@ -2,7 +2,7 @@ class Poll < ActiveRecord::Base
 
   has_many :items, through: :votes
   has_many :voters, through: :votes, source: :user
-  belongs_to :creator, class name :user #need to check this syntax
+  belongs_to :creator, :class_name => 'User'
 
 
 
