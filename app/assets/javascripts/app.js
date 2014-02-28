@@ -17,6 +17,23 @@
 //   new PotentialRecipientView({el: $('#recipient')}).render();
 // }
 
+function resetSelector(){
+  $('#fs-user-list').empty();
+
+  $("#mutual-friends-link").fSelector({
+
+    max: 5,
+    excludeIds: exclusions,
+    facebookInvite: false,
+    lang: {
+      title: "Pick your mutual friends who will vote on the gifts",
+      buttonSubmit: "Add Accomplices",
+      selectedLimitResult: "Limit is {5} people."
+    },
+    closeOnSubmit: true
+  });
+}
+
 var mutual_friends_array = [];
 var my_friends = [];
 var exclusions;
@@ -58,7 +75,7 @@ $(document).ready(function() {
       },
       closeOnSubmit: true,
       onSubmit: function(response){
-        
+
         friend_id = response[0];
 
         mutual_url = '/' + user_id + '/mutualfriends/' + friend_id;
@@ -74,25 +91,26 @@ $(document).ready(function() {
                 });
                 exclusions = _.difference(my_friends, mutual_friends_array);
               }
+            resetSelector();
         });
       }
     });
 
   // This doesn't totally work yet.  Need to compare mutual friends with your own friends
   // and only return mutuals
-  $("#mutual-friends-link").fSelector({
+  // $("#mutual-friends-link").fSelector({
 
-    // max: 5,
-    excludeIds: exclusions,
-    // getStoredFriends: mutual_friends_array,
-    facebookInvite: false,
-    lang: {
-      title: "Pick your mutual friends who will vote on the gifts",
-      buttonSubmit: "Add Accomplices",
-      selectedLimitResult: "Limit is {5} people."
-    },
-    closeOnSubmit: true
-  })
+  //   // max: 5,
+  //   excludeIds: exclusions,
+  //   // getStoredFriends: mutual_friends_array,
+  //   facebookInvite: false,
+  //   lang: {
+  //     title: "Pick your mutual friends who will vote on the gifts",
+  //     buttonSubmit: "Add Accomplices",
+  //     selectedLimitResult: "Limit is {5} people."
+  //   },
+  //   closeOnSubmit: true
+  // })
 });
 
 
