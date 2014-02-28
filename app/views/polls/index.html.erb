@@ -1,9 +1,21 @@
 <%if current_user %>
-  <h4 class="center col-xs-12">Whom do you want to buy a gift for?</h4>
+  <div class="col-xs-12">
+    <h4><b>Whom do you want to buy a gift for?</b></h4>
+  
 
-  <a href="javascript:{}" class="bt-fs-dialog btn btn-lg btn-primary center col-xs-12">Select the Friend you want to Gift</a>
-  <div class="verticalspacer col-xs-12"></div>  
-  <a href="javascript:{}" id="mutual-friends-link"  class="btn btn-lg btn-primary center col-xs-12">Select Your Accomplices</a>
+    <div class="col-xs-10">
+      <div class="row">
+
+        <a href="javascript:{}" class="home-button bt-fs-dialog btn btn-lg btn-primary center col-xs-4">Select the Friend you want to Gift</a>
+
+        <!-- <div class="verticalspacer col-xs-4"></div>   -->
+
+        <a href="javascript:{}" id="mutual-friends-link"  class="home-button btn btn-lg btn-primary center col-xs-4">Select Your Accomplices</a>
+
+      </div>
+    </div>
+  </div>
+
 
   <div id="recipient"></div>
 
