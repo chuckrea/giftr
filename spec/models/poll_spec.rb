@@ -19,5 +19,18 @@ describe Poll do
         expect(@poll_recipients_array).to include poll.recipient_name
       end
     end
+    describe 'given voters for a poll' do
+      before do
+        @voter1 = User.create(email: "user1@example.com")
+        @voter2 = User.create(email: "user2@example.com")
+      end
+      it 'the creator should be able to assign those users as voters' do
+        @user1.assignVoter(@voter1, @first_poll)        
+      end
+      it 'the poll should know who its voters are' do
+        expect(@first_poll.voters).to include @voter1
+        expect(@first_poll.voters).to include @voter2
+      end
+    end
   end
 end

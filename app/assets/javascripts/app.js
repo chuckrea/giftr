@@ -16,6 +16,10 @@
 // function showChoice(){
 //   new PotentialRecipientView({el: $('#recipient')}).render();
 // }
+var muse;
+var user_id; 
+var friend_id;
+var mutual_url;
 
 $(document).ready(function() {  
 
@@ -27,20 +31,32 @@ $(document).ready(function() {
     $('#loginbutton,#feedbutton').removeAttr('disabled');
     FB.getLoginStatus($.noop);
   });
-
-  $(".bt-fs-dialog").fSelector({ 
-      lang: {title: "something", buttonSubmit: "thing"},
+  
+  $(".bt-fs-dialog").fSelector({
+      max: 1,
+      facebookInvite: false,
+      lang: {
+        title: "Pick the friend whom you are buying a gift for", 
+        buttonSubmit: "Add Gift Recipient", 
+        selectedLimitResult: "Limit is {1} person."
+      },
+      closeOnSubmit: true,
       onSubmit: function(response){
-        // example response usage
-        alert(response);
-        FB.api(
-          "/{user-id-a}/mutualfriends/"+response[0],
-          function (response) {
-            if (response && !response.error) {
-        /* handle the result */
-      }
-    }
-// );
+        friend_id = response[0];
+        FB.api('/me', function(stuff){
+          user_id = stuff.id
+          console.log(stuff.id)
+          mutual_url = '/' + user_id + '/mutualfriends/' + friend_id
+        });
+
+        // mutual_url = '/' + user_id + '/mutualfriends/' + friend_id;
+
+        FB.api('/606833302/mutualfriends/811519',
+              function (mutuals) {
+                if (mutuals && !mutuals.error) {
+                  console.log(mutuals)
+                }
+        });
       }
     });
 });
