@@ -17,12 +17,15 @@
 // function showChoice(){
 //   new PotentialRecipientView({el: $('#recipient')}).render();
 // }
-var muse;
-var user_id; 
-var friend_id;
-var mutual_url;
+
+var mutual_friends_array = [];
 
 $(document).ready(function() {  
+
+  var user_id; 
+  var friend_id;
+  var mutual_url;
+  
 
   $.ajaxSetup({ cache: true });
   $.getScript('//connect.facebook.net/en_US/all.js', function(){
@@ -30,7 +33,9 @@ $(document).ready(function() {
       appId: '294324634052609',
     });     
     $('#loginbutton,#feedbutton').removeAttr('disabled');
-    FB.getLoginStatus($.noop);
+    FB.getLoginStatus(function(response){
+      user_id = response.authResponse.userID
+    });
   });
 
   
@@ -45,22 +50,35 @@ $(document).ready(function() {
       closeOnSubmit: true,
       onSubmit: function(response){
         friend_id = response[0];
-        FB.api('/me', function(stuff){
-          user_id = stuff.id
-          console.log(stuff.id)
-          mutual_url = '/' + user_id + '/mutualfriends/' + friend_id
-        });
+        mutual_url = '/' + user_id + '/mutualfriends/' + friend_id;
 
-        // mutual_url = '/' + user_id + '/mutualfriends/' + friend_id;
-
-        FB.api('/606833302/mutualfriends/811519',
-              function (mutuals) {
-                if (mutuals && !mutuals.error) {
-                  console.log(mutuals)
-                }
+        // This sets up an array containing ids of mutual friends with your
+        // chosen gift recipient.
+        // As of now does not work for more than 99 mutual friends
+        FB.api(mutual_url, function (mutuals) {
+              if (mutuals && !mutuals.error) {
+                console.log(mutuals.data)
+                _.each(mutuals.data, function(friend){
+                  mutual_friends_array.push(parseInt(friend.id))
+                })
+              }
         });
       }
     });
+
+  // This doesn't totally work yet.  Need to compare mutual friends with your own friends
+  // and only return mutuals
+  $("#mutual-friends-link").fSelector({
+    max: 5,
+    getStoredFriends: mutual_friends_array,
+    facebookInvite: false,
+    lang: {
+      title: "Pick your mutual friends who will vote on the gifts",
+      buttonSubmit: "Add Accomplices",
+      selectedLimitResult: "Limit is {5} people."
+    },
+    closeOnSubmit: true
+  })
 });
 
 
