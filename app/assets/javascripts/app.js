@@ -45,15 +45,14 @@ $(document).ready(function() {
       closeOnSubmit: true,
       onSubmit: function(response){
         friend_id = response[0];
-        // FB.api('/me', function(stuff){
-        //   user_id = stuff.id
-        //   console.log(stuff.id)
-        //   mutual_url = '/' + user_id + '/mutualfriends/' + friend_id
-        // });
+        FB.api('/me', function(stuff){
+          user_id = stuff.id
+          console.log(stuff.id)
+        });
 
-        // mutual_url = '/' + user_id + '/mutualfriends/' + friend_id;
-        console.log(user_id)
-        FB.api('/' + user_id + '/mutualfriends/' + friend_id,
+        mutual_url = '/' + user_id + '/mutualfriends/' + friend_id;
+
+        FB.api(mutual_url,
               function (mutuals) {
                 if (mutuals && !mutuals.error) {
                   console.log(mutuals)
