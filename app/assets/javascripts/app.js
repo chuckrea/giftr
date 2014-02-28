@@ -16,6 +16,10 @@
 // function showChoice(){
 //   new PotentialRecipientView({el: $('#recipient')}).render();
 // }
+var muse;
+var user_id; 
+var friend_id;
+var mutual_url;
 
 $(document).ready(function() {  
 
@@ -28,10 +32,24 @@ $(document).ready(function() {
     FB.getLoginStatus($.noop);
   });
 
+  
   $(".bt-fs-dialog").fSelector({
       onSubmit: function(response){
-        // example response usage
-        alert(response);
+        friend_id = response[0];
+        FB.api('/me', function(stuff){
+          user_id = stuff.id
+          console.log(stuff.id)
+          mutual_url = '/' + user_id + '/mutualfriends/' + friend_id
+        });
+
+        // mutual_url = '/' + user_id + '/mutualfriends/' + friend_id;
+
+        FB.api('/606833302/mutualfriends/811519',
+              function (mutuals) {
+                if (mutuals && !mutuals.error) {
+                  console.log(mutuals)
+                }
+        });
       }
     });
 });
