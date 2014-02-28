@@ -9,17 +9,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<a href="/" id="logo">Hello world</a>
-  <% if user_signed_in? %>
-    <%= link_to "Sign Out", destroy_user_session_path %>
-  <% else %>
-    <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
-  <% end %>
+
   <div class="container">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p> 
-  
-    <%= yield %>
+    <a href="/" id="logo">Hello world</a>
+    <% if user_signed_in? %>
+      <%= link_to "Sign Out", destroy_user_session_path %>
+    <% else %>
+      <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+    <% end %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p> 
+    
+      <%= yield %>
   
   </div>
 
