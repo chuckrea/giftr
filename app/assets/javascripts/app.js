@@ -35,6 +35,9 @@ $(document).ready(function() {
 
     FB.getLoginStatus(function(response){
       user_id = response.authResponse.userID
+      FB.api('/me/friends', function(response){
+        console.log(response)
+      })
     });
 
   });

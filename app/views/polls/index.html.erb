@@ -1,12 +1,11 @@
 <%if current_user %>
-  <p>Whom do you want to buy a gift for?</p>
+  <h4 class="center col-xs-12">Whom do you want to buy a gift for?</h4>
 
-  <a href="javascript:{}" class="bt-fs-dialog btn">Select the Friend you want to Gift</a>
-
-  <a href="javascript:{}" id="mutual-friends-link btn">Select Your Accomplices</a>
+  <a href="javascript:{}" class="bt-fs-dialog btn btn-lg btn-primary center col-xs-12">Select the Friend you want to Gift</a>
+  <div class="verticalspacer col-xs-12"></div>  
+  <a href="javascript:{}" id="mutual-friends-link"  class="btn btn-lg btn-primary center col-xs-12">Select Your Accomplices</a>
 
   <div id="recipient"></div>
-  <div id="current_user_template"><%= current_user.uid %></div>
 
 <% end %> 
 
