@@ -71,7 +71,7 @@ $(document).ready(function() {
       lang: {
         title: "Pick the friend whom you are buying a gift for", 
         buttonSubmit: "Add Gift Recipient", 
-        selectedLimitResult: "Limit is {1} person."
+        selectedLimitResult: "You can only select one gift recipient at a time."
       },
       closeOnSubmit: true,
       onSubmit: function(response){
