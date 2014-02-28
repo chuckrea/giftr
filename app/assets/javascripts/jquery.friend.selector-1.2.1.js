@@ -167,6 +167,7 @@
       }, function (response) {
         _parseFacebookFriends(response);
       });
+
       
     } else {
     

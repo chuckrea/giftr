@@ -25,3 +25,13 @@ describe Vote do
     end
   end
 end
+
+
+# in controller
+# users.votes << Vote.create(vote_params)
+
+@user_obj = {}
+@user_obj["name"] = user.name
+vote_arr = user.votes
+@user_obj["votes"] = votes_arr
+render :json => @user_obj
