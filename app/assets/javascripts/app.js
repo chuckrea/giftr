@@ -31,6 +31,7 @@ $(document).ready(function() {
 
   $(".bt-fs-dialog").fSelector({
       max: 1,
+      facebookInvite: false,
       lang: {
         title: "Pick the friend whom you are buying a gift for", 
         buttonSubmit: "Add Gift Recipient", 
