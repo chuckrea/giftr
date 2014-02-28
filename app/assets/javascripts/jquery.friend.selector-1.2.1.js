@@ -95,6 +95,8 @@
 
   _dialogBox = function() {
 
+    
+
     if (running === true) {
       return;
     }
@@ -152,7 +154,6 @@
   },
 
   _getFacebookFriend = function() {
-
 
     $('#fs-user-list').append('<div id="fs-loading"></div>');
 
@@ -615,7 +616,6 @@
 
 
   $.fn.fSelector = function ( options ) {
-
     this.unbind("click.fs");
     this.bind("click.fs", function(){
       fsOptions = options;
