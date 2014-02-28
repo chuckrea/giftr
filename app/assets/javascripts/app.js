@@ -21,7 +21,7 @@ var user_id;
 var friend_id;
 var mutual_url;
 
-$(document).ready(function() {  
+$(document).ready(function() {    
 
   $.ajaxSetup({ cache: true });
   $.getScript('//connect.facebook.net/en_US/all.js', function(){
@@ -30,6 +30,8 @@ $(document).ready(function() {
     });     
     $('#loginbutton,#feedbutton').removeAttr('disabled');
     FB.getLoginStatus($.noop);
+    user_id = $('#current_user_template').html();
+    console.log(user_id)
   });
   
   $(".bt-fs-dialog").fSelector({
@@ -43,15 +45,15 @@ $(document).ready(function() {
       closeOnSubmit: true,
       onSubmit: function(response){
         friend_id = response[0];
-        FB.api('/me', function(stuff){
-          user_id = stuff.id
-          console.log(stuff.id)
-          mutual_url = '/' + user_id + '/mutualfriends/' + friend_id
-        });
+        // FB.api('/me', function(stuff){
+        //   user_id = stuff.id
+        //   console.log(stuff.id)
+        //   mutual_url = '/' + user_id + '/mutualfriends/' + friend_id
+        // });
 
         // mutual_url = '/' + user_id + '/mutualfriends/' + friend_id;
-
-        FB.api('/606833302/mutualfriends/811519',
+        console.log(user_id)
+        FB.api('/' + user_id + '/mutualfriends/' + friend_id,
               function (mutuals) {
                 if (mutuals && !mutuals.error) {
                   console.log(mutuals)
