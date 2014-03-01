@@ -16,6 +16,7 @@
 
 		<div id="recipient"></div>
 
+
 <% end %> 
 
 <h1>Gift Formz</h1>
@@ -27,6 +28,9 @@
   </form>
 
   <div id="item_list"></div>
+  <form action="polls/create" method="POST"> 
+    <button id="finished_adding_button">Finished adding gifts</button>
+  </form>
 
   <%= render text: File.read("app/views/templates.txt").html_safe %>
 

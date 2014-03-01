@@ -44,6 +44,7 @@ function resetSelector(){
 var mutual_friends_array = [];
 var my_friends = [];
 var exclusions;
+var friend_attrs;
 var accomplices;
 
 $(document).ready(function() {    
@@ -84,6 +85,7 @@ $(document).ready(function() {
       },
       closeOnSubmit: true,
       onSubmit: function(response){
+
         console.log(response)
         friend_id = response[0];
 
