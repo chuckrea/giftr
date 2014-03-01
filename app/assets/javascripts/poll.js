@@ -1,18 +1,33 @@
 // we want to create a list of items similar to a todo list. each item should get saved to the DB. and then we want to create a poll which will bundle all the items together into one collection of items
 
 
-// var Poll = Backbone.Model.extend({
-//   // defaults: {
-//   //   creator_id: "here we will have the current user's id"
-//   //   // recipient_name:
-//   //   // recipient_photo:
-//   //   recipient_fb_id: friend_id
-//   //   // description:
-//   //   // end_date:
-//   //   // created_at: 
-//   //   // updated_at:
-//   // }
-// })
+var Poll = Backbone.Model.extend({
+    defaults: {
+      description: "not yet",
+      end_date: "not yet"
+    }
+    // var self = this;
+    // var params = {
+    //   task: {
+    //     "id": self.id,
+    //   }
+    // }
+    // $.ajax({
+    //   url: "/polls",
+    //   type: "post",
+    //   dataType: "json",
+    //   data: params,
+    //   success: function(data){
+    //     // data is the newly created poll that Rails sends back
+    //     self.id = data.id;
+    //   }
+    // })
+})
+
+var PollList = Backbone.Collection.extend({
+  model: Poll, 
+  url: "/polls"
+})
 
 // var PollList = Backbone.Collection.extend({
 //   model: Poll,  
@@ -39,10 +54,6 @@
 //   }
 
 // })
-
-var PollListView = Backbone.View.extend({
-
-})
 
 
 var Item = Backbone.Model.extend({
@@ -71,7 +82,7 @@ var ItemFormView = Backbone.View.extend({
     itemsListView.collection.create({
       name: $('#new_item_name_input').val(),
       url: $('#new_item_url_input').val(), 
-      poll_id: "huh"
+      poll_id: ""
     });
 
     this.resetValues(); 
@@ -156,9 +167,10 @@ var ItemListView = Backbone.View.extend({
 })
 
 $(function (){
+  window.polllist = new PollList();
+  window.poll = new Poll();
   window.itemsListView = new ItemListView(); 
   window.itemformView = new ItemFormView();
   window.item = new Item();
   window.itemView = new ItemView({model: item});
-
 })

@@ -1,7 +1,7 @@
 class PollsController < ApplicationController
 
   def index
-  @poll = Poll.create  
+  @polls = Poll.all
   @render = false
     if session[:token]
       @render = true
@@ -9,8 +9,8 @@ class PollsController < ApplicationController
   end
 
   def create
-    @item = Item.create(item_params)
-    render json: @item
+    @poll = Poll.create(poll_params)
+    render json: @poll
   end
 
   private
