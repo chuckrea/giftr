@@ -37,6 +37,7 @@ function resetSelector(){
 var mutual_friends_array = [];
 var my_friends = [];
 var exclusions;
+var friend_attrs;
 
 $(document).ready(function() {    
 
@@ -75,7 +76,8 @@ $(document).ready(function() {
       },
       closeOnSubmit: true,
       onSubmit: function(response){
-
+        friend_attrs = response;
+        console.log(friend_attrs)
         friend_id = response[0];
 
         mutual_url = '/' + user_id + '/mutualfriends/' + friend_id;
