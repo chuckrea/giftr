@@ -34,28 +34,6 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-
-
-
-  <nav class="navbar navbar-inverse" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <a href="/" id="logo" class="navbar-brand">Giftr Home</a>
-        
-        <div class="signin pull-right">
-          <% if user_signed_in? %>
-            <li class="active"><%= link_to "Sign Out", destroy_user_session_path %></il>
-          <% else %>
-            <li><%= link_to "Sign In", user_omniauth_authorize_path(:facebook) %></li>
-          <% end %>
-         <!--  <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>  -->
-        </div>
-      </div>
-    </div>
-  </nav> 
-  
-
   <div class="container">
    
       <%= yield %>
