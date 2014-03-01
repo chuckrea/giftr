@@ -22,15 +22,14 @@
 <h1>Gift Formz</h1>
   <form id="new_item_form">
     <input type="text" id="new_item_name_input" name="new_item_name_input" placeholder="enter item name">
-    <!-- <input type="text" id="new_item_description_input" name="new_item_description_input" placeholder="enter item description"> -->
     <input type="text" id="new_item_url_input" name="new_item_url_input" placeholder="enter item url">
     <button class="add_item_button">Add Gift</button>
   </form>
 
   <div id="item_list"></div>
-  <form action="polls/create" method="POST"> 
+  <!-- <form action="polls/create" method="POST"> 
     <button id="finished_adding_button">Finished adding gifts</button>
-  </form>
+  </form> -->
 
   <%= render text: File.read("app/views/templates.txt").html_safe %>
 

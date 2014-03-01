@@ -17,6 +17,7 @@
 //   new PotentialRecipientView({el: $('#recipient')}).render();
 // }
 
+
 function resetSelector(){
   $('#fs-user-list').empty();
   
@@ -46,15 +47,14 @@ var my_friends = [];
 var exclusions;
 var friend_attrs;
 var accomplices;
+var recipient_name;
+var poll;
 
 $(document).ready(function() {    
 
   var user_id; 
   var friend_id;
   var mutual_url;
-
-  
-  
 
   $.ajaxSetup({ cache: true });
   $.getScript('//connect.facebook.net/en_US/all.js', function(){
@@ -85,11 +85,21 @@ $(document).ready(function() {
       },
       closeOnSubmit: true,
       onSubmit: function(response){
-        friend_attrs = response;
-        console.log(friend_attrs)
         friend_id = response[0];
 
         mutual_url = '/' + user_id + '/mutualfriends/' + friend_id;
+        FB.api( '/'+friend_id, function(response) {
+          poll = new Poll({creator_id: user_id, 
+                          recipient_name: response.name, 
+                          recipient_photo: "http://graph.facebook.com/" + friend_id + "/picture?type=large", 
+                          recipient_fb_id: friend_id, 
+                          description: "This Worked!", 
+                          end_date: "not yet"
+                        });
+          poll.save()
+          poll.set({url: '/polls/' + this.id});
+          console.log(poll)
+        });
 
         // This sets up an array containing ids of mutual friends with your
         // chosen gift recipient.

@@ -1,91 +1,99 @@
 
-var Poll = Backbone.Model.extend({             
+var Poll = Backbone.Model.extend({     
+  url: "/polls",
+defaults: {
+    description: "I just changed this", 
+    end_date: "not yet", 
+    // poll_id: poll.get("poll_id")
+  }        
  
 })
 
-var PollFormView = Backbone.View.extend({
-  initialize: function(){
-    this.render()
-  }, 
-  render: function(){
+// var PollFormView = Backbone.View.extend({
+//   initialize: function(){
+//     this.render()
+//   }, 
+//   render: function(){
 
-  }, 
-  events: {
-    "click .add_item_button": "addPoll"
-  }, 
-  //trying to create poll when add gift clicked but only if poll does not already exist
-  addPoll: function(e){
-    e.preventDefault();
-    //trying to only create poll once with below conditional
-    // if (typeof poll !== 'undefined') {
-    //   console.log("poll already exists")
-    // } else {
-      console.log("creating poll")
+//   }, 
+//   events: {
+//     "click .add_item_button": "addPoll"
+//   }, 
+//   //trying to create poll when add gift clicked but only if poll does not already exist
+//   addPoll: function(e){
+//     e.preventDefault();
+//     // trying to only create poll once with below conditional
+//     // if (typeof poll !== 'undefined') {
+//     //   console.log("poll already exists")
+//     // } else {
+//       console.log("creating poll")
+//       console.log(pollListView.collection)
+//       pollListView.collection.create({ 
+//         description: "not yet", 
+//         end_date: "not yet"
+//     }); 
+//     // }
+//     },
 
-      pollListView.collection.create({ 
-        id: poll.attributes.id
-    }); 
-    },
+//   el: function() {
+//     return $('#new_item_form')
+//   }
+// })
 
-  el: function() {
-    return $('#new_item_form')
-  }
-})
+// var PollList = Backbone.Collection.extend({
+//   model: Poll, 
+//   url: "/polls"
+// })
 
-var PollList = Backbone.Collection.extend({
-  model: Poll, 
-  url: "/polls"
-})
+// var PollView = Backbone.View.extend({
+//   initialize: function(){
+//     this.render();
+//   }, 
+//   events: {
+//     //may want to add edit and delete later
+//   }, 
+//   template: function(attrs){
+//     html_string = $('#polls_template').html();
+//     var template_func = _.template(html_string)
+//     return template_func(attrs)
+//   },
+//   render: function() {
+//     this.$el.html(this.template(this.model.attributes));
+//     return this
+//   },
 
-var PollView = Backbone.View.extend({
-  initialize: function(){
-    this.render();
-  }, 
-  events: {
-    //may want to add edit and delete later
-  }, 
-  template: function(attrs){
-    html_string = $('#polls_template').html();
-    var template_func = _.template(html_string)
-    return template_func(attrs)
-  },
-  render: function() {
-    this.$el.html(this.template(this.model.attributes));
-    return this
-  },
+// })
 
-})
+// var PollListView = Backbone.View.extend({
+//   initialize: function(){
+//     this.collection = new PollList();
+//     // this.itemViews = []
 
-var PollListView = Backbone.View.extend({
-  initialize: function(){
-    this.collection = new PollList();
-    // this.itemViews = []
+//     this.collection.fetch();
+//     this.listenTo(this.collection, "all", this.render)
+//   },
 
-    this.collection.fetch();
-    this.listenTo(this.collection, "all", this.render)
-  },
+//   el: function(){
+//     return $('#item_list')
+//   }, 
 
-  el: function(){
-    return $('#item_list')
-  }, 
+//   render: function() {
 
-  render: function() {
+//     // var self = this;
+//     // _.each(this.itemViews, function(view){
+//     //   view.remove();
+//     // })
+//     // this.itemViews = []
+//     _.each(this.collection.models, function(poll){
+//       var new_view = new PollView({
+//         model: poll
+//       });
+//       // self.itemViews.push(new_view)
+//       // self.$el.prepend(new_view.render().$el)
+//     })
 
-    // var self = this;
-    // _.each(this.itemViews, function(view){
-    //   view.remove();
-    // })
-    // this.itemViews = []
-    _.each(this.collection.models, function(poll){
-      var new_view = new PollView({
-        model: poll
-      });
-      // self.itemViews.push(new_view)
-      // self.$el.prepend(new_view.render().$el)
-    })
-
-  }
-})
+//   }
+// })
 
 var Item = Backbone.Model.extend({
 
@@ -114,7 +122,8 @@ var ItemFormView = Backbone.View.extend({
     itemsListView.collection.create({
       name: $('#new_item_name_input').val(),
       url: $('#new_item_url_input').val(), 
-      poll_id: ""
+      poll_id: poll.id
+      // console.log(poll)
     });
 
     this.resetValues(); 
@@ -199,10 +208,10 @@ var ItemListView = Backbone.View.extend({
 })
 
 $(function (){
-  window.pollListView = new PollListView(); 
-  window.pollformView = new PollFormView();
-  window.poll = new Poll();
-  window.pollView = new PollView({model: poll});
+  // window.pollListView = new PollListView(); 
+  // window.pollformView = new PollFormView();
+  // window.poll = new Poll();
+  // window.pollView = new PollView({model: poll});
   window.itemsListView = new ItemListView(); 
   window.itemformView = new ItemFormView();
   window.item = new Item();

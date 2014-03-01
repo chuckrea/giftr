@@ -630,3 +630,63 @@ li.checked .fs-anchor {
   top: 50%;
   left: 50%;
 }
+
+@media all and (max-width: 576px){ /*Resizes the facebook window when browser is about the size of a tablet screen */
+  #fs-dialog-box-content{
+    width: 30em;
+  }
+
+  #fs-user-list li {
+    display: inline-block;
+    float: none;
+    padding: 5px 0 0 5px;
+    width: 192px;
+    overflow: inherit;
+  }
+    
+  #fs-dialog-buttons {
+    margin-left: 11em;
+     text-align: none; 
+     float: left; 
+  }
+
+  #fs-input-wrap {
+    width: 36em;
+  }
+}
+
+@media all and (max-width: 445px){ /*Resizes the facebook window when browser is about the size of an iPhone screen*/
+  #fs-dialog-box-content{
+    width: 25em;
+  }
+
+  #fs-user-list li {
+    font-size: 2em;
+    display: inline-block;
+    float: none;
+    padding: 5px 0 0 5px;
+    width: 278px;
+    overflow: inherit;
+  }
+
+  #fs-user-list input[type="checkbox"]{
+/*    float: left;
+*/  margin: 6px 12px 0;
+    -ms-transform: scale(2);
+    -moz-transform: scale(2);
+    -webkit-transform: scale(2);
+    -o-transform: scale(2);
+    padding: 2em;
+  }
+    
+  #fs-dialog-buttons {
+    margin-left: 5em;
+     text-align: none; 
+     float: left; 
+  }
+
+  #fs-input-wrap {
+    width: 30em;
+  }
+}
+
