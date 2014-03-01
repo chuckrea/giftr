@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe User do
-  describe 'given a user'
+  describe 'given a user' do
     before do
       @user1 = User.create(email: "user@example.com")
     end
@@ -10,5 +10,5 @@ describe User do
       @poll.creator.should == @user1
       @poll.description.should == 'Necklace for Sally'
     end
-
+  end
 end
