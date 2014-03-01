@@ -46,6 +46,7 @@ var my_friends = [];
 var exclusions;
 var friend_attrs;
 var accomplices;
+var recipient_name;
 
 $(document).ready(function() {    
 
@@ -86,11 +87,17 @@ $(document).ready(function() {
       closeOnSubmit: true,
       onSubmit: function(response){
         friend_attrs = response;
-        console.log(friend_attrs)
+        // console.log(friend_attrs)
         friend_id = response[0];
 
         mutual_url = '/' + user_id + '/mutualfriends/' + friend_id;
+        FB.api( '/'+friend_id, function(response) {
+          recipient_name = response.name
+        });
 
+        var poll = new Poll({ creator_id: user_id, recipient_name: recipient_name, recipient_photo: "http://graph.facebook.com/friend_id/picture?type=large", recipient_fb_id: friend_id, description: "This Worked!", end_date: "not yet"}).save({success: function(){
+        console.log(poll.description)
+        }})
         // This sets up an array containing ids of mutual friends with your
         // chosen gift recipient.
         // As of now does not work for more than 99 mutual friends
