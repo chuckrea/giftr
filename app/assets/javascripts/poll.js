@@ -122,7 +122,7 @@ var ItemFormView = Backbone.View.extend({
     itemsListView.collection.create({
       name: $('#new_item_name_input').val(),
       url: $('#new_item_url_input').val(), 
-      poll_id: ""
+      poll_id: poll.get("id")
     });
 
     this.resetValues(); 
