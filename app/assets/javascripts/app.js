@@ -100,6 +100,7 @@ $(document).ready(function() {
                           end_date: "not yet"
                         });
           poll.save()
+          poll.set({url: '/polls/' + this.id});
           console.log(poll)
         });
 
