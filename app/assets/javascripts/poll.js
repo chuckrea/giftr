@@ -9,6 +9,16 @@ defaults: {
  
 })
 
+// var User = Backbone.Model.extend({
+//   defaults: {
+//     provider: "facebook", 
+//     uid: "",
+//     email: "default@gmail.com", 
+//     password: "abcd1234"
+//   }
+// })
+
+
 // var PollFormView = Backbone.View.extend({
 //   initialize: function(){
 //     this.render()
@@ -113,7 +123,8 @@ var ItemFormView = Backbone.View.extend({
 
   }, 
   events: {
-    "click .add_item_button": "addItemToPoll"
+    "click .add_item_button": "addItemToPoll",
+    // "click .add_item_button": "addFinishButton"
   }, 
 
   addItemToPoll: function(e){
@@ -123,12 +134,15 @@ var ItemFormView = Backbone.View.extend({
       name: $('#new_item_name_input').val(),
       url: $('#new_item_url_input').val(), 
       poll_id: poll.id
-      // console.log(poll)
-    });
-
-    this.resetValues(); 
-     
+    })
+    this.resetValues();
   },
+
+  // addFinishButton: function(e){
+  //     e.preventDefault;
+  //     var html_string = $('#finish_adding_button_template').html();
+  //     $('#finish_button_container').append(html_string);
+  //   },    
 
   resetValues: function() {
     _.each( this.$('input'), function(input){
@@ -176,7 +190,7 @@ var ItemListView = Backbone.View.extend({
     this.listenTo(this.collection, "all", this.render)
   },
 
-  //GOING TO FIX THIS, DONT ERASE
+  // GOING TO FIX THIS, DONT ERASE
   // create_finish_button: function () {
   //   //if two gifts exist then append button
   //   if (itemsListView.collection.length > 1) {

@@ -36,6 +36,10 @@ function resetSelector(){
     onSubmit: function(response){
       accomplices = response;
       return accomplices;
+      console.log(accomplices)
+      // _.each(accomplices, function(accomplice){
+
+      // })
     }
   });
 };
