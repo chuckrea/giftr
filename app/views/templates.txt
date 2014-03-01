@@ -2,3 +2,7 @@
 <span class="name"><%= name %></span>
 <span class="url"><%= url %></span>
 </script>
+
+<script id='polls_template' type="text/template">
+<span class="poll_id"> <% poll.id %> </span>
+</script>
