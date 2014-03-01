@@ -18,10 +18,15 @@
 
 <% end %> 
 
+<h1>Gift Formz</h1>
+  <form id="new_item_form">
+    <input type="text" id="new_item_name_input" name="new_item_name_input" placeholder="enter item name">
+    <!-- <input type="text" id="new_item_description_input" name="new_item_description_input" placeholder="enter item description"> -->
+    <input type="text" id="new_item_url_input" name="new_item_url_input" placeholder="enter item url">
+    <button class="add_item_button">Add Gift</button>
+  </form>
 
+  <div id="item_list"></div>
 
+  <%= render text: File.read("app/views/templates.txt").html_safe %>
 
-<!-- <form id='new_recipient_form'>
-      <input id="recipient_name_input" type="text" name="recipient_name" placeholder="Enter Name" />
-      <button class='search_button'>search</button>
-  </form> -->

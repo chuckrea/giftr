@@ -338,7 +338,7 @@
 
     _showFriendCount();
 
-    _showFriends();
+    // _showFriends();
   },
 
   _stopEvent = function() {
@@ -500,19 +500,21 @@
   _resetSelection = function() {
     $('#fs-user-list li').removeClass('checked');
     $('#fs-user-list input.fs-friends').attr('checked', false);
-    
+    console.log("something was unchecked")
     selected_friend_count = 1;
   },
 
-  _showFriends = function() {
-    if ( selected_friend_count > 1 && fsOptions.showSelectedCount === true ){
-      var item = $('<span/>');
-      var container = $('#fs-user-list ul'),
-        selectedElements = container.find('li.checked');
-        item.append(selectedElements);
-    $('#fs-summary-box').append(item);
-    }
-  },
+  // _showFriends = function() {
+  //   if ( selected_friend_count > 1 && fsOptions.showSelectedCount === true ){
+  //     var item = $('<span/>');
+  //     var container = $('#fs-user-list ul'),
+  //       selectedElements = container.find('li.checked');
+  //       item.append(selectedElements);
+  //   $('#fs-summary-box').append(item);
+  //     var summary_container = $('#fs-summary-box')
+  //       summaryselectedElements = summary_container.find('li.checked')
+  //   }
+  // },
 
   _selectAll = function() {
     if (fsOptions.showButtonSelectAll === true && fsOptions.max === null) {
