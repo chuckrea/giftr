@@ -13,15 +13,14 @@
   <div class="container-fluid">
     <div class="navbar-header"> <!-- Everything within the navbar-header div is what will appear at the top of our page in a moble device. This includes the app name, and the dropdown menu button. -->
 
-    <% if user_signed_in? %> <!-- If a user is signed in.. -->
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <!-- ..our dropdown menu button will appear on a moblie-sized screen -->
         <span class="sr-only">Toggle navigation</span> <!-- These spans are the bars that appear inside our drop-down menu button on our menu page. They don't have any functionality. They're only for design. -->
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-    <% end %>
       <a class="navbar-brand" href="#">Giftr</a>
+
     </div>
 
     <!-- The links that will appear in our header, and within the dropdown button on our mobile page. -->
@@ -33,6 +32,7 @@
           <li><%= link_to "Sign In", user_omniauth_authorize_path(:facebook) %></li>
         <% end %>
       </ul>
+
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
