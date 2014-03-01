@@ -71,6 +71,7 @@ $(document).ready(function() {
         });
         
       });
+      $(".bt-fs-dialog").click()
     });
 
   });
