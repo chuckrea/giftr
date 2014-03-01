@@ -9,20 +9,33 @@
 </head>
 <body>
 
-  <div class="container">
-    
-    <a href="/" id="logo">Giftr Home</a>
-    
-    <div class="signin pull-right">
-      <% if user_signed_in? %>
-        <%= link_to "Sign Out", destroy_user_session_path %>
-      <% else %>
-        <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
-      <% end %>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p> 
+  <nav class="navbar navbar-inverse" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header"> <!-- Everything within the navbar-header div is what will appear at the top of our page in a moble device. This includes the app name, and the dropdown menu button. -->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <!-- Our dropdown menu button. Will only appear on a moblie-sized screen -->
+        <span class="sr-only">Toggle navigation</span> <!-- These spans are the bars that appear inside our drop-down menu button on our menu page. They don't have any functionality. They're only for design. -->
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Giftr</a>
     </div>
 
+    <!-- The links that will appear in our header, and within the dropdown button on our mobile page. -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="signin nav navbar-nav pull-right">
+        <% if user_signed_in? %>
+          <li class="active"><%= link_to "Sign Out", destroy_user_session_path %></il>
+        <% else %>
+          <li><%= link_to "Sign In", user_omniauth_authorize_path(:facebook) %></li>
+        <% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+   
       <%= yield %>
   
   </div>
