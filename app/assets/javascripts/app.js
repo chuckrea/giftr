@@ -86,8 +86,6 @@ $(document).ready(function() {
       },
       closeOnSubmit: true,
       onSubmit: function(response){
-        friend_attrs = response;
-        // console.log(friend_attrs)
         friend_id = response[0];
 
         mutual_url = '/' + user_id + '/mutualfriends/' + friend_id;
