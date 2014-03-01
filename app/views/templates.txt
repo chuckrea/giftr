@@ -4,5 +4,5 @@
 </script>
 
 <script id='polls_template' type="text/template">
-<span class="poll_id"> <% id %> </span>
+<span class="poll_id"> <% poll.id %> </span>
 </script>

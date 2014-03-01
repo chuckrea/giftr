@@ -1,10 +1,36 @@
 
 var Poll = Backbone.Model.extend({             
-  defaults: {
-    id: "not yet"
-  }
+ 
 })
 
+var PollFormView = Backbone.View.extend({
+  initialize: function(){
+    this.render()
+  }, 
+  render: function(){
+
+  }, 
+  events: {
+    "click .add_item_button": "addPoll"
+  }, 
+  //trying to create poll when add gift clicked but only if poll does not already exist
+  addPoll: function(e){
+    e.preventDefault();
+    //trying to only create poll once with below conditional
+    // if (typeof poll !== 'undefined') {
+    //   console.log("poll already exists")
+    // } else {
+      console.log("creating poll")
+
+      pollListView.collection.create({ 
+        id: poll.attributes.id
+    }); 
+    },
+
+  el: function() {
+    return $('#new_item_form')
+  }
+})
 
 var PollList = Backbone.Collection.extend({
   model: Poll, 
@@ -28,6 +54,37 @@ var PollView = Backbone.View.extend({
     return this
   },
 
+})
+
+var PollListView = Backbone.View.extend({
+  initialize: function(){
+    this.collection = new PollList();
+    // this.itemViews = []
+
+    this.collection.fetch();
+    this.listenTo(this.collection, "all", this.render)
+  },
+
+  el: function(){
+    return $('#item_list')
+  }, 
+
+  render: function() {
+
+    // var self = this;
+    // _.each(this.itemViews, function(view){
+    //   view.remove();
+    // })
+    // this.itemViews = []
+    _.each(this.collection.models, function(poll){
+      var new_view = new PollView({
+        model: poll
+      });
+      // self.itemViews.push(new_view)
+      // self.$el.prepend(new_view.render().$el)
+    })
+
+  }
 })
 
 var Item = Backbone.Model.extend({
@@ -57,7 +114,7 @@ var ItemFormView = Backbone.View.extend({
     itemsListView.collection.create({
       name: $('#new_item_name_input').val(),
       url: $('#new_item_url_input').val(), 
-      poll_id: poll.get("id")
+      poll_id: ""
     });
 
     this.resetValues(); 
@@ -142,7 +199,10 @@ var ItemListView = Backbone.View.extend({
 })
 
 $(function (){
+  window.pollListView = new PollListView(); 
+  window.pollformView = new PollFormView();
   window.poll = new Poll();
+  window.pollView = new PollView({model: poll});
   window.itemsListView = new ItemListView(); 
   window.itemformView = new ItemFormView();
   window.item = new Item();
