@@ -1,66 +1,41 @@
-// we want to create a list of items similar to a todo list. each item should get saved to the DB. and then we want to create a poll which will bundle all the items together into one collection of items
 
-
-var Poll = Backbone.Model.extend({
-    defaults: {
-      description: "not yet",
-      end_date: "not yet"
-    }
-    // var self = this;
-    // var params = {
-    //   task: {
-    //     "id": self.id,
-    //   }
-    // }
-    // $.ajax({
-    //   url: "/polls",
-    //   type: "post",
-    //   dataType: "json",
-    //   data: params,
-    //   success: function(data){
-    //     // data is the newly created poll that Rails sends back
-    //     self.id = data.id;
-    //   }
-    // })
+var Poll = Backbone.Model.extend({             
+  defaults: {
+    id: "not yet"
+  }
 })
+
 
 var PollList = Backbone.Collection.extend({
   model: Poll, 
   url: "/polls"
 })
 
-// var PollList = Backbone.Collection.extend({
-//   model: Poll,  
-//   url: "/polls"
-// })
+var PollView = Backbone.View.extend({
+  initialize: function(){
+    this.render();
+  }, 
+  events: {
+    //may want to add edit and delete later
+  }, 
+  template: function(attrs){
+    html_string = $('#polls_template').html();
+    var template_func = _.template(html_string)
+    return template_func(attrs)
+  },
+  render: function() {
+    this.$el.html(this.template(this.model.attributes));
+    return this
+  },
 
-// var PollView = Backbone.View.extend({
-//   initialize: function(){
-//     this.render();
-//   }, 
-//   events: {
-//     //may want to add edit and delete later
-//   }, 
-//   template: function(attrs){
-//     html_string = $('#polls_template').html();
-//     var template_func = _.template(html_string)
-//     return template_func(attrs)
-//   },
-//   render: function() {
-//     this.$el.html(this.template(this.model.attributes));
-//     return this
-//   },
-
-//   }
-
-// })
-
+})
 
 var Item = Backbone.Model.extend({
+
   defaults: {
     name: "not yet", 
     url: "not yet", 
-    poll_id: "not yet"
+    // poll_id: poll.get("poll_id")
   }
 })
 
@@ -82,7 +57,7 @@ var ItemFormView = Backbone.View.extend({
     itemsListView.collection.create({
       name: $('#new_item_name_input').val(),
       url: $('#new_item_url_input').val(), 
-      poll_id: ""
+      poll_id: poll.get("id")
     });
 
     this.resetValues(); 
@@ -167,7 +142,6 @@ var ItemListView = Backbone.View.extend({
 })
 
 $(function (){
-  window.polllist = new PollList();
   window.poll = new Poll();
   window.itemsListView = new ItemListView(); 
   window.itemformView = new ItemFormView();
