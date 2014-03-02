@@ -187,7 +187,7 @@ var ItemListView = Backbone.View.extend({
     this.collection = new ItemList();
     this.itemViews = []
 
-    this.collection.fetch();
+    this.collection.fetch(data: {poll_id: poll.id});
     this.listenTo(this.collection, "all", this.render)
   },
 
