@@ -2,7 +2,8 @@
 class ItemsController < ApplicationController
 
   def index
-    @items = Item.all.order("id")
+
+    @items = Item.where(poll_id: params[:poll_id])
     respond_to do |format|
       format.html
       format.json { render json: @items}
@@ -14,6 +15,11 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.create(item_params)
+    unless @item.image 
+      @item.image = '/default.jpg'
+      @item.save
+    end
+
     render json: @item
   end
 
