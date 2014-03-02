@@ -35,6 +35,12 @@ function resetSelector(){
     closeOnSubmit: true,
     onSubmit: function(response){
       accomplices = response;
+      console.log(accomplices);
+      _.each(accomplices, function(accomplice){
+        console.log(accomplice)
+        var user = new User({uid: accomplice})
+        user.save();
+      });
       return accomplices;
     }
   });

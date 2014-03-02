@@ -1,9 +1,12 @@
 Giftr::Application.routes.draw do
 
+  post '/users' => 'users#create', :as => 'new_user'
+
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }, :skip => [:sessions]
 
   resources :items
   resources :polls
+
 
   root :to => 'welcome#index'
 
