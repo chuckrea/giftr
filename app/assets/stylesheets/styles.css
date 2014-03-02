@@ -1,6 +1,9 @@
 
 /*================== Repeatable Formatting Styles =======================================*/
 
+.move-below-header {
+	margin-top: 5em;
+}
 
 .push-content-off-page {
 	position: absolute;
@@ -46,3 +49,8 @@
 #splash-page-4 { 
 	background-color: purple;
 }
+
+.site-wrapper {
+	text-align: center;
+}
+
