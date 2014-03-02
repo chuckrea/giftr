@@ -14,6 +14,8 @@ class PollsController < ApplicationController
 
   def create
     @poll = Poll.create(poll_params)
+    @poll.creator_id = current_user.id
+    @poll.save
     render json: @poll
   end
 

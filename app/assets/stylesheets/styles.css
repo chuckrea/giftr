@@ -1,0 +1,29 @@
+
+/*================== Repeatable Formatting Styles =======================================*/
+
+
+.push-content-off-page {
+	position: absolute;
+	bottom: 0px;
+}
+
+
+/*============================= Main Styling ===============================================*/
+
+
+
+.home-button {
+  margin: 10px;
+}
+
+
+/*============================= Splash Page Styling ===============================================*/
+
+/*---------------------------- Splash Page 1 Styling ------------------------------------------*/
+
+#splash-page-1 {
+	background-color: blue;
+	height: 30em;
+}
+
+

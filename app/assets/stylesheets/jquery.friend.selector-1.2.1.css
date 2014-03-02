@@ -657,6 +657,7 @@ li.checked .fs-anchor {
 
 @media all and (max-width: 445px){ /*Resizes the facebook window when browser is about the size of an iPhone screen*/
   #fs-dialog-box-content{
+    height: 34em;
     width: 25em;
   }
 
@@ -672,10 +673,10 @@ li.checked .fs-anchor {
   #fs-user-list input[type="checkbox"]{
 /*    float: left;
 */  margin: 6px 12px 0;
-    -ms-transform: scale(2);
+  /*  -ms-transform: scale(2);
     -moz-transform: scale(2);
     -webkit-transform: scale(2);
-    -o-transform: scale(2);
+    -o-transform: scale(2);*/
     padding: 2em;
   }
     
@@ -687,6 +688,10 @@ li.checked .fs-anchor {
 
   #fs-input-wrap {
     width: 30em;
+  }
+
+  #fs-input-text {
+    font-size: 1.5em;
   }
 }
 
