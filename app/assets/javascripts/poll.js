@@ -9,14 +9,15 @@ defaults: {
  
 })
 
-// var User = Backbone.Model.extend({
-//   defaults: {
-//     provider: "facebook", 
-//     uid: "",
-//     email: "default@gmail.com", 
-//     password: "abcd1234"
-//   }
-// })
+var User = Backbone.Model.extend({
+  url: "/users",
+  defaults: {
+    // provider: "facebook", 
+    // uid: "",
+    // email: "default@gmail.com", 
+    // password: "abcd1234"
+  }
+})
 
 
 // var PollFormView = Backbone.View.extend({
