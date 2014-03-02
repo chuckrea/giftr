@@ -1,7 +1,7 @@
 
 var Poll = Backbone.Model.extend({     
   url: "/polls",
-defaults: {
+  defaults: {
     description: "I just changed this", 
     end_date: "not yet", 
     // poll_id: poll.get("poll_id")
@@ -186,8 +186,7 @@ var ItemListView = Backbone.View.extend({
   initialize: function(){
     this.collection = new ItemList();
     this.itemViews = []
-
-    this.collection.fetch();
+    this.collection.fetch({data: {poll_id: poll.id}});
     this.listenTo(this.collection, "all", this.render)
   },
 
@@ -222,7 +221,13 @@ var ItemListView = Backbone.View.extend({
   }
 })
 
-$(function (){
+var Vote = Backbone.Model.extend({
+  url: '/votes'
+})
+
+
+
+var itemSetup = function (){
   // window.pollListView = new PollListView(); 
   // window.pollformView = new PollFormView();
   // window.poll = new Poll();
@@ -231,4 +236,4 @@ $(function (){
   window.itemformView = new ItemFormView();
   window.item = new Item();
   window.itemView = new ItemView({model: item});
-})
+}

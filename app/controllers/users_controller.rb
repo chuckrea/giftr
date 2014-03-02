@@ -9,14 +9,14 @@ class UsersController < ApplicationController
       @user.password = "abcd1234"
       @user.save!
     else
-      @user = existingUser
+      @user = existingUser[0]
     end
     render json: @user
   end
 
   private
   def user_params
-  params.require(:user).permit(:provider, :uid, :email, :password)
+    params.require(:user).permit(:provider, :uid, :email, :password)
   end
 
 end

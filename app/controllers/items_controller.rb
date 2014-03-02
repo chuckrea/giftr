@@ -2,7 +2,8 @@
 class ItemsController < ApplicationController
 
   def index
-    @items = Item.all.order("id")
+
+    @items = Item.where(poll_id: params[:poll_id])
     respond_to do |format|
       format.html
       format.json { render json: @items}

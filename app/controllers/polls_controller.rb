@@ -19,6 +19,10 @@ class PollsController < ApplicationController
     render json: @poll
   end
 
+  def show
+    @poll = Poll.find(params["id"])
+  end
+
   private
 
   def poll_params

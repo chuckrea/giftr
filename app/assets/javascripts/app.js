@@ -28,7 +28,7 @@ function resetSelector(){
     excludeIds: exclusions,
     facebookInvite: false,
     lang: {
-      title: "Pick your mutual friends who will vote on the gifts",
+      title: "Pick your mutual friends who will vote on the gifts (Last step)",
       buttonSubmit: "Add Accomplices",
       selectedLimitResult: "Limit is {5} people."
     },
@@ -38,11 +38,20 @@ function resetSelector(){
       console.log(accomplices);
       _.each(accomplices, function(accomplice){
         console.log(accomplice)
-        var user = new User({uid: accomplice})
-        user.save();
+        user = new User({uid: accomplice})
+        user.save(null,
+          {success: function(response){
+            // console.log(response.attributes.id)
+            vote = new Vote()
+            vote.save({user_id: response.attributes.id, poll_id: poll.id}, {success: function(response){
+              window.location.replace("/polls/"+poll.id)}
+            });
+          }
+        });
       });
-      return accomplices;
+      // return accomplices;
     }
+
   });
 };
 
@@ -55,6 +64,8 @@ var friend_attrs;
 var accomplices;
 var recipient_name;
 var poll;
+var user;
+var vote;
 
 $(document).ready(function() {    
 
@@ -86,7 +97,7 @@ $(document).ready(function() {
       max: 1,
       facebookInvite: false,
       lang: {
-        title: "Pick the friend whom you are buying a gift for", 
+        title: "Pick the friend whom you are buying a gift for (Step 1/3)", 
         buttonSubmit: "Add Gift Recipient", 
         selectedLimitResult: "You can only select one gift recipient at a time."
       },
@@ -102,9 +113,8 @@ $(document).ready(function() {
                           description: "This Worked!", 
                           end_date: "not yet"
                         });
-          poll.save()
+          poll.save(null, {success: itemSetup})
           poll.set({url: '/polls/' + this.id});
-          console.log(poll)
         });
 
         // This sets up an array containing ids of mutual friends with your
