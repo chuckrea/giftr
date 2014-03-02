@@ -54,3 +54,6 @@
 	text-align: center;
 }
 
+#new_item_image_input {
+	display: hidden;
+}
