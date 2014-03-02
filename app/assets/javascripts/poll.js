@@ -182,7 +182,7 @@ var ItemView = Backbone.View.extend({
     $('#upfile1').click(function(){
       $('#new_item_image_input').trigger('click');
     });
-  },
+  }
 
 })
 
@@ -227,6 +227,12 @@ var ItemListView = Backbone.View.extend({
       self.$el.prepend(new_view.render().$el)
     })
 
+  },
+  addVoteButton: function(){
+    var self = this
+    _.each(itemsListView.itemViews, function(item){ 
+      item.$el.append("<button data-action='vote'>Vote!</button>") 
+    });
   }
 })
 
