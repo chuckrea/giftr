@@ -2,7 +2,7 @@
 <span class="name"><%= name %></span>
 <span class="url"><%= url %></span>
 <p class="image_container">
-<img class="image" src="<%= image %>" />
+<img class="image" src=<%= image.to_s %> />
 </p>
 </script>
 

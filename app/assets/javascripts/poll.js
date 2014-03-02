@@ -173,15 +173,16 @@ var ItemView = Backbone.View.extend({
   },
   template: function(attrs){
     html_string = $('#items_template').html();
+    console.log(html_string)
     var template_func = _.template(html_string)
     return template_func(attrs)
   },
   render: function(){
     this.$el.html(this.template(this.model.attributes));
     return this;
-    $('#upfile1').click(function(){
-      $('#new_item_image_input').trigger('click');
-    });
+    // $('#upfile1').click(function(){
+    //   $('#new_item_image_input').trigger('click');
+    // });
   },
 
 })
