@@ -28,7 +28,7 @@ function resetSelector(){
     excludeIds: exclusions,
     facebookInvite: false,
     lang: {
-      title: "Pick your mutual friends who will vote on the gifts",
+      title: "Pick your mutual friends who will vote on the gifts (Last step)",
       buttonSubmit: "Add Accomplices",
       selectedLimitResult: "Limit is {5} people."
     },
@@ -97,7 +97,7 @@ $(document).ready(function() {
       max: 1,
       facebookInvite: false,
       lang: {
-        title: "Pick the friend whom you are buying a gift for", 
+        title: "Pick the friend whom you are buying a gift for (Step 1/3)", 
         buttonSubmit: "Add Gift Recipient", 
         selectedLimitResult: "You can only select one gift recipient at a time."
       },
@@ -113,9 +113,8 @@ $(document).ready(function() {
                           description: "This Worked!", 
                           end_date: "not yet"
                         });
-          poll.save()
+          poll.save(null, {success: itemSetup})
           poll.set({url: '/polls/' + this.id});
-          console.log(poll)
         });
 
         // This sets up an array containing ids of mutual friends with your
