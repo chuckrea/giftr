@@ -1,13 +1,14 @@
 class UsersController < ApplicationController
 
   def create
+    
     @user = User.new(user_params)
-    # binding.pry
+    binding.pry
     @user.provider = "facebook"
-    @user.email = "default@gmail.com"
+    @user.email = "#{user_params}@example.com"
     @user.password = "abcd1234"
     # binding.pry
-    @user.save
+    @user.save!
     render json: @user
   end
 
