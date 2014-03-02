@@ -49,8 +49,13 @@ function resetSelector(){
       
       });
       // return accomplices;
-      window.location.replace("/polls/"+poll.id)
+    },
+    onClose: function(response) {
+      console.log(response)
+      console.log(poll)
+      // window.location.replace("/polls/"+poll.id)
     }
+
   });
 };
 
