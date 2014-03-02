@@ -11,4 +11,3 @@ describe User do
       @poll.description.should == 'Necklace for Sally'
     end
   end
-end
