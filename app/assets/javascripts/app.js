@@ -41,7 +41,8 @@ function resetSelector(){
         var user = new User({uid: accomplice})
         user.save();
       });
-      return accomplices;
+      // return accomplices;
+      window.location.replace("/polls/"+poll.id)
     }
   });
 };
