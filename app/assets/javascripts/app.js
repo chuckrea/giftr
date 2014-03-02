@@ -56,9 +56,6 @@ $(document).ready(function() {
   var friend_id;
   var mutual_url;
 
-  
-  
-
   $.ajaxSetup({ cache: true });
   $.getScript('//connect.facebook.net/en_US/all.js', function(){
     FB.init({
@@ -100,10 +97,10 @@ $(document).ready(function() {
                           end_date: "not yet"
                         });
           poll.save()
+          poll.set({url: '/polls/' + this.id});
           console.log(poll)
         });
 
-        
         // This sets up an array containing ids of mutual friends with your
         // chosen gift recipient.
         // As of now does not work for more than 99 mutual friends
