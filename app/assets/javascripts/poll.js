@@ -1,7 +1,7 @@
 
 var Poll = Backbone.Model.extend({     
   url: "/polls",
-defaults: {
+  defaults: {
     description: "I just changed this", 
     end_date: "not yet", 
     // poll_id: poll.get("poll_id")
@@ -221,6 +221,12 @@ var ItemListView = Backbone.View.extend({
 
   }
 })
+
+var Vote = Backbone.Model.extend({
+  url: '/votes'
+})
+
+
 
 $(function (){
   // window.pollListView = new PollListView(); 

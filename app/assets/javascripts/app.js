@@ -38,8 +38,15 @@ function resetSelector(){
       console.log(accomplices);
       _.each(accomplices, function(accomplice){
         console.log(accomplice)
-        var user = new User({uid: accomplice})
-        user.save();
+        user = new User({uid: accomplice})
+        user.save(null,
+          {success: function(response){
+            console.log(response.attributes.id)
+            vote = new Vote()
+            vote.save({user_id: response.attributes.id, poll_id: poll.id});
+          }
+        });
+      
       });
       // return accomplices;
       window.location.replace("/polls/"+poll.id)
@@ -56,6 +63,8 @@ var friend_attrs;
 var accomplices;
 var recipient_name;
 var poll;
+var user;
+var vote;
 
 $(document).ready(function() {    
 
