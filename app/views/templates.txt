@@ -1,3 +1,6 @@
-
+<script id='items_template' type="text/template">
+<span class="name"><%= name %></span>
+<span class="url"><%= url %></span>
+</script>
 
 

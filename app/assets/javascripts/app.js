@@ -51,6 +51,7 @@ function resetSelector(){
       });
       // return accomplices;
     }
+
   });
 };
 
