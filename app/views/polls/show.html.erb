@@ -1,6 +1,4 @@
-
-
-<h1>hello world</h1>
+<br>
 
 <h2>Poll Creator: <%= @poll.creator.name %> </h2>
 
@@ -18,13 +16,15 @@
 <script type="text/javascript">
 
   $(function(){
-    itemSetup();
+
+    callback = function(){
+      window.itemsListView.addVoteButton() 
+    }
+    itemSetup({is_buttons: true});
+    
   })
 </script>
 
-<script>
-  itemsListView.addVoteButton()
-</script>
 
 
 
