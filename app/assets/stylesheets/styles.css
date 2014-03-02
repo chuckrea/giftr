@@ -22,14 +22,16 @@
 /*============================= Splash Page Styling ===============================================*/
 
 .splash-page-section-wrapper { /* Allows splash page background to take up full width of the page */
-	height: 54em;
+	height: 58em;
 	width: 104em;	
 	margin-left: -10em;
+	padding-top:2em;
 }
 
 /*---------------------------- Splash Page 1 Styling ------------------------------------------*/
 
 #splash-page-1 { 
+	margin-top: 3.6em;
 	background-color: lightblue;
 }
 
