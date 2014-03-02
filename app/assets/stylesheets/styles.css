@@ -10,7 +10,9 @@
 
 /*============================= Main Styling ===============================================*/
 
-
+#navigation{
+	margin-bottom: 0em;
+}
 
 .home-button {
   margin: 10px;
@@ -19,11 +21,26 @@
 
 /*============================= Splash Page Styling ===============================================*/
 
-/*---------------------------- Splash Page 1 Styling ------------------------------------------*/
-
-#splash-page-1 {
-	background-color: blue;
-	height: 30em;
+.splash-page-section-wrapper { /* Allows splash page background to take up full width of the page */
+	height: 54em;
+	width: 104em;	
+	margin-left: -10em;
 }
 
+/*---------------------------- Splash Page 1 Styling ------------------------------------------*/
 
+#splash-page-1 { 
+	background-color: lightblue;
+}
+
+#splash-page-2 { 
+	background-color: pink;
+}
+
+#splash-page-3 { 
+	background-color: lightgreen;
+}
+
+#splash-page-4 { 
+	background-color: purple;
+}
