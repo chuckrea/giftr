@@ -1,8 +1,30 @@
-
-
-<h1>hello world</h1>
+<br>
 
 <h2>Poll Creator: <%= @poll.creator.name %> </h2>
+
+<h3>Possible Gifts:</h3>
+
+<div id="item_list"></div>
+
+<%= render text: File.read("app/views/templates.txt").html_safe %>
+
+
+<%= javascript_tag do %>
+  window.poll = <%= raw @poll.to_json %>
+<% end %>
+
+<script type="text/javascript">
+
+  $(function(){
+
+    callback = function(){
+      window.itemsListView.addVoteButton() 
+    }
+    itemSetup({is_buttons: true});
+    
+  })
+</script>
+
 
 
 
