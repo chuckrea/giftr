@@ -113,9 +113,8 @@ $(document).ready(function() {
                           description: "This Worked!", 
                           end_date: "not yet"
                         });
-          poll.save()
+          poll.save(null, {success: itemSetup})
           poll.set({url: '/polls/' + this.id});
-          console.log(poll)
         });
 
         // This sets up an array containing ids of mutual friends with your

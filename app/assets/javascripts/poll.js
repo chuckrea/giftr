@@ -186,8 +186,7 @@ var ItemListView = Backbone.View.extend({
   initialize: function(){
     this.collection = new ItemList();
     this.itemViews = []
-
-    this.collection.fetch(data: {poll_id: poll.id});
+    this.collection.fetch({data: {poll_id: poll.id}});
     this.listenTo(this.collection, "all", this.render)
   },
 
@@ -228,7 +227,7 @@ var Vote = Backbone.Model.extend({
 
 
 
-$(function (){
+var itemSetup = function (){
   // window.pollListView = new PollListView(); 
   // window.pollformView = new PollFormView();
   // window.poll = new Poll();
@@ -237,4 +236,4 @@ $(function (){
   window.itemformView = new ItemFormView();
   window.item = new Item();
   window.itemView = new ItemView({model: item});
-})
+}
