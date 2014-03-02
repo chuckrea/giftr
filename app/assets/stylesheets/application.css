@@ -11,10 +11,3 @@
  *= require_self
  *= require_tree .
  */
-.verticalspacer {
-  margin: 5px auto;
-}
-
-.home-button {
-  margin: 10px;
-}
