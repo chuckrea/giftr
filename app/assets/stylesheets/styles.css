@@ -1,8 +1,9 @@
 
 /*================== Repeatable Formatting Styles =======================================*/
 
-.move-below-header {
-	margin-top: 5em;
+
+.push-below-header {
+	margin-top: 3em;
 }
 
 .push-content-off-page {
@@ -12,6 +13,17 @@
 
 
 /*============================= Main Styling ===============================================*/
+
+img {
+	border-radius: 1em;
+	/*-moz-box-shadow:    1em 1em 5em .1em #999;
+  	-webkit-box-shadow: 1em 1em 5em .1em #999;
+  	box-shadow:         1em 1em 5em .1em #999;*/
+}
+
+h1 {
+	font-size: 3em;
+}
 
 #navigation{
 	margin-bottom: 0em;
@@ -24,11 +36,33 @@
 
 /*============================= Splash Page Styling ===============================================*/
 
+
+.app-tagline {
+	font-size: 5em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
 .splash-page-section-wrapper { /* Allows splash page background to take up full width of the page */
-	height: 58em;
-	width: 104em;	
-	margin-left: -10em;
-	padding-top:2em;
+	height: 54em;	
+	color: white;
+}
+
+.site-wrapper {
+	text-align: center;
+}
+
+.splash-page-section-wrapper h1 {
+	font-family: 'Roboto', sans-serif;
+}
+
+.splash-page-section-wrapper h2 {
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+.splash-page-section-wrapper img {
+	margin-top: 2em;
 }
 
 /*---------------------------- Splash Page 1 Styling ------------------------------------------*/
@@ -38,19 +72,26 @@
 	background-color: lightblue;
 }
 
+/*---------------------------- Splash Page 2 Styling ------------------------------------------*/
+
+
 #splash-page-2 { 
 	background-color: pink;
 }
 
+/*---------------------------- Splash Page 3 Styling ------------------------------------------*/
+
+
 #splash-page-3 { 
-	background-color: lightgreen;
+	background-color: darkgreen;
 }
+
+/*---------------------------- Splash Page 4 Styling ------------------------------------------*/
+
 
 #splash-page-4 { 
 	background-color: purple;
 }
 
-.site-wrapper {
-	text-align: center;
-}
+
 
