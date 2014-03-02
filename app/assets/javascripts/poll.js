@@ -182,6 +182,11 @@ var ItemView = Backbone.View.extend({
 
 })
 
+// var ItemVoteView = Backbone.View.extend({
+//   this.collection = new ItemList
+//   this.collection.fetch({data: poll.id})
+// })
+
 var ItemListView = Backbone.View.extend({
   initialize: function(){
     this.collection = new ItemList();

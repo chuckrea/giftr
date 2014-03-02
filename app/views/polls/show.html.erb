@@ -3,5 +3,26 @@
 
 <h2>Poll Creator: <%= @poll.creator.name %> </h2>
 
+<h3>Possible Gifts:</h3>
+
+<table>
+  <% @poll.items.each do |item| %>
+  <tr>
+    <td><%= item.name %></td>
+    <td><%= item.url %></td>
+    <td><button id="item-vote">VOTE</td>
+  </tr>
+  <% end %>  
+</table>
+
+
+
+
+<script type="text/javascript">
+  $(function(){
+    itemSetup();
+  })
+</script>
+
 
 

@@ -21,6 +21,9 @@ class PollsController < ApplicationController
 
   def show
     @poll = Poll.find(params["id"])
+    @items = Item.where(poll_id: @poll.id)
+
+    # render json: @items
   end
 
   private
