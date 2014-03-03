@@ -7,7 +7,8 @@
 </script>
 
 <script id='accomplice-view-template' type="text/template">
-  <img src="http://placekitten.com/200/200">
+  // <h2><%= user_id %></h2>
+  // <img src="http://placekitten.com/200/200">
   // var img_url = "http://graph.facebook.com/" + <%= user_id %> + "/picture"
   // $('#accomplice-photos').append('<img src="' + img_url + '">')
 </script>
