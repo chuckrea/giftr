@@ -1,9 +1,6 @@
 <script id='items_template' type="text/template">
 <span class="name"><%= name %></span>
-<span class="url"><%= url %></span>
 <p class="image_container">
-<img class="image" src=<%= image.to_s %> />
+<img class="gift_image" src=<%= url %> />
 </p>
 </script>
-
-

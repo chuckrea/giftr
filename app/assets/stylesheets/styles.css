@@ -119,3 +119,8 @@ i {
 #new_item_image_input {
 	display: hidden;
 }
+
+.gift_image {
+	width: 200px;
+	height: 200px;
+}
