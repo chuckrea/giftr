@@ -14,17 +14,13 @@
 <% end %>
 
 <script type="text/javascript">
-
+var votes;
   $(function(){
 
-    callback = function(){
-      window.itemsListView.addVoteButton() 
-    }
-    itemSetup({is_buttons: true});
-    
+    itemVoteSetup();
+    votes = new Vote().fetch({data: {poll_id: poll.id}})
   })
 </script>
-
 
 
 
