@@ -3,7 +3,6 @@
 <p class="image_container">
 <img class="gift_image" src=<%= url %> />
 </p>
-</script>
 
 <script id='accomplice-view-template' type="text/template">
   // <h2><%= user_id %></h2>
