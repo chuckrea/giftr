@@ -246,7 +246,7 @@ var ItemListView = Backbone.View.extend({
         model: item
       });
       self.itemViews.push(new_view)
-      self.$el.prepend(new_view.render().$el)
+      self.$el.append(new_view.render().$el)
     })
 
 
@@ -286,7 +286,7 @@ var ItemVoteListView = Backbone.View.extend({
         model: item
       });
       self.itemViews.push(new_view)
-      self.$el.prepend(new_view.render().$el.append("<button data-action='vote'>Vote!</button>"))
+      self.$el.append(new_view.render().$el.append("<button class=\"btn btn-lg btn-primary\" data-action='vote'>Vote!</button>"))
     })
 
   }

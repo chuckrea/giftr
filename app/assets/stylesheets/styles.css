@@ -1,4 +1,19 @@
 
+#accomplice-photos {
+	padding: 10px;
+	width:80%;
+	position:absolute;
+	bottom:0; 
+	margin:0 auto;
+	border: solid 1px black;
+}
+
+.accomplice {
+	border-radius: 0px;
+	margin: 0 10px;
+}
+
+
 /*================== Repeatable Formatting Styles =======================================*/
 
 /*body {
