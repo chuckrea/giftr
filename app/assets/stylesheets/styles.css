@@ -71,6 +71,12 @@ i {
 .splash-page-section-wrapper img {
 	margin-top: 2em;
 	margin-bottom: 4em;
+	height: 250px;
+	width: 250px;
+	border: solid .8em #f1f1f1;
+/*	-moz-box-shadow:    3px 3px 5px 6px #ccc;
+  	-webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  	box-shadow:         3px 3px 5px 6px #ccc;*/
 }
 
 .instructions ~ img { /*Selects any images that are siblings of an element with a class "instructions". This selcts tthe images in Splash Page 2, 3, & 4*/
@@ -83,25 +89,25 @@ i {
 
 #splash-page-1 { 
 	margin-top: 3.6em;
-	background-color: lightblue;
+	background-image: url("bg_images/picnic.jpg");
 }
 
 /*---------------------------- Splash Page 2 Styling ------------------------------------------*/
 
 #splash-page-2 { 
-	background-color: pink;
+	background-image: url("bg_images/baseball5.jpg");
 }
 
 /*---------------------------- Splash Page 3 Styling ------------------------------------------*/
 
 #splash-page-3 { 
-	background-color: darkgreen;
+	background-image: url("bg_images/serenade4.jpg");
 }
 
 /*---------------------------- Splash Page 4 Styling ------------------------------------------*/
 
 #splash-page-4 { 
-	background-color: purple;
+	background-image: url("bg_images/ballet2.jpg");
 }
 
 #splash-page-4 button { /*Selects the sign in button on splash page four*/

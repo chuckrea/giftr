@@ -169,7 +169,8 @@ var ItemView = Backbone.View.extend({
   },
   events: {
     "click .delete": "deleteActivity",
-    "click .edit": "enterEdit"
+    "click .edit": "enterEdit",
+    "click [data-action='vote']" : 'vote'
   },
   template: function(attrs){
     html_string = $('#items_template').html();
@@ -180,6 +181,11 @@ var ItemView = Backbone.View.extend({
   render: function(){
     this.$el.html(this.template(this.model.attributes));
     return this;
+    },
+  vote: function(){
+    console.log(votes.responseJSON)
+    this.$('button').remove()
+    this.$el.append('<p>You voted for me!</p>')
   }
 })
 // var ItemVoteView = Backbone.View.extend({
@@ -224,16 +230,46 @@ var ItemListView = Backbone.View.extend({
       self.$el.prepend(new_view.render().$el)
     })
 
-    if (this.is_buttons){
-      this.addVoteButton()
-    }
 
+  }
+})
+
+var ItemVoteListView = Backbone.View.extend({
+  initialize: function(){
+    this.collection = new ItemList();
+    this.itemViews = []
+    this.collection.fetch({data: {poll_id: poll.id}});
+    this.listenTo(this.collection, "all", this.render)
   },
-  addVoteButton: function(){
-    var self = this
-    _.each(itemsListView.itemViews, function(item){ 
-      item.$el.append("<button data-action='vote'>Vote!</button>") 
-    });
+
+  // GOING TO FIX THIS, DONT ERASE
+  // create_finish_button: function () {
+  //   //if two gifts exist then append button
+  //   if (itemsListView.collection.length > 1) {
+  //     var finished_adding_gifts_button = $('<button>Finished Adding Gifts</button>')
+  //     $('#item_list').append(finished_adding_gifts_button)
+  //   }
+  // }, 
+
+  el: function(){
+    return $('#item_list')
+  }, 
+
+  render: function() {
+
+    var self = this;
+    _.each(this.itemViews, function(view){
+      view.remove();
+    })
+    this.itemViews = []
+    _.each(this.collection.models, function(item){
+      var new_view = new ItemView({
+        model: item
+      });
+      self.itemViews.push(new_view)
+      self.$el.prepend(new_view.render().$el.append("<button data-action='vote'>Vote!</button>"))
+    })
+
   }
 })
 
@@ -257,5 +293,14 @@ var itemSetup = function (options){
 }
 
 
-
+var itemVoteSetup = function (){
+  // window.pollListView = new PollListView(); 
+  // window.pollformView = new PollFormView();
+  // window.poll = new Poll();
+  // window.pollView = new PollView({model: poll});
+  window.itemVoteListView = new ItemVoteListView(); 
+  window.itemformView = new ItemFormView();
+  window.item = new Item();
+  window.itemView = new ItemView({model: item});
+}
 
