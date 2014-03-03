@@ -16,28 +16,30 @@ class ItemsController < ApplicationController
 
   def create
     # @item = Item.create(item_params)
-    @item = Item.new
-    @item.name = params[:item][:name]
-    @item.url = params[:item][:url]
-    @item.poll_id = params[:item][:poll_id]
-    @item.image = params[:item][:image]
-    @item.save!
-    # binding.pry
-    # unless @item.image 
-    #   @item.image = '/default.jpg'
-    #   @item.save
-    # end
-
-    render json: @item
+    item = Item.new
+    item.name = params[:item][:name]
+    item.poll_id = params[:item][:poll_id]
+    data = params[:image]
+    data_index = data.index('base64') + 7
+    filedata = data.slice(data_index, data.length)
+    decoded_image = Base64.decode64(filedata)
+    file = File.new("app/assets/images/1234", "wb")
+    file.write(decoded_image)
+    item.image = File.open(file)
+    item.url = item.image.url
+    item.save!
+    item.update_attributes(url: item.image.url)
+    
+    render json: item
   end
 
   def show
   end
 
-  private
+  # private
 
-  def item_params
-    params.require(:item).permit(:name, :url, :poll_id, :image)
-  end
+  # def item_params
+  #   params.require(:item).permit(:name, :url, :poll_id, :image)
+  # end
 
 end

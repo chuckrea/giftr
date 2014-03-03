@@ -1,17 +1,13 @@
 
+
 /*================== Repeatable Formatting Styles =======================================*/
 
-/*body {
-	padding-top: 70px;
-}*/
-
-.push-below-header {
-	/*margin-top: 3em;*/
+body {
+	padding-top: 3em;
 }
 
-.push-content-off-page {
-	position: absolute;
-	bottom: 0px;
+.top-padding {
+	margin-top: 2em; 			/*Pushes the top element on our app pages (any page that isn't the splash page) below the navbar*/
 }
 
 #block { 						/*This command is contained in an id to override the built in settings from font awesome. I'd rather write this as a repeatable class, but this seems to do the trick*/
@@ -21,12 +17,6 @@
 
 /*============================= Main Styling ===============================================*/
 
-img {
-	border-radius: 1em;
-	/*-moz-box-shadow:    1em 1em 5em .1em #999;
-  	-webkit-box-shadow: 1em 1em 5em .1em #999;
-  	box-shadow:         1em 1em 5em .1em #999;*/
-}
 
 h1 {
 	font-size: 3em;
@@ -48,7 +38,7 @@ i {
 /*======================= fullPage Sticky Scrolling Styling ===============================================*/
 
 .table {
-	margin-bottom: 0px;
+	margin-bottom: 0px; Removes gap between 
 }
 
 
@@ -83,11 +73,13 @@ i {
 }
 
 .splash-page-section-wrapper img {
-	margin-top: 2em;
-	margin-bottom: 4em;
 	height: 250px;
 	width: 250px;
+	margin-top: 2em;
+	margin-bottom: 4em;
 	border: solid .8em #f1f1f1;
+	border-radius: 1em;
+
 /*	-moz-box-shadow:    3px 3px 5px 6px #ccc;
   	-webkit-box-shadow: 3px 3px 5px 6px #ccc;
   	box-shadow:         3px 3px 5px 6px #ccc;*/
@@ -130,6 +122,32 @@ i {
 }
 
 
+/*============================= Accomplice Styling ===============================================*/
+
+
+#accomplice-photos {
+	padding: 10px;
+	width:80%;
+	position:absolute;
+	bottom:0; 
+	margin:0 auto;
+	border: solid 1px black;
+}
+
+.accomplice {
+	border-radius: 0px;
+	margin: 0 10px;
+}
+
+
+/*============================= Item & Gift Styling ===============================================*/
+
+
 #new_item_image_input {
 	display: hidden;
+}
+
+.gift_image {
+	width: 200px;
+	height: 200px;
 }
