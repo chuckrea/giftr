@@ -1,9 +1,12 @@
 
 /*================== Repeatable Formatting Styles =======================================*/
 
+/*body {
+	padding-top: 70px;
+}*/
 
 .push-below-header {
-	margin-top: 3em;
+	/*margin-top: 3em;*/
 }
 
 .push-content-off-page {
@@ -92,7 +95,7 @@ i {
 /*---------------------------- Splash Page 1 Styling ------------------------------------------*/
 
 #splash-page-1 { 
-	margin-top: 3.6em;
+	/*margin-top: 3.6em;*/
 	background-image: url("bg_images/picnic.jpg");
 }
 

@@ -1,10 +1,16 @@
-<br>
+<div class="container">
 
-<h2>Poll Creator: <%= @poll.creator.name %> </h2>
+  <br>
 
-<h3>Possible Gifts:</h3>
+  <h2>Poll Creator: <%= @poll.creator.name %> </h2>
 
-<div id="item_list"></div>
+  <h3>Possible Gifts:</h3>
+
+  <div id="item_list"></div>
+
+  <div class="col-md-1 column-md-offset-10" id="accomplice-photos"></div>
+
+</div>
 
 <%= render text: File.read("app/views/templates.txt").html_safe %>
 
@@ -12,13 +18,35 @@
 <%= javascript_tag do %>
   window.poll = <%= raw @poll.to_json %>
 <% end %>
+<%= javascript_tag do %>
+  window.user = <%= raw @user.to_json %>
+<% end %>
 
 <script type="text/javascript">
-var votes;
+var voteList;
   $(function(){
 
     itemVoteSetup();
-    votes = new Vote().fetch({data: {poll_id: poll.id}})
+    voteList = new VoteList()
+    voteList.fetch({data: {poll_id: poll.id}})
+    window.voters = new UserList()
+    voters.fetch({data: {poll_id: poll.id}, 
+      success: function(response){
+        // console.log(response)
+        // new VoteListView({collection: voteList})
+        _.each(response.models, function(model){
+          // new VoteView({model: model})
+          var img_url = "http://graph.facebook.com/" + model.attributes.uid + "/picture"
+          $('#accomplice-photos').append('<img src="' + img_url + '">')
+        })
+      }
+    })
+    
+
+/////////// ACCOMPLICE VOTING
+    // userList = new UserList()
+    // userList.fetch({data: {poll_id: poll.id}})
+
   })
 </script>
 
