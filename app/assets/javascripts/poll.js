@@ -174,6 +174,7 @@ var ItemView = Backbone.View.extend({
   },
   template: function(attrs){
     html_string = $('#items_template').html();
+    console.log(html_string)
     var template_func = _.template(html_string)
     return template_func(attrs)
   },
@@ -189,7 +190,6 @@ var ItemView = Backbone.View.extend({
     this.$('button').remove()
     this.$el.append('<p>You voted for me!</p>')
   }
-
 })
 
 // var ItemVoteView = Backbone.View.extend({
@@ -198,7 +198,8 @@ var ItemView = Backbone.View.extend({
 // })
 
 var ItemListView = Backbone.View.extend({
-  initialize: function(){
+  initialize: function(is_buttons){
+    this.is_buttons = is_buttons || false;
     this.collection = new ItemList();
     this.itemViews = []
     this.collection.fetch({data: {poll_id: poll.id}});
@@ -232,6 +233,7 @@ var ItemListView = Backbone.View.extend({
       self.itemViews.push(new_view)
       self.$el.prepend(new_view.render().$el)
     })
+
 
   }
 })
@@ -281,16 +283,19 @@ var Vote = Backbone.Model.extend({
 
 
 
-var itemSetup = function (){
+var itemSetup = function (options){
+  
   // window.pollListView = new PollListView(); 
   // window.pollformView = new PollFormView();
   // window.poll = new Poll();
   // window.pollView = new PollView({model: poll});
-  window.itemsListView = new ItemListView(); 
+  window.itemsListView = new ItemListView(options); 
   window.itemformView = new ItemFormView();
   window.item = new Item();
   window.itemView = new ItemView({model: item});
+  
 }
+
 
 var itemVoteSetup = function (){
   // window.pollListView = new PollListView(); 
@@ -302,3 +307,4 @@ var itemVoteSetup = function (){
   window.item = new Item();
   window.itemView = new ItemView({model: item});
 }
+
