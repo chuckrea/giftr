@@ -47,7 +47,9 @@ gem 'carrierwave'
 
 gem "fog", "~> 1.3.1"
 
-gem 'rails_12factor', group: :production
+group :production do
+  gem 'rails_12factor'
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
