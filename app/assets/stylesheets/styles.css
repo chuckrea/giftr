@@ -67,6 +67,10 @@ i {
 	text-align: center;
 }
 
+.splash-page-section-wrapper a{
+	color: #fafafa;
+}
+
 .splash-page-section-wrapper h1 {
 	font-family: 'Roboto', sans-serif;
 }
