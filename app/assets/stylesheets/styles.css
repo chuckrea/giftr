@@ -71,6 +71,12 @@ i {
 .splash-page-section-wrapper img {
 	margin-top: 2em;
 	margin-bottom: 4em;
+	height: 250px;
+	width: 250px;
+	border: solid .8em #f1f1f1;
+/*	-moz-box-shadow:    3px 3px 5px 6px #ccc;
+  	-webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  	box-shadow:         3px 3px 5px 6px #ccc;*/
 }
 
 .instructions ~ img { /*Selects any images that are siblings of an element with a class "instructions". This selcts tthe images in Splash Page 2, 3, & 4*/
