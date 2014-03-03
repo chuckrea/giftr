@@ -298,18 +298,18 @@ var VoteList = Backbone.Collection.extend({
   url: "/votes"
 })
 
-var VoteView = Backbone.View.extend({
-  initialize: function(){
-    this.render();
-  },
+// var VoteView = Backbone.View.extend({
+//   initialize: function(){
+//     this.render();
+//   },
 
-  // template: _.template($('#accomplice-view-template').html()),
+//   // template: _.template($('#accomplice-view-template').html()),
 
-  render: function(){
-    this.$el.html(this.template(this.model.attributes));
-    return this
-  }
-});
+//   render: function(){
+//     this.$el.html(this.template(this.model.attributes));
+//     return this
+//   }
+// });
 
 // var VoteListView = Backbone.View.extend({
 //   initialize: function(){
