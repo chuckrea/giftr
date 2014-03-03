@@ -12,13 +12,18 @@
 <%= javascript_tag do %>
   window.poll = <%= raw @poll.to_json %>
 <% end %>
+<%= javascript_tag do %>
+  window.user = <%= raw @user.to_json %>
+<% end %>
 
 <script type="text/javascript">
-var votes;
+var voteList;
   $(function(){
 
     itemVoteSetup();
-    votes = new Vote().fetch({data: {poll_id: poll.id}})
+    voteList = new VoteList()
+    voteList.fetch({data: {poll_id: poll.id}})
+
   })
 </script>
 

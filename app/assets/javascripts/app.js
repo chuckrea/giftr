@@ -35,15 +35,19 @@ function resetSelector(){
     closeOnSubmit: true,
     onSubmit: function(response){
       accomplices = response;
-      console.log(accomplices);
+      // console.log(accomplices);
       _.each(accomplices, function(accomplice){
-        console.log(accomplice)
+        // console.log(accomplice)
         user = new User({uid: accomplice})
         user.save(null,
           {success: function(response){
             // console.log(response.attributes.id)
             vote = new Vote()
-            vote.save({user_id: response.attributes.id, poll_id: poll.id}, {success: function(response){
+            vote.save({user_id: response.attributes.id, poll_id: poll.id}, 
+
+/////////////////////WE NEED A URL BECAUSE WE MODIFIED THE .SAVE ON THIS VOTE MODEL//////
+
+              {success: function(response){
               window.location.replace("/polls/"+poll.id)}
             });
           }
