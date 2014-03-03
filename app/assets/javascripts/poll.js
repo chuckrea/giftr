@@ -174,7 +174,7 @@ var ItemView = Backbone.View.extend({
   },
   template: function(attrs){
     html_string = $('#items_template').html();
-    console.log(html_string)
+    // console.log(html_string)
     var template_func = _.template(html_string)
     return template_func(attrs)
   },
@@ -285,6 +285,7 @@ var ItemVoteListView = Backbone.View.extend({
 })
 
 var Vote = Backbone.Model.extend({
+  url: "/votes"
 })
 
 var VoteList = Backbone.Collection.extend({

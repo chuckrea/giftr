@@ -13,7 +13,7 @@ class VotesController < ApplicationController
   def update
     @vote = Vote.find(params[:id])
     @vote.update_attributes(vote_params)
-    render json: @vote    
+    render json: @vote     
   end
 
 
