@@ -1,12 +1,16 @@
-<br>
+<div class="container">
 
-<h2>Poll Creator: <%= @poll.creator.name %> </h2>
+  <br>
 
-<h3>Possible Gifts:</h3>
+  <h2>Poll Creator: <%= @poll.creator.name %> </h2>
 
-<div id="item_list"></div>
+  <h3>Possible Gifts:</h3>
 
-<div class="col-md-1 column-md-offset-10" id="accomplice-photos"></div>
+  <div id="item_list"></div>
+
+  <div class="col-md-1 column-md-offset-10" id="accomplice-photos"></div>
+
+</div>
 
 <%= render text: File.read("app/views/templates.txt").html_safe %>
 
