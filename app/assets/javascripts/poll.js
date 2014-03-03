@@ -180,8 +180,8 @@ var ItemView = Backbone.View.extend({
   render: function(){
     this.$el.html(this.template(this.model.attributes));
     return this;
+  }
 })
-
 // var ItemVoteView = Backbone.View.extend({
 //   this.collection = new ItemList
 //   this.collection.fetch({data: poll.id})

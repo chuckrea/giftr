@@ -34,10 +34,10 @@ class ItemsController < ApplicationController
   def show
   end
 
-  private
+  # private
 
-  def item_params
-    params.require(:item).permit(:name, :url, :poll_id, :image)
-  end
+  # def item_params
+  #   params.require(:item).permit(:name, :url, :poll_id, :image)
+  # end
 
 end
