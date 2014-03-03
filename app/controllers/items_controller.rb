@@ -15,6 +15,11 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.create(item_params)
+    unless @item.image 
+      @item.image = '/default.jpg'
+      @item.save
+    end
+
     render json: @item
   end
 

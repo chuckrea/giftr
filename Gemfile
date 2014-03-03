@@ -41,6 +41,12 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+##IMAGE UPLOADING STUFF
+
+gem 'carrierwave'
+
+gem "fog", "~> 1.3.1"
+
 gem 'rails_12factor', group: :production
 
 # Use ActiveModel has_secure_password

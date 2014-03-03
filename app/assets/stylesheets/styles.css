@@ -110,3 +110,6 @@ i {
 }
 
 
+#new_item_image_input {
+	display: hidden;
+}

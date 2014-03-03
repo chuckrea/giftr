@@ -110,8 +110,8 @@ var Item = Backbone.Model.extend({
 
   defaults: {
     name: "not yet", 
-    url: "not yet", 
-    // poll_id: poll.get("poll_id")
+    url: "not yet",
+    image: "not yet",
   }
 })
 
@@ -134,6 +134,7 @@ var ItemFormView = Backbone.View.extend({
     itemsListView.collection.create({
       name: $('#new_item_name_input').val(),
       url: $('#new_item_url_input').val(), 
+      image: $('#new_item_image_input').val(),
       poll_id: poll.id
     })
     this.resetValues();
@@ -178,6 +179,9 @@ var ItemView = Backbone.View.extend({
   render: function(){
     this.$el.html(this.template(this.model.attributes));
     return this;
+    $('#upfile1').click(function(){
+      $('#new_item_image_input').trigger('click');
+    });
   },
 
 })
