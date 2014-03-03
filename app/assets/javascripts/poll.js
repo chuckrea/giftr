@@ -186,9 +186,16 @@ var ItemView = Backbone.View.extend({
     });
   },
   vote: function(){
-    console.log(votes.responseJSON)
-    this.$('button').remove()
-    this.$el.append('<p>You voted for me!</p>')
+    // console.log(votes.responseJSON);
+    this.$('button').remove();
+    this.$el.append('<p>You voted for me!</p>');
+    var voteditem = voteList.findWhere({user_id: user.id});
+// console.log(this.model.id);
+console.log(voteditem);
+    voteditem.attributes.item_id = this.model.id;
+    voteditem.save({}, {
+        url: "/votes/"+voteditem.id
+    });
   }
 })
 
@@ -278,7 +285,11 @@ var ItemVoteListView = Backbone.View.extend({
 })
 
 var Vote = Backbone.Model.extend({
-  url: '/votes'
+})
+
+var VoteList = Backbone.Collection.extend({
+  model: Vote, 
+  url: "/votes"
 })
 
 
