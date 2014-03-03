@@ -41,9 +41,9 @@ function resetSelector(){
         user = new User({uid: accomplice})
         user.save(null,
           {success: function(response){
-            // console.log(response.attributes.id)
+            console.log(response.attributes.uid)
             vote = new Vote()
-            vote.save({user_id: response.attributes.id, poll_id: poll.id},
+            vote.save({user_id: response.attributes.id, poll_id: poll.id, image_url: "http://graph.facebook.com/" + response.attributes.uid + "/picture"},
               {success: function(response){
               window.location.replace("/polls/"+poll.id)}
             });

@@ -311,17 +311,17 @@ var VoteList = Backbone.Collection.extend({
 //   }
 // });
 
-// var VoteListView = Backbone.View.extend({
-//   initialize: function(){
-//     this.listenTo(this.collection, 'add', this.renderVote)
-//   },
+var VoteListView = Backbone.View.extend({
+  initialize: function(){
+    this.listenTo(this.collection, 'add', this.renderVote)
+  },
 
-//   renderVote: function(vote){
-//     vote.view = new VoteView({model: vote});
-//     this.$el.prepend(vote.view.render().el)
-//     return this
-//   }
-// });
+  renderVote: function(vote){
+    vote.view = new VoteView({model: vote});
+    this.$el.prepend(vote.view.render().el)
+    return this
+  }
+});
 
 
 var itemSetup = function (options){
