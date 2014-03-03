@@ -243,3 +243,18 @@ $(document).ready(function() {
 
 // })
 
+
+
+//======================= Trying to build sticky scrolling ====================================
+
+$(window).load(function(e) {
+  $('.site-wrapper a').on('click', scrollToInformation);
+});
+
+function scrollToInformation(event) {
+  event.preventDefault();
+  var diff = $(document).height() - $(window).height();
+  var dest = ($(this).offset().top > diff) ? diff : $(this).offset().top;
+  if (dest <= 480) { dest = 0; }
+  $('html, body').animate({scrollTop: dest - 53}, 800, 'swing');
+}
