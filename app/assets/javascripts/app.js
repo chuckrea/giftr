@@ -43,10 +43,7 @@ function resetSelector(){
           {success: function(response){
             // console.log(response.attributes.id)
             vote = new Vote()
-            vote.save({user_id: response.attributes.id, poll_id: poll.id}, 
-
-/////////////////////WE NEED A URL BECAUSE WE MODIFIED THE .SAVE ON THIS VOTE MODEL//////
-
+            vote.save({user_id: response.attributes.id, poll_id: poll.id},
               {success: function(response){
               window.location.replace("/polls/"+poll.id)}
             });

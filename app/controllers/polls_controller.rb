@@ -23,6 +23,7 @@ class PollsController < ApplicationController
     @user = current_user
     @poll = Poll.find(params["id"])
     @items = Item.where(poll_id: @poll.id)
+    @voters = @poll.voters
 
     # render json: @items
   end

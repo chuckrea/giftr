@@ -19,6 +19,11 @@ var User = Backbone.Model.extend({
   }
 })
 
+var UserList = Backbone.Collection.extend({
+  model: User, 
+  url: "/users"
+})
+
 
 // var PollFormView = Backbone.View.extend({
 //   initialize: function(){
