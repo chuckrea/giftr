@@ -1,9 +1,12 @@
 
 /*================== Repeatable Formatting Styles =======================================*/
 
+/*body {
+	padding-top: 70px;
+}*/
 
 .push-below-header {
-	margin-top: 3em;
+	/*margin-top: 3em;*/
 }
 
 .push-content-off-page {
@@ -42,6 +45,13 @@ i {
 }
 
 
+/*======================= fullPage Sticky Scrolling Styling ===============================================*/
+
+.table {
+	margin-bottom: 0px; Removes gap between 
+}
+
+
 /*============================= Splash Page Styling ===============================================*/
 
 
@@ -56,12 +66,16 @@ i {
 }
 
 .splash-page-section-wrapper { /* Allows splash page background to take up full width of the page */
-	height: 54em;	
+	height: 100%;	
 	color: white;
 }
 
 .site-wrapper {
 	text-align: center;
+}
+
+.splash-page-section-wrapper a{
+	color: #fafafa;
 }
 
 .splash-page-section-wrapper h1 {
@@ -88,7 +102,7 @@ i {
 /*---------------------------- Splash Page 1 Styling ------------------------------------------*/
 
 #splash-page-1 { 
-	margin-top: 3.6em;
+	/*margin-top: 3.6em;*/
 	background-image: url("bg_images/picnic.jpg");
 }
 

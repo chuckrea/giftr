@@ -41,12 +41,9 @@ function resetSelector(){
         user = new User({uid: accomplice})
         user.save(null,
           {success: function(response){
-            // console.log(response.attributes.id)
+            console.log(response.attributes.uid)
             vote = new Vote()
-            vote.save({user_id: response.attributes.id, poll_id: poll.id}, 
-
-/////////////////////WE NEED A URL BECAUSE WE MODIFIED THE .SAVE ON THIS VOTE MODEL//////
-
+            vote.save({user_id: response.attributes.id, poll_id: poll.id, image_url: "http://graph.facebook.com/" + response.attributes.uid + "/picture"},
               {success: function(response){
               window.location.replace("/polls/"+poll.id)}
             });
@@ -247,3 +244,18 @@ $(document).ready(function() {
 
 // })
 
+
+
+//======================= Trying to build sticky scrolling ====================================
+
+$(window).load(function(e) {
+  $('.site-wrapper a').on('click', scrollToInformation);
+});
+
+function scrollToInformation(event) {
+  event.preventDefault();
+  var diff = $(document).height() - $(window).height();
+  var dest = ($(this).offset().top > diff) ? diff : $(this).offset().top;
+  if (dest <= 480) { dest = 0; }
+  $('html, body').animate({scrollTop: dest - 53}, 800, 'swing');
+}

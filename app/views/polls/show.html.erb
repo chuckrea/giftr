@@ -1,10 +1,16 @@
-<br>
+<div class="container">
 
-<h2>Poll Creator: <%= @poll.creator.name %> </h2>
+  <br>
 
-<h3>Possible Gifts:</h3>
+  <h2>Poll Creator: <%= @poll.creator.name %> </h2>
 
-<div id="item_list"></div>
+  <h3>Possible Gifts:</h3>
+
+  <div id="item_list"></div>
+
+  <div class="col-md-1 column-md-offset-10" id="accomplice-photos"></div>
+
+</div>
 
 <%= render text: File.read("app/views/templates.txt").html_safe %>
 
@@ -22,7 +28,23 @@ var voteList;
 
     itemVoteSetup();
     voteList = new VoteList()
-    voteList.fetch({data: {poll_id: poll.id}})
+    voteList.fetch({data: {poll_id: poll.id},
+      success: function(response){
+        _.each(response.models, function(model){
+          var img_url = model.attributes.image_url
+          $('#accomplice-photos').append('<img id="' + model.attributes.id + '" src="' + img_url + '">')
+        })
+        appendVotesToItems(voteList.models);
+      }
+    })
+    window.voters = new UserList()
+    voters.fetch({data: {poll_id: poll.id}})
+
+    
+
+/////////// ACCOMPLICE VOTING
+    // userList = new UserList()
+    // userList.fetch({data: {poll_id: poll.id}})
 
   })
 </script>
