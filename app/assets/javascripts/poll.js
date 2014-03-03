@@ -185,6 +185,7 @@ var ItemView = Backbone.View.extend({
   },
   render: function(){
     this.$el.html(this.template(this.model.attributes));
+    this.$el.attr('id', this.model.attributes.id)
     return this;
     $('#upfile1').click(function(){
       $('#new_item_image_input').trigger('click');
@@ -201,6 +202,8 @@ var ItemView = Backbone.View.extend({
     voteditem.save({}, {
         url: "/votes/"+voteditem.id
     });
+    console.log(voteList.models)
+    appendVotesToItems(voteList.models);
   }
 })
 
@@ -347,5 +350,16 @@ var itemVoteSetup = function (){
   window.itemformView = new ItemFormView();
   window.item = new Item();
   window.itemView = new ItemView({model: item});
+}
+
+var appendVotesToItems = function(votes){
+  _.each(votes, function(vote){
+    if(vote.attributes.item_id){
+      selector = '#' + vote.attributes.id
+      $vote_img = $(selector);
+      id = vote.attributes.item_id
+      $vote_img.appendTo($('#'+vote.attributes.item_id))
+    }
+  })
 }
 
