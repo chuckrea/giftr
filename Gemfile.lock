@@ -56,6 +56,8 @@ GEM
     execjs (2.0.2)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
+    font-awesome-rails (4.0.3.1)
+      railties (>= 3.2, < 5.0)
     hashie (2.0.5)
     hike (1.2.3)
     httparty (0.13.0)
@@ -187,6 +189,7 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.0.0)
   devise (~> 3.0.0.rc)
+  font-awesome-rails
   httparty
   jbuilder (~> 1.2)
   jquery-rails
