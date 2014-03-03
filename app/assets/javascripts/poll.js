@@ -186,7 +186,7 @@ var ItemView = Backbone.View.extend({
     });
   },
   vote: function(){
-    console.log("vote button was clicked")
+    console.log(votes.responseJSON)
     this.$('button').remove()
     this.$el.append('<p>You voted for me!</p>')
   }

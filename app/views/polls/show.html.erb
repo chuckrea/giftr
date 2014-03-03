@@ -14,10 +14,11 @@
 <% end %>
 
 <script type="text/javascript">
-
+var votes;
   $(function(){
 
     itemVoteSetup();
+    votes = new Vote().fetch({data: {poll_id: poll.id}})
   })
 </script>
 

@@ -7,7 +7,7 @@ class VotesController < ApplicationController
 
   def index
 
-    render json: Vote.where(poll_id: params[:poll_id], user_id: params[:user_id])
+    render json: Vote.where(poll_id: params[:poll_id])
   end
 
 
