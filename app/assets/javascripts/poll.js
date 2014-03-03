@@ -195,8 +195,8 @@ var ItemView = Backbone.View.extend({
     this.$('button').remove();
     this.$el.append('<p>You voted for me!</p>');
     var voteditem = voteList.findWhere({user_id: user.id});
-// console.log(this.model.id);
-console.log(voteditem);
+    // console.log(this.model.id);
+    console.log(voteditem);
     voteditem.attributes.item_id = this.model.id;
     voteditem.save({}, {
         url: "/votes/"+voteditem.id
@@ -298,6 +298,30 @@ var VoteList = Backbone.Collection.extend({
   url: "/votes"
 })
 
+var VoteView = Backbone.View.extend({
+  initialize: function(){
+    this.render();
+  },
+
+  // template: _.template($('#accomplice-view-template').html()),
+
+  render: function(){
+    this.$el.html(this.template(this.model.attributes));
+    return this
+  }
+});
+
+// var VoteListView = Backbone.View.extend({
+//   initialize: function(){
+//     this.listenTo(this.collection, 'add', this.renderVote)
+//   },
+
+//   renderVote: function(vote){
+//     vote.view = new VoteView({model: vote});
+//     this.$el.prepend(vote.view.render().el)
+//     return this
+//   }
+// });
 
 
 var itemSetup = function (options){

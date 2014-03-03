@@ -1,14 +1,14 @@
 class UsersController < ApplicationController
 
 ########### ACCOMPLICE VOTING
-  # def index
-  #   voters = []
-  #   votes = Vote.where(poll_id: params[:poll_id])
-  #   votes.each do |vote|
-  #     voters << vote.user
-  #   end
-  #   render json: voters
-  # end
+  def index
+    voters = []
+    votes = Vote.where(poll_id: params[:poll_id])
+    votes.each do |vote|
+      voters << vote.user
+    end
+    render json: voters
+  end
 
 
   def create
