@@ -2,13 +2,14 @@
 
   <br>
 
-  <h2>Poll Creator: <%= @poll.creator.name %> </h2>
-
-  <h3>Possible Gifts:</h3>
+  <h2><%= @poll.creator.name %> needs your advice on something for <%= @poll.recipient_name %> </h2>
+  <img src="http://graph.facebook.com/<%= @poll.recipient_fb_id %>/picture?type=large" alt="Creator">
+  <hr>
+  <h3>Please vote on one of his ideas:</h3>
 
   <div id="item_list"></div>
 
-  <div class="col-md-1 column-md-offset-10" id="accomplice-photos"></div>
+  <div class="col-md-1 column-md-offset-10" id="accomplice-photos">Voters:</div>
 
 </div>
 
@@ -32,7 +33,7 @@ var voteList;
       success: function(response){
         _.each(response.models, function(model){
           var img_url = model.attributes.image_url
-          $('#accomplice-photos').append('<img id="' + model.attributes.id + '" src="' + img_url + '">')
+          $('#accomplice-photos').append('<img id="' + model.attributes.id + '" class="accomplice" src="' + img_url + '">')
         })
         appendVotesToItems(voteList.models);
       }
