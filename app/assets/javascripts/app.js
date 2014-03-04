@@ -52,8 +52,8 @@ function resetSelector(){
                 image_url: "http://graph.facebook.com/" + response.attributes.uid + "/picture"
                 },{success: function(response){
                   
-                  // FB_notification(accomplice, poll.id);
-                  window.location = "/polls/" + poll.id
+                  FB_notification(accomplice, poll.id);
+                  // window.location = "/polls/" + poll.id
                 } 
              }
             );
@@ -83,7 +83,7 @@ var user;
 var vote;
 
 
-var FB_notification = function(){
+var FB_notification = function(accomplice, poll_id){
   FB.api('https://graph.facebook.com/', 'post', {
       id: "http://giftadvisor.herokuapp.com/polls/" + poll_id,
       scrape: true
