@@ -1,19 +1,17 @@
 <div class="container">
-
-  <br>
-  <div class="row">
-    <h1 class="col-md-9 advice"><%= @poll.creator.name %> needs your advice on something for <%= @poll.recipient_name %> </h1>
-    <img class="col-md-3" src="http://graph.facebook.com/<%= @poll.recipient_fb_id %>/picture?type=large" alt="Creator">
-  </div>
-  <hr>
-  <div class="row">
-    <h3>Votes for his ideas: (one per person)</h3>
-    <div class="text-center">
+  <div id="showvotes">
+    <div class="row">
+      <h1 class="col-md-9 col-sm-9 advice"><%= @poll.creator.name %> needs your advice on something for <%= @poll.recipient_name %> </h1>
+      <img class="col-md-3 col-sm-3 bigborders" style="padding:0" src="http://graph.facebook.com/<%= @poll.recipient_fb_id %>/picture?type=large" alt="Creator">
+    </div>
+    <hr>
+    <div class="row">
+      <h3>Vote for one of these ideas:</h3>
         <div id="item_list"></div>      
     </div>
-    <div class="col-md-1 column-md-offset-10 bordered" id="accomplice-photos">Voters:</div>
   </div>
 </div>
+<div class="col-md-12 bordered" id="accomplice-photos">Voters:</div>
 
 <%= render text: File.read("app/views/templates.txt").html_safe %>
 
@@ -59,7 +57,7 @@ var checkVoted = function(){
       {data: {poll_id: poll.id}}, 
       {success: function(){myvote = voteList.findWhere({user_id: user.id})}
       })
-    $('#accomplice-photos').append('<button id="toggleVoteButton" class="btn btn-lg btn-primary hidden">Change Your Vote</button>');
+    $('#accomplice-photos').append('<button id="toggleVoteButton" class="btn btn-lg btn-danger hidden">Change Your Vote</button>');
     $('#toggleVoteButton').click(function(){
       toggleVoteOption();
     });
