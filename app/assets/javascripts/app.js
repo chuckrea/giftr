@@ -37,6 +37,29 @@ function resetSelector(){
       var accompliceUid;
       accomplices = response;
       $('#index-accomplices').empty()
+      var i = 0
+
+      var FB_notification = function(accomplice, poll_id){
+        FB.api('https://graph.facebook.com/', 'post', {
+            id: "http://giftadvisor.herokuapp.com/polls/" + poll_id,
+            scrape: true
+          }, function(response){
+            FB.ui({
+            // console.log("facebook message fired"),
+            method: 'send',
+            to: [accomplice],
+            link: "http://giftadvisor.herokuapp.com/polls/" + poll_id,
+            redirect_uri: window.location.host+"/polls/"+poll_id  
+            }, fbCallback)
+          })
+        }
+
+      var fbCallback = function(){
+        console.log(i++)
+        if (i === accomplices.length){
+          window.location = "/polls/" + poll.id
+        }
+      }
         _.each(accomplices, function(accomplice){
           $('#index-accomplices').append('<img class="accomplices" src="http://graph.facebook.com/' + accomplice + '/picture?type=large">');
           
@@ -51,9 +74,7 @@ function resetSelector(){
                 poll_id: poll.id, 
                 image_url: "http://graph.facebook.com/" + response.attributes.uid + "/picture"
                 },{success: function(response){
-                  
                   FB_notification(accomplice, poll.id);
-                  // window.location = "/polls/" + poll.id
                 } 
              }
             );
@@ -83,20 +104,6 @@ var user;
 var vote;
 
 
-var FB_notification = function(accomplice, poll_id){
-  FB.api('https://graph.facebook.com/', 'post', {
-      id: "http://giftadvisor.herokuapp.com/polls/" + poll_id,
-      scrape: true
-    }, function(response){
-      FB.ui({
-      // console.log("facebook message fired"),
-      method: 'send',
-      to: [accomplice],
-      link: "http://giftadvisor.herokuapp.com/polls/" + poll_id,
-      redirect_uri: window.location.host+"/polls/"+poll_id  
-      })
-    })
-  }
 
 // var FB_notification = function(accomplice, poll_id){
 //     var url = "http://giftadvisor.herokuapp.com/polls/" + poll_id
