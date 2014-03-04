@@ -1,7 +1,7 @@
 
 #accomplice-photos {
 	padding: 10px;
-	width:80%;
+	/*width:80%;*/
 	position:absolute;
 	bottom:0; 
 	margin:0 auto;
@@ -21,6 +21,7 @@
 
 #item_list {
 	padding: 0px auto;
+	overflow-y: scroll;
 }
 
 .item {
@@ -31,9 +32,10 @@
 	margin: 10px;
 	background-position:center;
 	border: solid .8em #f1f1f1;
+	border-radius: 1em;
 }
 .itemholder{
-	width: 100%;
+	/*width: 100%;*/
 	background-color:rgba(250, 250, 250, 0.7);
 	text-shadow: 1px 1px #f1f1f1;
 }
