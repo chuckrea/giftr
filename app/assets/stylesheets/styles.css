@@ -8,6 +8,11 @@ border-right: 0px;
 border-left: 0px 
 }
 
+#login-warning {
+  color: white;
+  /*margin-right: 35px;*/
+}
+
 .accomplice {
 border-radius: 0px;
 margin: 0 10px;
