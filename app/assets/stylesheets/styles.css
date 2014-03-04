@@ -5,7 +5,6 @@
 	position:absolute;
 	bottom:0; 
 	margin:0 auto;
-	border: solid 1px black;
 }
 
 .accomplice {
@@ -13,20 +12,54 @@
 	margin: 0 10px;
 }
 
+.advice {
+	padding: 30px;
+	font-size: 4em;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#item_list {
+	padding: 0px auto;
+}
+
+.item {
+	display: inline-block;
+	width: 250px;
+	height: 250px;
+	background-size: cover;
+	margin: 10px;
+	background-position:center;
+	border: solid .8em #f1f1f1;
+}
+.itemholder{
+	width: 100%;
+	background-color:rgba(250, 250, 250, 0.7);
+	text-shadow: 1px 1px #f1f1f1;
+}
+
+.bordered {
+	border: solid 1px black;
+}
+
+.name{
+	font-size: 30px;
+}
 
 /*================== Repeatable Formatting Styles =======================================*/
 
-/*body {
-	padding-top: 70px;
-}*/
+body {
+	/*padding-top: 70px;*/
+	background-color: grey;
+}
 
 .push-below-header {
 	/*margin-top: 3em;*/
+	padding-top: 3em;
 }
 
-.push-content-off-page {
-	position: absolute;
-	bottom: 0px;
+.top-padding {
+	margin-top: 2em; 			/*Pushes the top element on our app pages (any page that isn't the splash page) below the navbar*/
 }
 
 #block { 						/*This command is contained in an id to override the built in settings from font awesome. I'd rather write this as a repeatable class, but this seems to do the trick*/
@@ -36,12 +69,6 @@
 
 /*============================= Main Styling ===============================================*/
 
-img {
-	border-radius: 1em;
-	/*-moz-box-shadow:    1em 1em 5em .1em #999;
-  	-webkit-box-shadow: 1em 1em 5em .1em #999;
-  	box-shadow:         1em 1em 5em .1em #999;*/
-}
 
 h1 {
 	font-size: 3em;
@@ -98,11 +125,13 @@ i {
 }
 
 .splash-page-section-wrapper img {
-	margin-top: 2em;
-	margin-bottom: 4em;
 	height: 250px;
 	width: 250px;
+	margin-top: 2em;
+	margin-bottom: 4em;
 	border: solid .8em #f1f1f1;
+	border-radius: 1em;
+
 /*	-moz-box-shadow:    3px 3px 5px 6px #ccc;
   	-webkit-box-shadow: 3px 3px 5px 6px #ccc;
   	box-shadow:         3px 3px 5px 6px #ccc;*/
@@ -143,6 +172,27 @@ i {
 	margin: 0 auto;
 	display: block;
 }
+
+
+/*============================= Accomplice Styling ===============================================*/
+
+
+#accomplice-photos {
+	padding: 10px;
+	width:80%;
+	position:absolute;
+	bottom:0; 
+	margin:0 auto;
+	border: solid 1px black;
+}
+
+.accomplice {
+	border-radius: 0px;
+	margin: 0 10px;
+}
+
+
+/*============================= Item & Gift Styling ===============================================*/
 
 
 #new_item_image_input {

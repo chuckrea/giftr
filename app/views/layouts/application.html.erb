@@ -12,9 +12,9 @@
   <!-- Script to make fullPage sticky scrolling work on app's splash page -->
   <script type="text/javascript">
     $(document).ready(function() {
-        $.fn.fullpage({
-          resize : false,
-        anchors: ['firstPage', 'secondPage', '3rdPage', 'lastPage']
+        $.fn.fullpage({   
+          resize : false, // Stops the splash page from resizing it's text when the page width is changed.
+        anchors: ['firstPage', 'secondPage', '3rdPage', 'lastPage'] //Tells fullPage that we're scrolling through four page sections.
         });
     }); 
   </script>
