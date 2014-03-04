@@ -1,16 +1,18 @@
 <div class="container">
 
   <br>
-
-  <h2><%= @poll.creator.name %> needs your advice on something for <%= @poll.recipient_name %> </h2>
-  <img src="http://graph.facebook.com/<%= @poll.recipient_fb_id %>/picture?type=large" alt="Creator">
+  <div class="row">
+    <h1 class="col-md-9 advice"><%= @poll.creator.name %> needs your advice on something for <%= @poll.recipient_name %> </h1>
+    <img class="col-md-3" src="http://graph.facebook.com/<%= @poll.recipient_fb_id %>/picture?type=large" alt="Creator">
+  </div>
   <hr>
-  <h3>Please vote on one of his ideas:</h3>
-
-  <div id="item_list"></div>
-
-  <div class="col-md-1 column-md-offset-10" id="accomplice-photos">Voters:</div>
-
+  <div class="row">
+    <h3>Votes for his ideas: (one per person)</h3>
+    <div class="text-center">
+        <div id="item_list"></div>      
+    </div>
+    <div class="col-md-1 column-md-offset-10 bordered" id="accomplice-photos">Voters:</div>
+  </div>
 </div>
 
 <%= render text: File.read("app/views/templates.txt").html_safe %>
@@ -25,6 +27,19 @@
 
 <script type="text/javascript">
 var voteList;
+var myvote;
+var checkVoted = function(){
+  myvote = voteList.findWhere({user_id: user.id});
+  console.log(user.id);
+  if (myvote != undefined) {
+    if (myvote.attributes.item_id != null) {
+      toggleVoteOption();
+    }
+  } else {
+    $('#item_list button').addClass('hidden');
+  }
+}
+
   $(function(){
 
     itemVoteSetup();
@@ -36,10 +51,17 @@ var voteList;
           $('#accomplice-photos').append('<img id="' + model.attributes.id + '" class="accomplice" src="' + img_url + '">')
         })
         appendVotesToItems(voteList.models);
+        checkVoted();
       }
     })
     window.voters = new UserList()
-    voters.fetch({data: {poll_id: poll.id}})
+    voters.fetch(
+      {data: {poll_id: poll.id}}, 
+      {success: function(){myvote = voteList.findWhere({user_id: user.id})}
+      })
+    $('#accomplice-photos').append('<button id="toggleVoteButton" class="btn btn-lg btn-primary hidden">Change Your Vote</button>');
+    $('#toggleVoteButton').click(function() {toggleVoteOption()});
+    checkVoted();
 
     
 
@@ -48,6 +70,12 @@ var voteList;
     // userList.fetch({data: {poll_id: poll.id}})
 
   })
+
+////HERE WE CAN PUT STUFF IF WE WANT THE PAGE TO CHECK FOR UPDATES:
+// window.setInterval(function(){
+
+
+// }, 400);
 </script>
 
 

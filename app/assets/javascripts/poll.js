@@ -186,6 +186,8 @@ var ItemView = Backbone.View.extend({
   render: function(){
     this.$el.html(this.template(this.model.attributes));
     this.$el.attr('id', this.model.attributes.id)
+    this.$el.attr('class', 'col-md-4 item')
+    this.$el.attr('style', 'background-image:url("'+this.model.attributes.url+'")')
     return this;
     $('#upfile1').click(function(){
       $('#new_item_image_input').trigger('click');
@@ -193,8 +195,8 @@ var ItemView = Backbone.View.extend({
   },
   vote: function(){
     // console.log(votes.responseJSON);
-    this.$('button').remove();
-    this.$el.append('<p>You voted for me!</p>');
+    // this.$('button').remove();
+    // this.$el.append('<p>You voted for me!</p>');
     var voteditem = voteList.findWhere({user_id: user.id});
     // console.log(this.model.id);
     console.log(voteditem);
@@ -204,6 +206,7 @@ var ItemView = Backbone.View.extend({
     });
     console.log(voteList.models)
     appendVotesToItems(voteList.models);
+    toggleVoteOption()
   }
 })
 
@@ -362,4 +365,11 @@ var appendVotesToItems = function(votes){
     }
   })
 }
+
+var toggleVoteOption = function(){
+  $('#item_list button').toggleClass('hidden');
+  $('#accomplice-photos button').toggleClass('hidden');
+}
+
+
 
