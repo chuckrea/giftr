@@ -34,8 +34,12 @@ function resetSelector(){
     },
     closeOnSubmit: true,
     onSubmit: function(response){
+      var accompliceUid;
       accomplices = response;
+      $('#index-accomplices').empty()
         _.each(accomplices, function(accomplice){
+          $('#index-accomplices').append('<img src="http://graph.facebook.com/' + accomplice + '/picture?type=large">');
+    
           user = new User({uid: accomplice});
           user.save(null,
             {success: function(response){
@@ -47,7 +51,8 @@ function resetSelector(){
                 poll_id: poll.id, 
                 image_url: "http://graph.facebook.com/" + response.attributes.uid + "/picture"
                 },{success: function(response){
-                  FB_notification(null, poll.id);
+                  
+                  FB_notification(accomplice, poll.id);
                 } 
              }
             );
@@ -55,6 +60,10 @@ function resetSelector(){
         });
       // }});
     
+    },
+    onClose: function(){
+
+      // FB_notification(accomplices, poll.id);
     }
 
   });
@@ -72,12 +81,15 @@ var poll;
 var user;
 var vote;
 
-var FB_notification = function(accomplices, poll_id){FB.ui({
+var FB_notification = function(accomplice, poll_id){
+    var url = "http://giftadvisor.herokuapp.com/polls/" + poll_id
+    console.log(url)
+    FB.ui({
     // console.log("facebook message fired"),
     method: 'send',
-    to: ['2804458'],
-    link: "http://www.google.com",
-    redirect_uri: window.location.host+"/polls/"+poll_id  
+    to: [accomplice],
+    message: "Help me Buy a Gift",
+    link: "http://giftadvisor.herokuapp.com/polls/" + poll_id
   }, function(response){
   })
 }
