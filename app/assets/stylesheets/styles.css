@@ -88,16 +88,16 @@ margin-top: 2em; /*Pushes the top element on our app pages (any page that isn't 
 display: block;
 }
 
-.block { 
-display: block;
+.block { 						
+	display: block;
 }
 
 .inline-block {
-display: inline-block;
+	display: inline-block;
 }
 
 .center {
-text-align: center;
+	text-align: center;
 }
 
 /*============================= Main Styling ===============================================*/
@@ -284,45 +284,44 @@ height: 200px;
 display: none;
 }
 
-
 /*============================= Poll Show Page Styling ===============================================*/
 
 .showvotes {
-color: #fafafa  ;
-font-family: 'Roboto', sans-serif;
+	color: #fafafa;
+	font-family: 'Roboto', sans-serif;
 }
 
 .showvotes img {
-height: 15em;
-width: 15em;
+	height: 15em;
+	width: 15em;
 }
 
 .showvotes h2 {
-margin: 1em 0em .5em 0em;
-padding: 0em 0em 1em 0em;
-border-bottom: solid .1em #fafafa  ;
+	margin: 1em 0em .5em 0em;
+	padding: 0em 0em 1em 0em;
+	border-bottom: solid .1em #fafafa;
 }
 
 #arrow {
-height: 8em;
-width: 10em;
-left: 0;
-right: 0;
-margin: -2em auto 0 auto;
-position: absolute;
-transform:rotate(-143deg);
--ms-transform:rotate(-143deg); /* IE 9 */
--webkit-transform:rotate(-143deg); /* Opera, Chrome, and Safari */
+	height: 8em;
+	width: 10em;
+	left: 0;
+	right: 0;
+	margin: -2em auto 0 auto;
+	position: absolute;
+	transform:rotate(-143deg);
+	-ms-transform:rotate(-143deg); /* IE 9 */
+	-webkit-transform:rotate(-143deg); /* Opera, Chrome, and Safari */
 }
 
 #gift-icon {
-height: 9em;
-width: 9em;
-margin-top: 3em;
-
+	height: 9em;
+	width: 9em;
+	margin-top: 3em;
 }
 
 #accomplice-photos {
+
 padding: 10px;
 /*width:80%;*/
 position:absolute;
