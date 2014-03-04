@@ -1,67 +1,4 @@
 
-#accomplice-photos {
-	padding: 10px;
-	/*width:80%;*/
-	position:absolute;
-	bottom:0; 
-	margin:0 auto;
-	border-right: 0px;
-	border-left: 0px 
-}
-
-.accomplice {
-	border-radius: 0px;
-	margin: 0 10px;
-	position: relative;
-	bottom:0px; 
-}
-
-.advice {
-	padding: 30px;
-	text-align: center;
-	vertical-align: middle;
-}
-
-#item_list {
-	padding: 0px auto;
-}
-
-#showvotes {
-	/*overflow-y: scroll;	*/
-	text-shadow: 1px 1px #f1f1f1;
-}
-
-.item {
-	display: inline-block;
-	width: 30%;
-	height: 250px;
-	background-size: cover;
-	margin: 10px;
-	background-position:center;
-}
-
-.bigborders{
-	border: solid .8em #f1f1f1;
-	border-radius: 1em;
-}
-
-.itemholder{
-/*	width: 100%;
-	height: 100%;
-*/	background-color:rgba(250, 250, 250, 0.7);
-}
-
-.bordered {
-	border: solid 1px black;
-}
-
-.name{
-	/*font-size: 30px;*/
-}
-
-#toggleVoteButton {
-	margin: 0 20px;
-}
 
 /*================== Repeatable Formatting Styles =======================================*/
 
@@ -84,6 +21,17 @@ body {
 	display: block;
 }
 
+.block { 						
+	display: block;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+.center {
+	text-align: center;
+}
 
 /*============================= Main Styling ===============================================*/
 
@@ -226,7 +174,6 @@ i {
 }
 
 .gift-name {
-
   position:absolute;
   left:0;
   right:0;
@@ -269,3 +216,106 @@ i {
 .hiddenImage {
 	display: none;
 }
+
+
+/*============================= Poll Show Page Styling ===============================================*/
+
+.showvotes {
+	color: #fafafa;
+	font-family: 'Roboto', sans-serif;
+}
+
+.showvotes img {
+	height: 15em;
+	width: 15em;
+}
+
+.showvotes h2 {
+	margin: 1em 0em .5em 0em;
+	padding: 0em 0em 1em 0em;
+	border-bottom: solid .1em #fafafa;
+}
+
+#arrow {
+	height: 8em;
+	width: 10em;
+	left: 0;
+	right: 0;
+	margin: -2em auto 0 auto;
+	position: absolute;
+	transform:rotate(-143deg);
+	-ms-transform:rotate(-143deg); /* IE 9 */
+	-webkit-transform:rotate(-143deg); /* Opera, Chrome, and Safari */
+}
+
+#gift-icon {
+	height: 9em;
+	width: 9em;
+	margin-top: 3em;
+
+}
+
+#accomplice-photos {
+	padding: 10px;
+	/*width:80%;*/
+	position:absolute;
+	bottom:0; 
+	margin:0 auto;
+	border-right: 0px;
+	border-left: 0px 
+}
+
+.accomplice {
+	border-radius: 0px;
+	margin: 0 10px;
+	position: relative;
+	bottom:0px; 
+}
+
+.advice {
+	padding: 30px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#item_list {
+	padding: 0px auto;
+}
+
+.item {
+	display: inline-block;
+	width: 30%;
+	height: 250px;
+	background-size: cover;
+	margin: 10px;
+	background-position:center;
+}
+
+.bigborders{
+	border: solid .8em #f1f1f1;
+	border-radius: 1em;
+}
+
+.itemholder{
+/*	width: 100%;
+	height: 100%;
+*/	background-color:rgba(250, 250, 250, 0.7);
+}
+
+.bordered {
+	border: solid 1px black;
+}
+
+.name{
+	/*font-size: 30px;*/
+}
+
+#toggleVoteButton {
+	margin: 0 20px;
+}
+
+
+
+
+
+

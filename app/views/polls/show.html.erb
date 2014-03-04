@@ -1,17 +1,32 @@
 <div class="container">
-  <div id="showvotes">
-    <div class="row">
-      <img class="col-md-3 col-sm-3 bigborders" style="padding:0" src="http://graph.facebook.com/<%= @poll.creator.uid %>/picture?type=large" alt="Creator">
-      <h1 class="col-md-9 col-sm-9 advice"><%= @poll.creator.name %> needs your advice on something for <%= @poll.recipient_name %> </h1>
-      <img class="col-md-3 col-sm-3 bigborders" style="padding:0" src="http://graph.facebook.com/<%= @poll.recipient_fb_id %>/picture?type=large" alt="Recipient">
+  <div class="showvotes">
+
+    <div class="row push-below-header">
+      <div class="col-lg-4 center">
+        <img class="bigborders" src="http://graph.facebook.com/<%= @poll.creator.uid %>/picture?type=large" alt="Creator">
+      </div>
+      <div class="col-lg-4 center">
+        <%=image_tag("poll_page/gift.png", alt: "Gift Image", :id => "gift-icon", :class => "inline-block")%>
+        </br> <!-- Lazy, but works -->
+        <!-- <i class="fa fa-long-arrow-right"></i> -->
+        <img id="arrow" src="http://www.clker.com/cliparts/3/v/V/e/U/a/black-arrow-th.png" />
+      </div>
+      <div class="col-lg-4 center">
+        <img class="bigborders" src="http://graph.facebook.com/<%= @poll.recipient_fb_id %>/picture?type=large" alt="Recipient">
+      </div>
     </div>
-    <hr>
+
     <div class="row">
-      <h3>Vote for one of these ideas:</h3>
-        <div id="item_list"></div>      
+       <h2 class="advice">Help <%= @poll.creator.name.split(" ").shift().to_s %> choose a gift for <%= @poll.recipient_name.split(" ").shift().to_s %> </h2>
+    </div>
+    <div class="row">
+      <div id="item_list"></div>      
     </div>
   </div>
-</div>
+
+</div><!-- END container div -->
+
+
 <div class="col-md-12 bordered" id="accomplice-photos">Voters:</div>
 
 <%= render text: File.read("app/views/templates.txt").html_safe %>
