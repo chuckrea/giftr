@@ -82,7 +82,6 @@ var poll;
 var user;
 var vote;
 
-
 var FB_notification = function(){
   FB.api('https://graph.facebook.com/', 'post', {
       id: "http://giftadvisor.herokuapp.com/polls/" + poll_id,
