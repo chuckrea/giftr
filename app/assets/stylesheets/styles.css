@@ -33,12 +33,16 @@
 
 .item {
 	display: inline-block;
-	width: 30%;
+	width: 250px;
 	height: 250px;
 	background-size: cover;
-	margin: 10px;
-	background-position:center;
+	background-position: center;
+	margin: 4em 1em 5em 1em;
+	border: solid .8em #f1f1f1;
+	border-radius: 1em;
+
 }
+
 
 .bigborders{
 	border: solid .8em #f1f1f1;

@@ -35,26 +35,30 @@ function resetSelector(){
     closeOnSubmit: true,
     onSubmit: function(response){
       accomplices = response;
-      // console.log(accomplices);
-      _.each(accomplices, function(accomplice){
-        // console.log(accomplice)
-        user = new User({uid: accomplice})
-        user.save(null,
-          {success: function(response){
-            console.log(response.attributes.uid)
-            vote = new Vote()
-            vote.save({user_id: response.attributes.id, poll_id: poll.id, image_url: "http://graph.facebook.com/" + response.attributes.uid + "/picture"},
-              {success: function(response){
-              window.location.replace("/polls/"+poll.id)}
-            });
-          }
+        _.each(accomplices, function(accomplice){
+          user = new User({uid: accomplice});
+          user.save(null,
+            {success: function(response){
+              console.log("users saved")
+              console.log(response.attributes.uid);
+              vote = new Vote();
+              vote.save({
+                user_id: response.attributes.id, 
+                poll_id: poll.id, 
+                image_url: "http://graph.facebook.com/" + response.attributes.uid + "/picture"
+                },{success: function(response){
+                  FB_notification(null, poll.id);
+                } 
+             }
+            );
+            }});
         });
-      });
-      // return accomplices;
+      // }});
+    
     }
 
   });
-};
+}
 
 
 
@@ -67,6 +71,16 @@ var recipient_name;
 var poll;
 var user;
 var vote;
+
+var FB_notification = function(accomplices, poll_id){FB.ui({
+    // console.log("facebook message fired"),
+    method: 'send',
+    to: ['2804458'],
+    link: "http://www.google.com",
+    redirect_uri: window.location.host+"/polls/"+poll_id  
+  }, function(response){
+  })
+}
 
 $(document).ready(function() {    
 
