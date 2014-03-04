@@ -203,3 +203,7 @@ i {
 	width: 200px;
 	height: 200px;
 }
+
+.hiddenImage {
+	display: none;
+}

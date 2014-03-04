@@ -15,7 +15,6 @@ class ItemsController < ApplicationController
   end
 
   def create
-    # @item = Item.create(item_params)
     item = Item.new
     item.name = params[:item][:name]
     item.poll_id = params[:item][:poll_id]
@@ -32,6 +31,8 @@ class ItemsController < ApplicationController
     
     render json: item
   end
+
+  
 
   def show
   end
