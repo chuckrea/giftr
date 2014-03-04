@@ -144,7 +144,7 @@ var ItemFormView = Backbone.View.extend({
       var reader = new FileReader();
       reader.onload = (function(theFile) {
         itemsListView.collection.create({
-          name: $('#new_item_name_input').val(), 
+          name: $('#new_item_name_input').val(),
           poll_id: poll.id,
           image: reader.result
         })

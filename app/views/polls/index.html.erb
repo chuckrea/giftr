@@ -1,41 +1,73 @@
-<div class="container">
+<div class="site-wrapper push-below-header">  <!-- Splash page wrapper. Starts below the navbar. -->
+  
+  <div class="site-wrapper-inner">
+  
+    <div class="cover-container"> 
+      
+      <div id="section0" class="section">
+        <div id="splash-page-1" class="clearfix splash-page-section-wrapper"> <!-- Splash Page First Section -->
+          <h1>Who are you Gifting? </h1>        
+          <%=image_tag("question_mark.jpg", alt: "Example Image", id: "recipient")%>
+          <button class="btn btn-default giftee" id="block">Choose Your Gift Recipient</button>
+          <i id="block" class="fa fa-arrow-down block"></i>
+        </div>
+      </div>
 
-	<%if current_user %>
+      <div id="section1" class="section">
+        <div id="app-setup-page-2" class="clearfix splash-page-section-wrapper"> <!-- Splash Page Second Section -->
+          <h1 class="instructions-app">Add the gifts you're thinkin' of</h1>
+          <div id="gift-one">
+            <%=image_tag("gift_pics/stash2.jpg", alt: "Example Image")%>
+            <h3 class="gift-name" id="gift-1-name"></h3>
+          </div>
+          <div id="gift-two">
+            <%=image_tag("gift_pics/wp.jpg", alt: "Example Image")%>
+            <h3 class="gift-name" id="gift-2-name"></h3>
+          </div>
+          <div id="gift-three">
+            <%=image_tag("gift_pics/ewok.jpg", alt: "Example Image")%>
+            <h3 class="gift-name" id="gift-3-name"></h3>
+          </div>
+          <form class="form-inline" role="form" id="new_item_form">
+            <div class="form-group">
+              <input type="text" class="form-control" id="new_item_name_input" name="new_item_name_input" placeholder="enter item name">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="new_item_url_input" name="new_item_url_input" placeholder="enter item url">
+            </div>
+            <div class="form-group">
+              <input type="file" class="filestyle" data-class="btn btn-primary" data-input="false" id="files" name="files[]" multiple />
+              <output id="list"></output>
+            </div>
+            <button class="add_item_button btn btn-danger">Add Gift</button>
+          </form>
+        </div>
+      </div>
 
-		<div class="row top-padding">
-			<div class="col-lg-4">
-				<h4><b>Whom do you want to buy a gift for?</b></h4>
-			</div>
+      <div id="section3" class="section">
+        <div id="splash-page-3" class="clearfix splash-page-section-wrapper"> <!-- Splash Page Third Section -->
+          <h1 class="instructions-app">Gather the friends that know them best</h1>
+          <%=image_tag("friend_pics/kate.png", alt: "Example Image")%>
+          <%=image_tag("friend_pics/tim.jpg", alt: "Example Image")%>
+          <%=image_tag("friend_pics/norman.jpg", alt: "Example Image")%>
+          <i id="block" class="fa fa-arrow-down block"></i>
+        </div>
+      </div>
 
-			<div class="col-lg-4">
-				<a href="javascript:{}" class="home-button bt-fs-dialog btn btn-lg btn-primary center col-xs-12">Select the Friend you want to Gift</a>
-			</div>
+      <div id="section4" class="section">
+        <div id="splash-page-4" class="clearfix splash-page-section-wrapper"> <!-- Splash Page Fourth Section -->
+          <h1 class="instructions-app">See which gift gets the most votes!</h1>
+          <img src="http://placekitten.com/g/250/250" alt="">
+          <button class="btn">Sign In with Facebook to Begin</button>
+        </div>
+      </div>
 
-			<div class="col-lg-4">
-					<a href="javascript:{}" id="mutual-friends-link"  class="home-button btn btn-lg btn-primary center col-xs-12">Select Your Accomplices</a>
-			</div>
-		</div>
-
-			<div id="recipient"></div>
-
-	<% end %> 
-
-	<div class=""> <!-- Pushed this to bottom of page while I build the welcome/index page -->
-		<h1>Gift Formz</h1>
-	  <form id="new_item_form">
-	    <input type="text" id="new_item_name_input" name="new_item_name_input" placeholder="enter item name">
-	    <input type="text" id="new_item_url_input" name="new_item_url_input" placeholder="enter item url">
-      <input type="file" id="files" name="files[]" multiple />
-      <output id="list"></output>
-	    <button class="add_item_button">Add Gift</button>
-	  </form>
-
-	<div id="item_list"></div>
-
-  <!-- <form action="polls/create" method="POST"> 
-    <button id="finished_adding_button">Finished adding gifts</button>
-  </form> -->
-
-  <%= render text: File.read("app/views/templates.txt").html_safe %>
+    </div>
+  
+  </div>
 
 </div>
+
+
+
+  <%= render text: File.read("app/views/templates.txt").html_safe %>

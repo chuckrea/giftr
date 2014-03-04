@@ -89,12 +89,12 @@ $(document).ready(function() {
         });
         
       });
-      $(".bt-fs-dialog").click()
+      // $(".bt-fs-dialog").click()
     });
 
   });
   
-  $(".bt-fs-dialog").fSelector({
+  $(".giftee").fSelector({
       max: 1,
       facebookInvite: false,
       lang: {
@@ -130,6 +130,13 @@ $(document).ready(function() {
               }
             resetSelector();
         });
+      },
+      onClose: function(){
+        $('#recipient').attr('src', "http://graph.facebook.com/" + friend_id + "/picture?type=large").attr('width', "180px")
+        setTimeout(function(){
+          window.location = '/polls#secondPage'
+        }, 1200);
+        
       }
     });
 
