@@ -82,33 +82,35 @@ var poll;
 var user;
 var vote;
 
-<<<<<<< HEAD
-// var FB_notification = function(){FB.api('https://graph.facebook.com/', 'post', {
-//     id: '[URL]',
-//     scrape: true
-// },)}, function(accomplices, poll_id){FB.ui({
+
+var FB_notification = function(){
+  FB.api('https://graph.facebook.com/', 'post', {
+      id: "http://giftadvisor.herokuapp.com/polls/" + poll_id,
+      scrape: true
+    }, function(response){
+      FB.ui({
+      // console.log("facebook message fired"),
+      method: 'send',
+      to: [accomplice],
+      link: "http://giftadvisor.herokuapp.com/polls/" + poll_id,
+      redirect_uri: window.location.host+"/polls/"+poll_id  
+      })
+    })
+  }
+
+// var FB_notification = function(accomplice, poll_id){
+//     var url = "http://giftadvisor.herokuapp.com/polls/" + poll_id
+//     console.log(url)
+//     FB.ui({
 //     // console.log("facebook message fired"),
 //     method: 'send',
-//     to: ['2804458'],
-//     link: "http://www.google.com",
-//     redirect_uri: window.location.host+"/polls/"+poll_id  
+//     to: [accomplice],
+//     message: "Help me Buy a Gift",
+//     link: "http://giftadvisor.herokuapp.com/polls/" + poll_id
 //   }, function(response){
 //   })
 // }
-=======
-var FB_notification = function(accomplice, poll_id){
-    var url = "http://giftadvisor.herokuapp.com/polls/" + poll_id
-    console.log(url)
-    FB.ui({
-    // console.log("facebook message fired"),
-    method: 'send',
-    to: [accomplice],
-    message: "Help me Buy a Gift",
-    link: "http://giftadvisor.herokuapp.com/polls/" + poll_id
-  }, function(response){
-  })
-}
->>>>>>> eee27f5653f11e595a0ff41f7ed00be0d53b6427
+
 
 $(document).ready(function() {    
 

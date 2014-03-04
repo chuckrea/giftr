@@ -112,10 +112,10 @@ var UserList = Backbone.Collection.extend({
 // })
 
 var Item = Backbone.Model.extend({
+  url: '/items',
 
   defaults: {
-    name: "not yet", 
-    url: "not yet",
+    name: "not yet",
     image: "not yet",
   }
 })
