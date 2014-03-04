@@ -30,7 +30,7 @@ var voteList;
 var myvote;
 var checkVoted = function(){
   myvote = voteList.findWhere({user_id: user.id});
-  console.log(user.id);
+  // console.log(user.id);
   if (myvote != undefined) {
     if (myvote.attributes.item_id != null) {
       toggleVoteOption();
@@ -60,7 +60,9 @@ var checkVoted = function(){
       {success: function(){myvote = voteList.findWhere({user_id: user.id})}
       })
     $('#accomplice-photos').append('<button id="toggleVoteButton" class="btn btn-lg btn-primary hidden">Change Your Vote</button>');
-    $('#toggleVoteButton').click(function() {toggleVoteOption()});
+    $('#toggleVoteButton').click(function(){
+      toggleVoteOption();
+    });
     checkVoted();
 
     
