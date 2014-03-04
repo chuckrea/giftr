@@ -47,6 +47,8 @@ gem 'carrierwave'
 
 gem "fog", "~> 1.3.1"
 
+gem "aws-sdk"
+
 gem 'rails_12factor', group: :production
 
 # Use ActiveModel has_secure_password

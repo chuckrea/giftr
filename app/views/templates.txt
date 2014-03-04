@@ -10,5 +10,3 @@
   // var img_url = "http://graph.facebook.com/" + <%= user_id %> + "/picture"
   // $('#accomplice-photos').append('<img src="' + img_url + '">')
 </script>
-
-

@@ -135,21 +135,23 @@ var ItemFormView = Backbone.View.extend({
 
   addItemToPoll: function(e){
     e.preventDefault();
-
-    itemsListView.collection.create({
-      name: $('#new_item_name_input').val(),
-      url: $('#new_item_url_input').val(), 
-      image: $('#new_item_image_input').val(),
-      poll_id: poll.id
-    })
+    this.handleFileSelect($('#files')[0].files[0])
     this.resetValues();
+
   },
 
-  // addFinishButton: function(e){
-  //     e.preventDefault;
-  //     var html_string = $('#finish_adding_button_template').html();
-  //     $('#finish_button_container').append(html_string);
-  //   },    
+  handleFileSelect: function(file) {
+      var reader = new FileReader();
+      reader.onload = (function(theFile) {
+        itemsListView.collection.create({
+          name: $('#new_item_name_input').val(), 
+          poll_id: poll.id,
+          image: reader.result
+        })
+      });
+      reader.readAsDataURL(file);
+  },
+  // document.getElementById('files').addEventListener('change', handleFileSelect, false);
 
   resetValues: function() {
     _.each( this.$('input'), function(input){
@@ -160,6 +162,11 @@ var ItemFormView = Backbone.View.extend({
   el: function() {
     return $('#new_item_form')
   }
+  // addFinishButton: function(e){
+  //     e.preventDefault;
+  //     var html_string = $('#finish_adding_button_template').html();
+  //     $('#finish_button_container').append(html_string);
+  //   },    
 
 })
 
@@ -189,10 +196,7 @@ var ItemView = Backbone.View.extend({
     this.$el.attr('class', 'col-md-4 item')
     this.$el.attr('style', 'background-image:url("'+this.model.attributes.url+'")')
     return this;
-    $('#upfile1').click(function(){
-      $('#new_item_image_input').trigger('click');
-    });
-  },
+    },
   vote: function(){
     // console.log(votes.responseJSON);
     // this.$('button').remove();
@@ -209,7 +213,6 @@ var ItemView = Backbone.View.extend({
     toggleVoteOption()
   }
 })
-
 // var ItemVoteView = Backbone.View.extend({
 //   this.collection = new ItemList
 //   this.collection.fetch({data: poll.id})
