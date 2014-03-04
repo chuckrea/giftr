@@ -1,7 +1,7 @@
 <div class="container">
   <div class="showvotes">
 
-    <div class="row push-below-header">
+    <div class="row push-below-header"> <!-- Section containing Gifter & Giftee, Gift Icon, & Arrow -->
       <div class="col-lg-4 center">
         <img class="bigborders" src="http://graph.facebook.com/<%= @poll.creator.uid %>/picture?type=large" alt="Creator">
       </div>
@@ -16,12 +16,14 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row"> <!-- Call To Action Section -->
        <h2 class="advice">Help <%= @poll.creator.name.split(" ").shift().to_s %> choose a gift for <%= @poll.recipient_name.split(" ").shift().to_s %> </h2>
     </div>
-    <div class="row">
+
+    <div class="row"> <!-- Gifts Section -->
       <div id="item_list"></div>      
     </div>
+
   </div>
 
 </div><!-- END container div -->
