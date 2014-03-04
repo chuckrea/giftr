@@ -1,12 +1,7 @@
 <script id='items_template' type="text/template">
 <span class="name"><%= name %></span>
-<p class="image_container">
-<img class="gift_image" src=<%= url %> />
+<p id="image_container">
+<img class="gift_image" src="<%= url %>" />
 </p>
-
-<script id='accomplice-view-template' type="text/template">
-  // <h2><%= user_id %></h2>
-  // <img src="http://placekitten.com/200/200">
-  // var img_url = "http://graph.facebook.com/" + <%= user_id %> + "/picture"
-  // $('#accomplice-photos').append('<img src="' + img_url + '">')
 </script>
+
