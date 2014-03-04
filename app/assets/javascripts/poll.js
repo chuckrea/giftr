@@ -137,25 +137,22 @@ var ItemFormView = Backbone.View.extend({
     e.preventDefault();
     this.handleFileSelect($('#files')[0].files[0]);
     this.resetValues();
+    $('#gift-one').remove()
+    $('#gift-two').remove()
+    $('#gift-three').remove()
   },
 
   handleFileSelect: function(file) {
-    var self = this;
-    var reader = new FileReader();
-    reader.onload = (function(theFile) {
-      itemsListView.collection.create({
-        name: $('#new_item_name_input').val(),
-        poll_id: poll.id,
-        image: reader.result
-      })
-      //    {
-      //   // success: function(model) {
-      //   //   self.afterImageIsInDbCallMe(model.attributes.url)
-      //   }
-      })
-    
-
-    reader.readAsDataURL(file);
+    console.log("file select fired")
+      var reader = new FileReader();
+      reader.onload = (function(theFile) {
+        itemsListView.collection.create({
+          name: $('#new_item_name_input').val(),
+          poll_id: poll.id,
+          image: reader.result
+        })
+      });
+      reader.readAsDataURL(file);
   },
 
   // afterImageIsInDbCallMe: function(img_url){
@@ -212,17 +209,19 @@ var ItemView = Backbone.View.extend({
     var self = this;
     this.$el.html(this.template(this.model.attributes));
     this.$el.attr('id', this.model.attributes.id)
-    this.$el.attr('class', 'col-md-4 item')
-    this.$el.attr('class', "hiddenImage")
+    // this.$el.attr('class', "hiddenImage")
     var image = this.model.attributes.url
-    this.$el.attr('style', 'background-image:url("'+image+'")')
+    self.$el.attr('class', 'item')
+    // this.$el.html("<i class='fa fa-spinner fa-spin img-spinner'></i>")
     var img = document.createElement('img')
     img.src = image
     img.className = "hiddenImage"
     img.onload = function(event){
       console.log ("onload fired")
-        self.$el.removeClass('hiddenImage')
-        self.$el.attr('class', 'col-md-4 item')
+        // self.$el.removeClass('hiddenImage')
+        // $('.img-spinner').remove();
+        self.$el.attr('style', 'background-image:url("'+image+'")')
+
       }
     return this;
 
@@ -336,7 +335,7 @@ var ItemVoteListView = Backbone.View.extend({
         model: item
       });
       self.itemViews.push(new_view)
-      self.$el.append(new_view.render().$el.append("<button class=\"btn btn-lg btn-primary\" data-action='vote'>Vote!</button>"))
+      self.$el.append(new_view.render().$el.append("<button class=\"btn btn-lg btn-danger\" data-action='vote'>Vote!</button>"))
     })
 
   }
