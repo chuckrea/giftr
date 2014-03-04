@@ -273,3 +273,8 @@ i {
 .hiddenImage {
 	display: none;
 }
+
+.image-upload > input
+{
+    display: none;
+}

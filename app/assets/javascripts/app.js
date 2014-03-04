@@ -72,15 +72,18 @@ var poll;
 var user;
 var vote;
 
-var FB_notification = function(accomplices, poll_id){FB.ui({
-    // console.log("facebook message fired"),
-    method: 'send',
-    to: ['2804458'],
-    link: "http://www.google.com",
-    redirect_uri: window.location.host+"/polls/"+poll_id  
-  }, function(response){
-  })
-}
+// var FB_notification = function(){FB.api('https://graph.facebook.com/', 'post', {
+//     id: '[URL]',
+//     scrape: true
+// },)}, function(accomplices, poll_id){FB.ui({
+//     // console.log("facebook message fired"),
+//     method: 'send',
+//     to: ['2804458'],
+//     link: "http://www.google.com",
+//     redirect_uri: window.location.host+"/polls/"+poll_id  
+//   }, function(response){
+//   })
+// }
 
 $(document).ready(function() {    
 
