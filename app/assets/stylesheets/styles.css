@@ -325,6 +325,12 @@ display: none;
 	margin-top: 3em;
 }
 
+<<<<<<< HEAD
+.image-upload > input
+{
+    display: none;
+}
+=======
 #accomplice-photos {
 
 padding: 10px;
@@ -396,3 +402,4 @@ border: solid 1px black;
 #toggleVoteButton {
 margin: 0 20px;
 }
+>>>>>>> eee27f5653f11e595a0ff41f7ed00be0d53b6427
