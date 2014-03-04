@@ -119,24 +119,6 @@ var Item = Backbone.Model.extend({
     image: "not yet",
   }
 })
-//make ajax call to items controller so you can see image.url 
-  // var make_ajax = function(){
-    
-  //   var url = $.ajax({
-  //     url: "http://localhost:3000/items.json",
-  //     dataType: "json",
-  //     method: "get",
-  //     success: function(data){
-  //       console.log(data);
-  //       data_url = data[data.length-1].image.url;
-        
-  //       return data_url;
-  //     }
-  //   });
-  // }
-
-// var test = make_ajax();
-// console.log(test);
 
 var ItemFormView = Backbone.View.extend({
   initialize: function(){
@@ -153,64 +135,41 @@ var ItemFormView = Backbone.View.extend({
 
   addItemToPoll: function(e){
     e.preventDefault();
-    // var url = make_ajax();
-    // console.log(url);
     this.handleFileSelect($('#files')[0].files[0]);
-    // console.log(item.image.url)
     this.resetValues();
   },
 
-  //OLD addItemToPoll -- DO NOT ERASE
-  // addItemToPoll: function(e){
-  //   e.preventDefault();
-  //   var url = make_ajax();
-  //   // console.log(url);
-  //   this.handleFileSelect($('#files')[0].files[0], this.afterImageIsInDbCallMe(url));
-  //   // console.log(item.image.url)
-  //   this.resetValues();
-  // },
-
   handleFileSelect: function(file) {
+    var self = this;
     var reader = new FileReader();
     reader.onload = (function(theFile) {
       itemsListView.collection.create({
-        name: $('#new_item_input').val(),
+        name: $('#new_item_name_input').val(),
         poll_id: poll.id,
         image: reader.result
       })
-    });
+      //    {
+      //   // success: function(model) {
+      //   //   self.afterImageIsInDbCallMe(model.attributes.url)
+      //   }
+      })
+    
 
     reader.readAsDataURL(file);
   },
 
-  //OLD handleFileSelect -- DO NOT ERASE
-  // handleFileSelect: function(file, callback) {
-  //   var reader = new FileReader();
-  //   reader.onload = (function(theFile) {
-  //     itemsListView.collection.create({
-  //       name: $('#new_item_input').val(),
-  //       poll_id: poll.id,
-  //       image: reader.result
-  //     })
-  //   });
-
-  //   callback;
-
-  //   reader.readAsDataURL(file);
-  // },
-  
-  afterImageIsInDbCallMe: function(img_url){
-      console.log("i have run")
-      // lazy-show images after loading
-      var img = document.createElement('img')
-      img.src = img_url
-      img.className = "hiddenImage"
-      img.onload = function(event){
-        img.className = ""
-      }
-      document.getElementById('item_list').appendChild(img)
-      return img
-    },
+  // afterImageIsInDbCallMe: function(img_url){
+  //     console.log("i have run")
+  //     // lazy-show images after loading
+  //     var img = document.createElement('img')
+  //     img.src = img_url
+  //     img.className = "hiddenImage"
+  //     img.onload = function(event){
+  //       img.className = ""
+  //     }
+  //     document.getElementById('item_list').appendChild(img)
+  //     return img
+  //   },
 
   resetValues: function() {
     _.each( this.$('input'), function(input){
@@ -250,11 +209,37 @@ var ItemView = Backbone.View.extend({
     return template_func(attrs)
   },
   render: function(){
+    var self = this;
     this.$el.html(this.template(this.model.attributes));
     this.$el.attr('id', this.model.attributes.id)
     this.$el.attr('class', 'col-md-4 item')
-    this.$el.attr('style', 'background-image:url("'+this.model.attributes.url+'")')
+    this.$el.attr('class', "hiddenImage")
+    var image = this.model.attributes.url
+    this.$el.attr('style', 'background-image:url("'+image+'")')
+    var img = document.createElement('img')
+    img.src = image
+    img.className = "hiddenImage"
+    img.onload = function(event){
+      console.log ("onload fired")
+        self.$el.removeClass('hiddenImage')
+        self.$el.attr('class', 'col-md-4 item')
+      }
     return this;
+
+  // afterImageIsInDbCallMe: function(img_url){
+  //     console.log("i have run")
+  //     // lazy-show images after loading
+  //     var img = document.createElement('img')
+  //     img.src = img_url
+  //     img.className = "hiddenImage"
+  //     img.onload = function(event){
+  //       img.className = ""
+  //     }
+  //     document.getElementById('item_list').appendChild(img)
+  //     return img
+  //   },
+
+
     },
   vote: function(){
     // console.log(votes.responseJSON);
@@ -401,7 +386,7 @@ var itemSetup = function (options){
   window.itemsListView = new ItemListView(options); 
   window.itemformView = new ItemFormView();
   window.item = new Item();
-  window.itemView = new ItemView({model: item});
+  // window.itemView = new ItemView({model: item});
   
 }
 
