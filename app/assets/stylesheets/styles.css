@@ -59,7 +59,7 @@ i {
 }
 
 .splash-page-section-wrapper { /* Allows splash page background to take up full width of the page */
-	height: 54em;	
+	height: 100%;	
 	color: white;
 }
 
