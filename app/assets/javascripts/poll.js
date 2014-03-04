@@ -119,6 +119,24 @@ var Item = Backbone.Model.extend({
     image: "not yet",
   }
 })
+//make ajax call to items controller so you can see image.url 
+  // var make_ajax = function(){
+    
+  //   var url = $.ajax({
+  //     url: "http://localhost:3000/items.json",
+  //     dataType: "json",
+  //     method: "get",
+  //     success: function(data){
+  //       console.log(data);
+  //       data_url = data[data.length-1].image.url;
+        
+  //       return data_url;
+  //     }
+  //   });
+  // }
+
+// var test = make_ajax();
+// console.log(test);
 
 var ItemFormView = Backbone.View.extend({
   initialize: function(){
@@ -135,10 +153,22 @@ var ItemFormView = Backbone.View.extend({
 
   addItemToPoll: function(e){
     e.preventDefault();
-    this.handleFileSelect($('#files')[0].files[0])
+    // var url = make_ajax();
+    // console.log(url);
+    this.handleFileSelect($('#files')[0].files[0]);
+    // console.log(item.image.url)
     this.resetValues();
-
   },
+
+  //OLD addItemToPoll -- DO NOT ERASE
+  // addItemToPoll: function(e){
+  //   e.preventDefault();
+  //   var url = make_ajax();
+  //   // console.log(url);
+  //   this.handleFileSelect($('#files')[0].files[0], this.afterImageIsInDbCallMe(url));
+  //   // console.log(item.image.url)
+  //   this.resetValues();
+  // },
 
   handleFileSelect: function(file) {
       var reader = new FileReader();
@@ -151,7 +181,35 @@ var ItemFormView = Backbone.View.extend({
       });
       reader.readAsDataURL(file);
   },
-  // document.getElementById('files').addEventListener('change', handleFileSelect, false);
+
+  //OLD handleFileSelect -- DO NOT ERASE
+  // handleFileSelect: function(file, callback) {
+  //   var reader = new FileReader();
+  //   reader.onload = (function(theFile) {
+  //     itemsListView.collection.create({
+  //       name: $('#new_item_input').val(),
+  //       poll_id: poll.id,
+  //       image: reader.result
+  //     })
+  //   });
+
+  //   callback;
+
+  //   reader.readAsDataURL(file);
+  // },
+  
+  afterImageIsInDbCallMe: function(img_url){
+      console.log("i have run")
+      // lazy-show images after loading
+      var img = document.createElement('img')
+      img.src = img_url
+      img.className = "hiddenImage"
+      img.onload = function(event){
+        img.className = ""
+      }
+      document.getElementById('item_list').appendChild(img)
+      return img
+    },
 
   resetValues: function() {
     _.each( this.$('input'), function(input){
@@ -193,12 +251,14 @@ var ItemView = Backbone.View.extend({
   render: function(){
     this.$el.html(this.template(this.model.attributes));
     this.$el.attr('id', this.model.attributes.id)
+    this.$el.attr('class', 'col-md-4 item')
+    this.$el.attr('style', 'background-image:url("'+this.model.attributes.url+'")')
     return this;
     },
   vote: function(){
     // console.log(votes.responseJSON);
-    this.$('button').remove();
-    this.$el.append('<p>You voted for me!</p>');
+    // this.$('button').remove();
+    // this.$el.append('<p>You voted for me!</p>');
     var voteditem = voteList.findWhere({user_id: user.id});
     // console.log(this.model.id);
     console.log(voteditem);
@@ -208,6 +268,7 @@ var ItemView = Backbone.View.extend({
     });
     console.log(voteList.models)
     appendVotesToItems(voteList.models);
+    toggleVoteOption()
   }
 })
 // var ItemVoteView = Backbone.View.extend({
@@ -365,4 +426,11 @@ var appendVotesToItems = function(votes){
     }
   })
 }
+
+var toggleVoteOption = function(){
+  $('#item_list button').toggleClass('hidden');
+  $('#accomplice-photos button').toggleClass('hidden');
+}
+
+
 
