@@ -171,16 +171,15 @@ var ItemFormView = Backbone.View.extend({
   // },
 
   handleFileSelect: function(file) {
-    var reader = new FileReader();
-    reader.onload = (function(theFile) {
-      itemsListView.collection.create({
-        name: $('#new_item_input').val(),
-        poll_id: poll.id,
-        image: reader.result
-      })
-    });
-
-    reader.readAsDataURL(file);
+      var reader = new FileReader();
+      reader.onload = (function(theFile) {
+        itemsListView.collection.create({
+          name: $('#new_item_name_input').val(),
+          poll_id: poll.id,
+          image: reader.result
+        })
+      });
+      reader.readAsDataURL(file);
   },
 
   //OLD handleFileSelect -- DO NOT ERASE
