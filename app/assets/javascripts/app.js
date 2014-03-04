@@ -82,7 +82,7 @@ var poll;
 var user;
 var vote;
 
-<<<<<<< HEAD
+
 // var FB_notification = function(){FB.api('https://graph.facebook.com/', 'post', {
 //     id: '[URL]',
 //     scrape: true
@@ -95,7 +95,7 @@ var vote;
 //   }, function(response){
 //   })
 // }
-=======
+
 var FB_notification = function(accomplice, poll_id){
     var url = "http://giftadvisor.herokuapp.com/polls/" + poll_id
     console.log(url)
@@ -108,7 +108,6 @@ var FB_notification = function(accomplice, poll_id){
   }, function(response){
   })
 }
->>>>>>> eee27f5653f11e595a0ff41f7ed00be0d53b6427
 
 $(document).ready(function() {    
 
