@@ -1,8 +1,9 @@
 <div class="container">
   <div id="showvotes">
     <div class="row">
+      <img class="col-md-3 col-sm-3 bigborders" style="padding:0" src="http://graph.facebook.com/<%= @poll.creator.uid %>/picture?type=large" alt="Creator">
       <h1 class="col-md-9 col-sm-9 advice"><%= @poll.creator.name %> needs your advice on something for <%= @poll.recipient_name %> </h1>
-      <img class="col-md-3 col-sm-3 bigborders" style="padding:0" src="http://graph.facebook.com/<%= @poll.recipient_fb_id %>/picture?type=large" alt="Creator">
+      <img class="col-md-3 col-sm-3 bigborders" style="padding:0" src="http://graph.facebook.com/<%= @poll.recipient_fb_id %>/picture?type=large" alt="Recipient">
     </div>
     <hr>
     <div class="row">
