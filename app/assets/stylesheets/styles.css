@@ -1,18 +1,4 @@
 
-#accomplice-photos {
-	padding: 10px;
-	width:80%;
-	position:absolute;
-	bottom:0; 
-	margin:0 auto;
-	border: solid 1px black;
-}
-
-.accomplice {
-	border-radius: 0px;
-	margin: 0 10px;
-}
-
 
 /*================== Repeatable Formatting Styles =======================================*/
 
@@ -136,7 +122,25 @@ i {
 }
 
 
+/*============================= Accomplice Styling ===============================================*/
 
+
+#accomplice-photos {
+	padding: 10px;
+	width:80%;
+	position:absolute;
+	bottom:0; 
+	margin:0 auto;
+	border: solid 1px black;
+}
+
+.accomplice {
+	border-radius: 0px;
+	margin: 0 10px;
+}
+
+
+/*============================= Item & Gift Styling ===============================================*/
 
 
 #new_item_image_input {
