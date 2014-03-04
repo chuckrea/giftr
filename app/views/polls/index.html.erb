@@ -16,6 +16,7 @@
       <div id="section1" class="section">
         <div id="app-setup-page-2" class="clearfix splash-page-section-wrapper"> <!-- Splash Page Second Section -->
           <h1 class="instructions-app">Add the gifts you're thinkin' of</h1>
+          <div id="item_list"></div>
           <div id="gift-one">
             <%=image_tag("gift_pics/stash2.jpg", alt: "Example Image")%>
             <h3 class="gift-name" id="gift-1-name"></h3>
@@ -27,6 +28,7 @@
           <div id="gift-three">
             <%=image_tag("gift_pics/ewok.jpg", alt: "Example Image")%>
             <h3 class="gift-name" id="gift-3-name"></h3>
+
           </div>
           <form class="form-inline" role="form" id="new_item_form">
             <div class="form-group">
@@ -47,10 +49,15 @@
       <div id="section3" class="section">
         <div id="splash-page-3" class="clearfix splash-page-section-wrapper"> <!-- Splash Page Third Section -->
           <h1 class="instructions-app">Gather the friends that know them best</h1>
-          <%=image_tag("friend_pics/kate.png", alt: "Example Image", id: "index-img-1")%>
-          <%=image_tag("friend_pics/tim.jpg", alt: "Example Image", id: "index-img-2")%>
-          <%=image_tag("friend_pics/norman.jpg", alt: "Example Image", id: "index-img-3")%>
-          <button class="btn btn-default mutual-friends-link" id="block">Choose Your Accomplices</button>
+          <div id="index-accomplices">
+            <%=image_tag("friend_pics/kate.png", alt: "Example Image", id: "index-img-1")%>
+            <%=image_tag("friend_pics/tim.jpg", alt: "Example Image", id: "index-img-2")%>
+            <%=image_tag("friend_pics/norman.jpg", alt: "Example Image", id: "index-img-3")%>
+            <%=image_tag("friend_pics/norman.jpg", alt: "Example Image", id: "index-img-3")%>
+            <%=image_tag("friend_pics/norman.jpg", alt: "Example Image", id: "index-img-3")%>
+          </div>
+          <button class="btn btn-danger mutual-friends-link" id="block">Choose Your Accomplices</button>
+          
         </div>
       </div>
 
@@ -67,3 +74,5 @@
   </div>
 
 </div>
+
+<%= render text: File.read("app/views/templates.txt").html_safe %>

@@ -22,7 +22,7 @@ class ItemsController < ApplicationController
     data_index = data.index('base64') + 7
     filedata = data.slice(data_index, data.length)
     decoded_image = Base64.decode64(filedata)
-    file = File.new("app/assets/images/1234", "wb")
+    file = File.new("app/assets/images/1234.jpg", "wb")
     file.write(decoded_image)
     item.image = File.open(file)
     item.url = item.image.url
@@ -32,7 +32,7 @@ class ItemsController < ApplicationController
     render json: item
   end
 
-  
+
 
   def show
   end
