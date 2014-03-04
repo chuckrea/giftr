@@ -251,7 +251,7 @@ var ItemView = Backbone.View.extend({
   render: function(){
     this.$el.html(this.template(this.model.attributes));
     this.$el.attr('id', this.model.attributes.id)
-    this.$el.attr('class', 'col-md-4 item')
+    this.$el.attr('class', 'col-md-4 item bigborders')
     this.$el.attr('style', 'background-image:url("'+this.model.attributes.url+'")')
     return this;
     },
@@ -350,7 +350,7 @@ var ItemVoteListView = Backbone.View.extend({
         model: item
       });
       self.itemViews.push(new_view)
-      self.$el.append(new_view.render().$el.append("<button class=\"btn btn-lg btn-primary\" data-action='vote'>Vote!</button>"))
+      self.$el.append(new_view.render().$el.append("<button class=\"btn btn-lg btn-danger\" data-action='vote'>Vote!</button>"))
     })
 
   }
