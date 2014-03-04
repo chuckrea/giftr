@@ -214,7 +214,7 @@ margin: 0 auto;
 display: block;
 }
 
-/*=============================== App Index Page Styling ========================================*/
+/*=============================== Poll Creation Page Styling ========================================*/
 
 .instructions-app {
 margin-top: 1em;
@@ -253,6 +253,17 @@ background-image: url("bg_images/serenade4.jpg");
   bottom: .5em;
 
 }
+
+.poll-creation-item-selection .item {
+  display: inline-block;
+  width: 250px;
+  height: 250px;
+/*  background-size: cover;
+  background-position: center;
+  margin: 4em 1em 5em 1em;
+  border: solid .8em #f1f1f1;
+  border-radius: 1em;
+*/}
 
 /*============================ Accomplice Styling ===============================================
 
