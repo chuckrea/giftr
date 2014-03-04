@@ -134,6 +134,7 @@ var ItemFormView = Backbone.View.extend({
   }, 
 
   addItemToPoll: function(e){
+    console.log("file button clicked")
     e.preventDefault();
     this.handleFileSelect($('#files')[0].files[0]);
     this.resetValues();
