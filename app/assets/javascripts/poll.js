@@ -152,6 +152,7 @@ var ItemFormView = Backbone.View.extend({
   }, 
 
   addItemToPoll: function(e){
+    console.log("file button clicked")
     e.preventDefault();
     // var url = make_ajax();
     // console.log(url);
