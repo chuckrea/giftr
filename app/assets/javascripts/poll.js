@@ -209,10 +209,10 @@ var ItemView = Backbone.View.extend({
   render: function(){
     var self = this;
     this.$el.html(this.template(this.model.attributes));
-    this.$el.attr('id', this.model.attributes.id)
+    this.$el.attr('id', 'item-id-'+this.model.attributes.id)
     // this.$el.attr('class', "hiddenImage")
     var image = this.model.attributes.url
-    self.$el.attr('class', 'item')
+    self.$el.attr('class', 'item col-lg-4 col-md-4')
     // this.$el.html("<i class='fa fa-spinner fa-spin img-spinner'></i>")
     var img = document.createElement('img')
     img.src = image
@@ -408,7 +408,7 @@ var appendVotesToItems = function(votes){
       selector = '#' + vote.attributes.id
       $vote_img = $(selector);
       id = vote.attributes.item_id
-      $vote_img.appendTo($('#'+vote.attributes.item_id))
+      $vote_img.appendTo($('#item-id-'+vote.attributes.item_id))
     }
   })
 }

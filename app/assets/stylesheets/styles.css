@@ -17,7 +17,7 @@ border-left: 0px
 border-radius: 0px;
 margin: 0 10px;
 position: relative;
-bottom:0px; 
+bottom:0px;
 }
 
 .advice {
@@ -35,16 +35,15 @@ padding: 0px auto;
 text-shadow: 1px 1px #f1f1f1  ;
 }
 
-.item {
-display: inline-block;
-width: 250px;
+.item, .accomplices {
+/*display: inline-block;*/
+/*width: 250px;*/
 height: 250px;
 background-size: cover;
 background-position: center;
 margin: 4em 1em 5em 1em;
-border: solid .8em #f1f1f1  ;
+border: solid .8em #f1f1f1;
 border-radius: 1em;
-
 }
 
 
@@ -325,32 +324,11 @@ display: none;
 	margin-top: 3em;
 }
 
-<<<<<<< HEAD
 .image-upload > input
 {
     display: none;
 }
-=======
-#accomplice-photos {
 
-padding: 10px;
-/*width:80%;*/
-position:absolute;
-bottom:0; 
-margin:0 auto;
-border-right: 0px;
-border-left: 0px 
-}
-
-.advice {
-padding: 30px;
-text-align: center;
-vertical-align: middle;
-}
-
-#item_list {
-padding: 0px auto;
-}
 
 /*.item, .accomplices {
 display: inline-block;
@@ -361,45 +339,9 @@ margin: 10px;
 background-position:center;
 }*/
 
-.accomplice {
-border-radius: 0px;
-margin: 0 10px;
-position: relative;
-bottom:0px; 
-}
-
-.item, .accomplices {
-display: inline-block;
-width: 250px;
-height: 250px;
-background-size: cover;
-background-position: center;
-margin: 4em 1em 5em 1em;
-border: solid .8em #f1f1f1;
-border-radius: 1em;
-}
 
 
-.bigborders{
-border: solid .8em #f1f1f1;
-border-radius: 1em;
-}
 
-.itemholder{
-/* width: 100%;
-height: 100%;
-*/ background-color:rgba(250, 250, 250, 0.7);
-}
 
-.bordered {
-border: solid 1px black;
-}
 
-.name{
-/*font-size: 30px;*/
-}
 
-#toggleVoteButton {
-margin: 0 20px;
-}
->>>>>>> eee27f5653f11e595a0ff41f7ed00be0d53b6427
