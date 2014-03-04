@@ -22,7 +22,7 @@ function resetSelector(){
   $('#fs-user-list').empty();
   
 
-  $("#mutual-friends-link").fSelector({
+  $(".mutual-friends-link").fSelector({
 
     max: 5,
     excludeIds: exclusions,

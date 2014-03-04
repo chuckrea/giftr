@@ -104,7 +104,7 @@ i {
   margin: 10px;
 }
 
-.giftee {
+.giftee, .mutual-friends-link {
 	margin: -1.5em auto 1em auto;
 }
 
@@ -214,6 +214,15 @@ i {
 
 #app-setup-page-2 {
 	background-image: url("bg_images/baseball5.jpg");
+}
+
+#app-setup-page-3 div { /* CHANGE THIS NAME SOON */
+	position: relative;
+	display: inline-block;
+}
+
+#app-setup-page-3 {
+	background-image: url("bg_images/serenade4.jpg");
 }
 
 .gift-name {
