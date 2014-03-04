@@ -212,7 +212,7 @@ var ItemView = Backbone.View.extend({
     this.$el.attr('id', this.model.attributes.id)
     // this.$el.attr('class', "hiddenImage")
     var image = this.model.attributes.url
-    self.$el.attr('class', 'item')
+    self.$el.attr('class', 'item').attr("class", "col-lg-4")
     // this.$el.html("<i class='fa fa-spinner fa-spin img-spinner'></i>")
     var img = document.createElement('img')
     img.src = image
