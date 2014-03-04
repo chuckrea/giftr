@@ -1,8 +1,7 @@
 <script id='items_template' type="text/template">
-<span class="name"><%= name %></span>
-<p id="image_container">
-<img class="gift_image" src="<%= url %>" />
-</p>
+  <div class="itemholder">
+    <span class="name"><%= name %></span>
+  </div>
 </script>
 
 <script id='accomplice-view-template' type="text/template">
