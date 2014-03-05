@@ -20,7 +20,14 @@ class PollsController < ApplicationController
   end
 
   def show
-    @user = current_user
+    login_callback_url = "/polls/#{params["id"]}"
+    session['login_callback_url']
+    # if session[:token]
+    #   @render = true
+    # else
+    #   redirect_to '/users/auth/facebook'
+    # end
+    # @user = current_user
     @poll = Poll.find(params["id"])
     @items = Item.where(poll_id: @poll.id)
     @voters = @poll.voters
