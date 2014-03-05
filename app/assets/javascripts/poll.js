@@ -137,7 +137,6 @@ var ItemFormView = Backbone.View.extend({
     console.log("file button clicked")
     e.preventDefault();
     this.handleFileSelect($('#files')[0].files[0]);
-    this.resetValues();
     $('#gift-one').remove()
     $('#gift-two').remove()
     $('#gift-three').remove()
@@ -153,7 +152,7 @@ var ItemFormView = Backbone.View.extend({
           image: reader.result
         })
       });
-      reader.readAsDataURL(file);
+    reader.readAsDataURL(file);
   },
 
   // afterImageIsInDbCallMe: function(img_url){
@@ -169,11 +168,7 @@ var ItemFormView = Backbone.View.extend({
   //     return img
   //   },
 
-  resetValues: function() {
-    _.each( this.$('input'), function(input){
-      $(input).val('');
-    })
-  },
+  
 
   el: function() {
     return $('#new_item_form')
@@ -206,6 +201,13 @@ var ItemView = Backbone.View.extend({
     var template_func = _.template(html_string)
     return template_func(attrs)
   },
+
+  resetValues: function() {
+    _.each( $('input'), function(input){
+      $(input).val('');
+    })
+  },
+
   render: function(){
     var self = this;
     this.$el.html(this.template(this.model.attributes));
@@ -225,6 +227,7 @@ var ItemView = Backbone.View.extend({
         self.$el.attr('style', 'background-image:url("'+image+'")')
 
       })
+    this.resetValues();
     return this;
 
   // afterImageIsInDbCallMe: function(img_url){
