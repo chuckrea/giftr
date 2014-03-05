@@ -112,7 +112,7 @@ margin-bottom: 0em;
   margin: 10px;
 }
 
-.giftee, .mutual-friends-link {
+.giftee {
 margin: -1.5em auto 1em auto;
 }
 
@@ -236,6 +236,11 @@ display: inline-block;
 background-image: url("bg_images/serenade4.jpg");
 }
 
+.selection-page-section-instructions {
+	margin-top: 2em;
+	margin-bottom: 1.3em;
+}
+
 .gift-name {
   position:absolute;
   left:0;
@@ -261,21 +266,17 @@ background-image: url("bg_images/serenade4.jpg");
   border-radius: 1em;
 */}
 
-/*============================ Accomplice Styling ===============================================
-
-
-#accomplice-photos {
-padding: 10px;
-width:80%;
-position:absolute;
-bottom:0; 
-margin:0 auto;
-border: solid 1px black;
+.selection-page-arrow {
+	margin-top: 1em;
 }
 
-.accomplice {
-border-radius: 0px;
-margin: 0 10px;
+.selection-page-section-2-arrow {
+	margin-top: .6em;
+}
+
+
+.mutual-friends-link {
+	margin: .6em auto 0 auto;
 }
 
 
@@ -334,16 +335,6 @@ display: none;
 .image-upload > input {
     display: none;
 }
-
-/*.item, .accomplices {
-	display: inline-block;
-	width: 30%;
-	height: 250px;
-	background-size: cover;
-	margin: 10px;
-	background-position:center;
-}*/
-
 
 .item, .accomplices {
 	display: inline-block;
