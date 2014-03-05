@@ -212,7 +212,7 @@ var ItemView = Backbone.View.extend({
     this.$el.attr('id', 'item-id-'+this.model.attributes.id)
     // this.$el.attr('class', "hiddenImage")
     var image = this.model.attributes.url
-    self.$el.attr('class', 'item col-lg-4 col-md-4')
+    self.$el.attr('class', 'item col-lg-3 col-md-3')
     var spinner = $("<i class='fa fa-cog fa-spin img-spinner'></i>")
     this.$el.html(spinner)
     var img = $('<img>');
