@@ -213,17 +213,18 @@ var ItemView = Backbone.View.extend({
     // this.$el.attr('class', "hiddenImage")
     var image = this.model.attributes.url
     self.$el.attr('class', 'item col-lg-4 col-md-4')
-    // this.$el.html("<i class='fa fa-spinner fa-spin img-spinner'></i>")
-    var img = document.createElement('img')
-    img.src = image
+    var spinner = $("<i class='fa fa-cog fa-spin img-spinner'></i>")
+    this.$el.html(spinner)
+    var img = $('<img>');
+    img.attr('src', image)
     img.className = "hiddenImage"
-    img.onload = function(event){
+    img.load(function(event){
       console.log ("onload fired")
         // self.$el.removeClass('hiddenImage')
-        // $('.img-spinner').remove();
+        spinner.remove();
         self.$el.attr('style', 'background-image:url("'+image+'")')
 
-      }
+      })
     return this;
 
   // afterImageIsInDbCallMe: function(img_url){
@@ -330,7 +331,9 @@ var ItemVoteListView = Backbone.View.extend({
     _.each(this.itemViews, function(view){
       view.remove();
     })
+
     this.itemViews = []
+
     _.each(this.collection.models, function(item){
       var new_view = new ItemView({
         model: item
