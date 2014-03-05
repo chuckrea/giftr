@@ -140,15 +140,15 @@ margin-bottom: 0px; /* Removes gap between splash page background images*/
 
 
 .app-tagline {
-font-size: 5em;
-margin-top: 1em;
-margin-bottom: 1em;
-font-family: 'Gafata', sans-serif;
-font-weight: 900;
+	font-size: 5em;
+	margin-top: .5em;
+	margin-bottom: .9em;
+	font-family: 'Gafata', sans-serif;
+	font-weight: 900;
 }
 
 .instructions {
-margin-top: 4em;
+margin-top: 3em;
 }
 
 .splash-page-section-wrapper { /* Allows splash page background to take up full width of the page */
@@ -174,7 +174,7 @@ height: 200px;
 width: 200px;
 margin-top: 2em;
 margin-bottom: 4em;
-border: solid .8em #f1f1f1  ;
+border: solid 0.7em #fafafa;
 border-radius: 0.7em;
 
 /* -moz-box-shadow:    3px 3px 5px 6px #ccc;
