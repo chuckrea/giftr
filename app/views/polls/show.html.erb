@@ -22,16 +22,14 @@
 
   </div>
 
-
-    <div id="item_list" class="row">
+  <div id="item_list" class="row">
       
-    </div>      
+  </div>      
+
+</div><!-- END container div and voting_page div-->
 
 
-</div><!-- END container div -->
-
-
-<div class="col-md-12 bordered" id="accomplice-photos">Voters:</div>
+<div class="col-md-12 bordered voting-page" id="accomplice-photos">Voters:</div>
 
 <%= render text: File.read("app/views/templates.txt").html_safe %>
 
@@ -65,6 +63,17 @@ var checkVoted = function(){
 }
 
   $(function(){
+
+    // // $(document).ready(function() {
+    //   // $.fn.fullpage.setAllowScrolling(true);
+    //     $.fn.fullpage({
+    //       normalScrollElements: '.voting_page',
+    //       scrollingSpeed: 0,
+    //       setAllowScrolling: false,   
+    //       // resize : false, // Stops the splash page from resizing it's text when the page width is changed.
+    //     anchors: ['firstPage', 'secondPage', 'lastPage'] //Tells fullPage that we're scrolling through four page sections.
+    //     });
+    // // }); 
 
     itemVoteSetup();
     voteList = new VoteList()

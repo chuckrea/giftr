@@ -33,7 +33,7 @@
 			'paddingTop': 0,
 			'paddingBottom': 0,
 			'fixedElements': null,
-			'normalScrollElements': null, 
+			'normalScrollElements': '.voting-page #voting-page', 
 			'keyboardScrolling': true,
 			'touchSensitivity': 5,
 			'continuousVertical': false,
