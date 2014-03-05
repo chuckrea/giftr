@@ -328,8 +328,8 @@ i {
 }
 
 .showvotes h2 {
-	margin: 1em 0em .5em 0em;
-	padding: 0em 0em 1em 0em;
+	margin: 1em 0em 1em 0em;
+	padding: 0em 0em .8em 0em;
 	border-bottom: solid .1em #fafafa;
 }
 
@@ -353,6 +353,7 @@ i {
 
 
 #accomplice-photos {
+	min-height: 54px;
 	right: 0;
 	left: 0;
 	background-color: white;
@@ -376,9 +377,11 @@ i {
 }
 
 .item, .accomplices {
-	display: inline-block;
+
+display: inline-block;
 /* width: 250px; */
 height: 250px;
+padding-top: 1.1em;
 background-size: cover;
 background-position: center;
 /* margin: 0em 1em 3em 1em; */
@@ -425,6 +428,20 @@ border-radius: 1em;
 }
 
 .bigborders{
-border: solid .8em #f1f1f1;
-border-radius: 1em;
+	border: solid .8em #f1f1f1;
+	border-radius: 1em;
 }
+
+
+/*======================= File Upload Button ================================*/
+
+
+@media all and (max-width: 992px){
+	#item_list .item {
+		width: 250px;
+		margin: 0 auto 1.2em auto;		
+		display: block;
+	}
+}
+
+
