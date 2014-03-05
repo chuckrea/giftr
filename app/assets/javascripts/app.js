@@ -38,7 +38,7 @@ function resetSelector(){
       accomplices = response;
       $('#index-accomplices').empty()
         _.each(accomplices, function(accomplice){
-          $('#index-accomplices').append('<img src="http://graph.facebook.com/' + accomplice + '/picture?type=large">');
+          $('#index-accomplices').append('<img class="accomplices" src="http://graph.facebook.com/' + accomplice + '/picture?type=large">');
     
           user = new User({uid: accomplice});
           user.save(null,
@@ -52,7 +52,8 @@ function resetSelector(){
                 image_url: "http://graph.facebook.com/" + response.attributes.uid + "/picture"
                 },{success: function(response){
                   
-                  FB_notification(accomplice, poll.id);
+                  // FB_notification(accomplice, poll.id);
+                  window.location = "/polls/" + poll.id
                 } 
              }
             );

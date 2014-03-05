@@ -1,92 +1,91 @@
-
 #accomplice-photos {
-	padding: 10px;
-	/*width:80%;*/
-	position:absolute;
-	bottom:0; 
-	margin:0 auto;
-	border-right: 0px;
-	border-left: 0px 
+padding: 10px;
+/*width:80%;*/
+position:absolute;
+bottom:0; 
+margin:0 auto;
+border-right: 0px;
+border-left: 0px 
 }
 
 .accomplice {
-	border-radius: 0px;
-	margin: 0 10px;
-	position: relative;
-	bottom:0px; 
+border-radius: 0px;
+margin: 0 10px;
+position: relative;
+bottom:0px; 
 }
 
 .advice {
-	padding: 30px;
-	text-align: center;
-	vertical-align: middle;
+padding: 30px;
+text-align: center;
+vertical-align: middle;
 }
 
 #item_list {
-	padding: 0px auto;
+padding: 0px auto;
 }
 
 #showvotes {
-	/*overflow-y: scroll;	*/
-	text-shadow: 1px 1px #f1f1f1;
+/*overflow-y: scroll; */
+text-shadow: 1px 1px #f1f1f1  ;
 }
 
 .item {
-	display: inline-block;
-	width: 250px;
-	height: 250px;
-	background-size: cover;
-	background-position: center;
-	margin: 4em 1em 5em 1em;
-	border: solid .8em #f1f1f1;
-	border-radius: 1em;
+display: inline-block;
+width: 250px;
+height: 250px;
+background-size: cover;
+background-position: center;
+margin: 4em 1em 5em 1em;
+border: solid .8em #f1f1f1  ;
+border-radius: 1em;
 
 }
 
 
 .bigborders{
-	border: solid .8em #f1f1f1;
-	border-radius: 1em;
+border: solid .8em #f1f1f1  ;
+border-radius: 1em;
 }
 
 .itemholder{
-/*	width: 100%;
-	height: 100%;
-*/	background-color:rgba(250, 250, 250, 0.7);
+/* width: 100%;
+height: 100%;
+*/ background-color:rgba(250, 250, 250, 0.7);
 }
 
 .bordered {
-	border: solid 1px black;
+border: solid 1px black;
 }
 
 .name{
-	/*font-size: 30px;*/
+/*font-size: 30px;*/
 }
 
 #toggleVoteButton {
-	margin: 0 20px;
+margin: 0 20px;
 }
 
 
 /*================== Repeatable Formatting Styles =======================================*/
 
 body {
-	padding-top: 3em;
-	background-image: url('http://www.andypost.com/data/photos/490_1r11_andy_post_beverage_photography_whiskey.jpg');
-	background-size: cover;
+padding-top: 3em;
+background-image: url('http://www.andypost.com/data/photos/490_1r11_andy_post_beverage_photography_whiskey.jpg');
+background-size: cover;
 }
 
 .push-below-header {
-	/*margin-top: 3em;*/
-	padding-top: 3em;
+/*margin-top: 3em;*/
+padding-top: 3em;
 }
 
 .top-padding {
-	margin-top: 2em; 			/*Pushes the top element on our app pages (any page that isn't the splash page) below the navbar*/
+margin-top: 2em; /*Pushes the top element on our app pages (any page that isn't the splash page) below the navbar*/
 }
 
-#block { 						/*This command is contained in an id to override the built in settings from font awesome. I'd rather write this as a repeatable class, but this seems to do the trick*/
-	display: block;
+#block { /*This command is contained in an id to override the built in settings from font awesome. I'd rather write this as a repeatable class, but this seems to do the trick*/
+display: block;
 }
 
 .block { 						
@@ -105,15 +104,15 @@ body {
 
 
 h1 {
-	font-size: 3em;
+font-size: 3em;
 }
 
 i {
-	font-size: 7em;
+font-size: 7em;
 }
 
 #navigation{
-	margin-bottom: 0em;
+margin-bottom: 0em;
 }
 
 .home-button {
@@ -121,14 +120,14 @@ i {
 }
 
 .giftee, .mutual-friends-link {
-	margin: -1.5em auto 1em auto;
+margin: -1.5em auto 1em auto;
 }
 
 
 /*======================= fullPage Sticky Scrolling Styling ===============================================*/
 
 .table {
-	margin-bottom: 0px; /* Removes gap between splash page background images*/ 
+margin-bottom: 0px; /* Removes gap between splash page background images*/ 
 }
 
 
@@ -136,109 +135,109 @@ i {
 
 
 .app-tagline {
-	font-size: 5em;
-	margin-top: 1em;
-	margin-bottom: 1em;
+font-size: 5em;
+margin-top: 1em;
+margin-bottom: 1em;
 }
 
 .instructions {
-	margin-top: 4em;
+margin-top: 4em;
 }
 
 .splash-page-section-wrapper { /* Allows splash page background to take up full width of the page */
-	height: 100%;	
-	color: white;
+height: 100%; 
+color: white;
 }
 
 .site-wrapper {
-	text-align: center;
+text-align: center;
 }
 
 .splash-page-section-wrapper a{
-	color: #fafafa;
+color: #fafafa  ;
 }
 
 .splash-page-section-wrapper h1 {
-	font-family: 'Roboto', sans-serif;
+font-family: 'Roboto', sans-serif;
 }
 
 .splash-page-section-wrapper img {
-	height: 200px;
-	width: 200px;
-	margin-top: 2em;
-	margin-bottom: 4em;
-	border: solid .8em #f1f1f1;
-	border-radius: 1em;
+height: 200px;
+width: 200px;
+margin-top: 2em;
+margin-bottom: 4em;
+border: solid .8em #f1f1f1  ;
+border-radius: 1em;
 
-/*	-moz-box-shadow:    3px 3px 5px 6px #ccc;
-  	-webkit-box-shadow: 3px 3px 5px 6px #ccc;
-  	box-shadow:         3px 3px 5px 6px #ccc;*/
+/* -moz-box-shadow:    3px 3px 5px 6px #ccc;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow:        3px 3px 5px 6px #ccc;*/
 }
 
 .instructions ~ img { /*Selects any images that are siblings of an element with a class "instructions". This selcts tthe images in Splash Page 2, 3, & 4*/
-	/*margin-top: 4em;
-	margin-bottom: 5em;*/
-	margin: 4em 2em 5em 2em;
+/*margin-top: 4em;
+margin-bottom: 5em;*/
+margin: 4em 2em 5em 2em;
 }
 
 /*---------------------------- Splash Page 1 Styling ------------------------------------------*/
 
 #splash-page-1 { 
-	/*margin-top: 3.6em;*/
-	background-image: url("bg_images/picnic.jpg");
+/*margin-top: 3.6em;*/
+background-image: url("bg_images/picnic.jpg");
 }
 
 /*---------------------------- Splash Page 2 Styling ------------------------------------------*/
 
 #splash-page-2 { 
-	background-image: url("bg_images/baseball5.jpg");
+background-image: url("bg_images/baseball5.jpg");
 }
 
 /*---------------------------- Splash Page 3 Styling ------------------------------------------*/
 
 #splash-page-3 { 
-	background-image: url("bg_images/serenade4.jpg");
+background-image: url("bg_images/serenade4.jpg");
 }
 
 /*---------------------------- Splash Page 4 Styling ------------------------------------------*/
 
 #splash-page-4 { 
-	background-image: url("bg_images/ballet2.jpg");
+background-image: url("bg_images/ballet2.jpg");
 }
 
 #splash-page-4 button { /*Selects the sign in button on splash page four*/
-	margin: 0 auto;
-	display: block;
+margin: 0 auto;
+display: block;
 }
 
 /*=============================== App Index Page Styling ========================================*/
 
 .instructions-app {
-	margin-top: 1em;
+margin-top: 1em;
 }
 
-.instructions-app ~ img {   /*Selects any images that are siblings of an element with a class "instructions". This selcts tthe images in Splash Page 2, 3, & 4*/
-	margin-top: 4em;
-	margin-bottom: 5em;
-	margin: 4em -2em 5em 2em;
+.instructions-app ~ img {  /*Selects any images that are siblings of an element with a class "instructions". This selcts tthe images in Splash Page 2, 3, & 4*/
+margin-top: 4em;
+margin-bottom: 5em;
+margin: 4em -2em 5em 2em;
 }
 
 #app-setup-page-2 div { /* CHANGE THIS NAME SOON */
-	position: relative;
-	display: inline-block;
+position: relative;
+display: inline-block;
 }
 
 #app-setup-page-2 {
-	background-image: url("bg_images/baseball5.jpg");
+background-image: url("bg_images/baseball5.jpg");
 }
 
 #app-setup-page-3 div { /* CHANGE THIS NAME SOON */
-	position: relative;
-	display: inline-block;
+position: relative;
+display: inline-block;
 }
 
 #app-setup-page-3 {
-	background-image: url("bg_images/serenade4.jpg");
+background-image: url("bg_images/serenade4.jpg");
 }
 
 .gift-name {
@@ -255,17 +254,17 @@ i {
 
 
 #accomplice-photos {
-	padding: 10px;
-	width:80%;
-	position:absolute;
-	bottom:0; 
-	margin:0 auto;
-	border: solid 1px black;
+padding: 10px;
+width:80%;
+position:absolute;
+bottom:0; 
+margin:0 auto;
+border: solid 1px black;
 }
 
 .accomplice {
-	border-radius: 0px;
-	margin: 0 10px;
+border-radius: 0px;
+margin: 0 10px;
 }
 
 
@@ -273,18 +272,17 @@ i {
 
 
 #new_item_image_input {
-	display: hidden;
+display: hidden;
 }
 
 .gift_image {
-	width: 200px;
-	height: 200px;
+width: 200px;
+height: 200px;
 }
 
 .hiddenImage {
-	display: none;
+display: none;
 }
-
 
 /*============================= Poll Show Page Styling ===============================================*/
 
@@ -320,27 +318,26 @@ i {
 	height: 9em;
 	width: 9em;
 	margin-top: 3em;
-
 }
 
 #accomplice-photos {
-	padding: 10px;
-	/*width:80%;*/
-	position:absolute;
-	bottom:0; 
-	margin:0 auto;
-	border-right: 0px;
-	border-left: 0px 
+padding: 10px;
+/*width:80%;*/
+position:absolute;
+bottom:0; 
+margin:0 auto;
+border-right: 0px;
+border-left: 0px 
 }
 
 .advice {
-	padding: 30px;
-	text-align: center;
-	vertical-align: middle;
+padding: 30px;
+text-align: center;
+vertical-align: middle;
 }
 
 #item_list {
-	padding: 0px auto;
+padding: 0px auto;
 }
 
 /*.item, .accomplices {
@@ -370,32 +367,25 @@ i {
 	border-radius: 1em;
 }
 
-
 .bigborders{
-	border: solid .8em #f1f1f1;
-	border-radius: 1em;
+border: solid .8em #f1f1f1;
+border-radius: 1em;
 }
 
 .itemholder{
-/*	width: 100%;
-	height: 100%;
-*/	background-color:rgba(250, 250, 250, 0.7);
+/* width: 100%;
+height: 100%;
+*/ background-color:rgba(250, 250, 250, 0.7);
 }
 
 .bordered {
-	border: solid 1px black;
+border: solid 1px black;
 }
 
 .name{
-	/*font-size: 30px;*/
+/*font-size: 30px;*/
 }
 
 #toggleVoteButton {
-	margin: 0 20px;
+margin: 0 20px;
 }
-
-
-
-
-
-
