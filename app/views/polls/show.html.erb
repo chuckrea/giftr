@@ -28,9 +28,9 @@
 
 </div><!-- END container div and voting_page div-->
 
-
-<div class="col-md-12 bordered voting-page" id="accomplice-photos">Voters:</div>
-
+<div class="row">
+<div class="col-md-5 bordered voting-page" id="accomplice-photos"><span id="voters_text">Voters</span></div>
+</div>
 <%= render text: File.read("app/views/templates.txt").html_safe %>
 
 

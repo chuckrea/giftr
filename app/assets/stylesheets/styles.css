@@ -1,11 +1,11 @@
 #accomplice-photos {
+text-align: center;
 padding: 10px;
 /*width:80%;*/
 position:absolute;
 bottom:0; 
 margin:0 auto;
-border-right: 0px;
-border-left: 0px 
+border: solid .3em #f1f1f1;
 }
 
 #login-warning {
@@ -14,6 +14,7 @@ border-left: 0px
 }
 
 .accomplice {
+position: center;
 border-radius: 0px;
 margin: 0 10px;
 position: relative;
@@ -258,6 +259,19 @@ background-image: url("bg_images/serenade4.jpg");
 
 }
 
+#voters_text {
+		writing-mode:tb-rl;
+    -webkit-transform:rotate(270deg);
+    -moz-transform:rotate(270deg);
+    -o-transform: rotate(270deg);
+    /*white-space:nowrap;*/
+    display:block;
+    float: right;
+    /*bottom:0;
+    width:20px;
+    height:20px;*/
+}
+
 .add_item_button {
 	margin: 1em auto;
 }
@@ -345,14 +359,14 @@ display: none;
 
 
 #accomplice-photos {
-
+background-color: white;
 padding: 10px;
 /*width:80%;*/
 position:absolute;
 bottom:0; 
 margin:0 auto;
-border-right: 0px;
-border-left: 0px 
+border-right: 1px;
+border-left: 1px; 
 }
 
 
