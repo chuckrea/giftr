@@ -335,9 +335,16 @@ display: none;
 	margin-top: 3em;
 }
 
-.image-upload > input
-{
-    display: none;
+
+#accomplice-photos {
+
+padding: 10px;
+/*width:80%;*/
+position:absolute;
+bottom:0; 
+margin:0 auto;
+border-right: 0px;
+border-left: 0px 
 }
 
 
