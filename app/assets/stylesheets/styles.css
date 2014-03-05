@@ -59,8 +59,8 @@
 
 body {
 	padding-top: 3em;
-	background-image: url('bg_images/discoball5.jpg');
-	background-size: cover;
+	background-image: url('bg_images/dark_stripes.png');
+	background-size: repeat;
 	font-family: 'Gafata', sans-serif;
 }
 
