@@ -17,8 +17,8 @@
 	padding: 30px;
 	text-align: center;
 	vertical-align: middle;
-	color: black;
-	font-family: 'Gafata', sans-serif;
+/*	color: black;
+*/	font-family: 'Gafata', sans-serif;
 }
 
 #item_list {
@@ -59,7 +59,7 @@
 
 body {
 	padding-top: 3em;
-	background-image: url('bg_images/disco20ball-3.jpg');
+	background-image: url('bg_images/discoball5.jpg');
 	background-size: cover;
 	font-family: 'Gafata', sans-serif;
 }
