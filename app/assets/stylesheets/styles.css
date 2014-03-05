@@ -42,14 +42,14 @@ height: 250px;
 background-size: cover;
 background-position: center;
 margin: 4em 1em 5em 1em;
-border: solid .8em #f1f1f1;
-border-radius: 1em;
+border: solid .3em #f1f1f1;
+border-radius: .7em;
 }
 
 
 .bigborders{
-border: solid .8em #f1f1f1  ;
-border-radius: 1em;
+border: solid .3em #f1f1f1  ;
+border-radius: .7em;
 }
 
 .itemholder{
@@ -77,6 +77,7 @@ body {
 padding-top: 3em;
 background-image: url('http://www.andypost.com/data/photos/490_1r11_andy_post_beverage_photography_whiskey.jpg');
 background-size: cover;
+font-family: 'Gafata', sans-serif;
 }
 
 .push-below-header {
@@ -139,13 +140,15 @@ margin-bottom: 0px; /* Removes gap between splash page background images*/
 
 
 .app-tagline {
-font-size: 5em;
-margin-top: 1em;
-margin-bottom: 1em;
+	font-size: 5em;
+	margin-top: .5em;
+	margin-bottom: .9em;
+	font-family: 'Gafata', sans-serif;
+	font-weight: 900;
 }
 
 .instructions {
-margin-top: 4em;
+margin-top: 3em;
 }
 
 .splash-page-section-wrapper { /* Allows splash page background to take up full width of the page */
@@ -162,7 +165,8 @@ color: #fafafa  ;
 }
 
 .splash-page-section-wrapper h1 {
-font-family: 'Roboto', sans-serif;
+font-family: 'Gafata', sans-serif;
+
 }
 
 .splash-page-section-wrapper img {
@@ -170,8 +174,8 @@ height: 200px;
 width: 200px;
 margin-top: 2em;
 margin-bottom: 4em;
-border: solid .8em #f1f1f1  ;
-border-radius: 1em;
+border: solid 0.7em #fafafa;
+border-radius: 0.7em;
 
 /* -moz-box-shadow:    3px 3px 5px 6px #ccc;
   -webkit-box-shadow: 3px 3px 5px 6px #ccc;
@@ -252,6 +256,10 @@ background-image: url("bg_images/serenade4.jpg");
   margin-right:auto;
   bottom: .5em;
 
+}
+
+.add_item_button {
+	margin: 1em auto;
 }
 
 .poll-creation-item-selection .item {
@@ -356,6 +364,34 @@ background-size: cover;
 margin: 10px;
 background-position:center;
 }*/
+
+/*======================= File Upload Button ================================*/
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+    margin-top: .5em
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 999px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+.img-spinner {
+	margin-top: .6em;
+}
+
 
 
 

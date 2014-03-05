@@ -137,7 +137,6 @@ var ItemFormView = Backbone.View.extend({
     console.log("file button clicked")
     e.preventDefault();
     this.handleFileSelect($('#files')[0].files[0]);
-    this.resetValues();
     $('#gift-one').remove()
     $('#gift-two').remove()
     $('#gift-three').remove()
@@ -153,7 +152,7 @@ var ItemFormView = Backbone.View.extend({
           image: reader.result
         })
       });
-      reader.readAsDataURL(file);
+    reader.readAsDataURL(file);
   },
 
   // afterImageIsInDbCallMe: function(img_url){
@@ -169,11 +168,7 @@ var ItemFormView = Backbone.View.extend({
   //     return img
   //   },
 
-  resetValues: function() {
-    _.each( this.$('input'), function(input){
-      $(input).val('');
-    })
-  },
+  
 
   el: function() {
     return $('#new_item_form')
@@ -206,24 +201,33 @@ var ItemView = Backbone.View.extend({
     var template_func = _.template(html_string)
     return template_func(attrs)
   },
+
+  resetValues: function() {
+    _.each( $('input'), function(input){
+      $(input).val('');
+    })
+  },
+
   render: function(){
     var self = this;
     this.$el.html(this.template(this.model.attributes));
     this.$el.attr('id', 'item-id-'+this.model.attributes.id)
     // this.$el.attr('class', "hiddenImage")
     var image = this.model.attributes.url
-    self.$el.attr('class', 'item col-lg-4 col-md-4')
-    // this.$el.html("<i class='fa fa-spinner fa-spin img-spinner'></i>")
-    var img = document.createElement('img')
-    img.src = image
+    self.$el.attr('class', 'item col-lg-3 col-md-3')
+    var spinner = $("<i class='fa fa-cog fa-spin img-spinner'></i>")
+    this.$el.html(spinner)
+    var img = $('<img>');
+    img.attr('src', image)
     img.className = "hiddenImage"
-    img.onload = function(event){
+    img.load(function(event){
       console.log ("onload fired")
         // self.$el.removeClass('hiddenImage')
-        // $('.img-spinner').remove();
+        spinner.remove();
         self.$el.attr('style', 'background-image:url("'+image+'")')
 
-      }
+      })
+    this.resetValues();
     return this;
 
   // afterImageIsInDbCallMe: function(img_url){
@@ -330,7 +334,9 @@ var ItemVoteListView = Backbone.View.extend({
     _.each(this.itemViews, function(view){
       view.remove();
     })
+
     this.itemViews = []
+
     _.each(this.collection.models, function(item){
       var new_view = new ItemView({
         model: item
