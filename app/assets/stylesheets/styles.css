@@ -333,13 +333,6 @@ i {
 	border-left: 0px 
 }
 
-.accomplice {
-	border-radius: 0px;
-	margin: 0 10px;
-	position: relative;
-	bottom:0px; 
-}
-
 .advice {
 	padding: 30px;
 	text-align: center;
@@ -350,14 +343,33 @@ i {
 	padding: 0px auto;
 }
 
-.item {
+/*.item, .accomplices {
 	display: inline-block;
 	width: 30%;
 	height: 250px;
 	background-size: cover;
 	margin: 10px;
 	background-position:center;
+}*/
+
+.accomplice {
+	border-radius: 0px;
+	margin: 0 10px;
+	position: relative;
+	bottom:0px; 
 }
+
+.item, .accomplices {
+	display: inline-block;
+	width: 250px;
+	height: 250px;
+	background-size: cover;
+	background-position: center;
+	margin: 4em 1em 5em 1em;
+	border: solid .8em #f1f1f1  ;
+	border-radius: 1em;
+}
+
 
 .bigborders{
 	border: solid .8em #f1f1f1;
