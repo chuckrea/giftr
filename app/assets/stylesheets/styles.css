@@ -77,6 +77,7 @@ body {
 padding-top: 3em;
 background-image: url('http://www.andypost.com/data/photos/490_1r11_andy_post_beverage_photography_whiskey.jpg');
 background-size: cover;
+font-family: 'Gafata', sans-serif;
 }
 
 .push-below-header {
@@ -142,6 +143,8 @@ margin-bottom: 0px; /* Removes gap between splash page background images*/
 font-size: 5em;
 margin-top: 1em;
 margin-bottom: 1em;
+font-family: 'Gafata', sans-serif;
+font-weight: 900;
 }
 
 .instructions {
@@ -162,7 +165,8 @@ color: #fafafa  ;
 }
 
 .splash-page-section-wrapper h1 {
-font-family: 'Roboto', sans-serif;
+font-family: 'Gafata', sans-serif;
+
 }
 
 .splash-page-section-wrapper img {
@@ -252,6 +256,10 @@ background-image: url("bg_images/serenade4.jpg");
   margin-right:auto;
   bottom: .5em;
 
+}
+
+.add_item_button {
+	margin: 1em auto;
 }
 
 .poll-creation-item-selection .item {
@@ -362,7 +370,7 @@ background-position:center;
 .btn-file {
     position: relative;
     overflow: hidden;
-    margin-top: 0;
+    margin-top: .5em
 }
 .btn-file input[type=file] {
     position: absolute;
