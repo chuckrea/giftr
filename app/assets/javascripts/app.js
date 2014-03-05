@@ -48,6 +48,7 @@ function resetSelector(){
             // console.log("facebook message fired"),
             method: 'send',
             to: [accomplice],
+            message
             link: "http://giftadvisor.herokuapp.com/polls/" + poll_id,
             redirect_uri: window.location.host+"/polls/"+poll_id  
             }, fbCallback)
