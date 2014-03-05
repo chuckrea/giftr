@@ -15,7 +15,6 @@
     $(document).ready(function() {
         $.fn.fullpage({   
           resize : false, // Stops the splash page from resizing it's text when the page width is changed.
-          
         anchors: ['firstPage', 'secondPage', '3rdPage', 'lastPage'] //Tells fullPage that we're scrolling through four page sections.
         });
     }); 
@@ -39,7 +38,7 @@
     <div class="collapse navbar-collapse navHeaderCollapse">
       <ul class="signin nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-          <li> <a href="#">New Poll</a></li>
+          <li><%= link_to "New Poll", polls_path %></li>
           <li class="active"><%= link_to "Sign Out", destroy_user_session_path %></li>
         <% else %>
           <li><%= link_to "Sign In with Facebook", user_omniauth_authorize_path(:facebook) %></li>
