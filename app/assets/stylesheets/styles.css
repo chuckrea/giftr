@@ -279,8 +279,8 @@ background-image: url("bg_images/serenade4.jpg");
 
 .poll-creation-item-selection .item {
   display: inline-block;
-  width: 250px;
-  height: 250px;
+ 	width: 200px;
+	height: 200px;
 /*  background-size: cover;
   background-position: center;
   margin: 4em 1em 5em 1em;
@@ -382,9 +382,10 @@ border-left: 1px;
 	height: 250px;
 	background-size: cover;
 	background-position: center;
-	margin: 4em 1em 5em 1em;
-	border: solid .8em #f1f1f1  ;
+	margin: 0em 1em 3em 1em;
+	border: solid .8em #f1f1f1;
 	border-radius: 1em;
+	
 }
 
 /*======================= File Upload Button ================================*/
