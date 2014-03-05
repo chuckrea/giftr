@@ -6,16 +6,16 @@
       
       <div id="section0" class="section">
         <div id="splash-page-1" class="clearfix splash-page-section-wrapper"> <!-- Splash Page First Section -->
-          <h1>Choose the friend you're buying a gift for</h1>        
+          <h1 class="selection-page-section-instructions">Choose the friend you're buying a gift for</h1>        
           <%=image_tag("question_mark2.jpg", alt: "Example Image", id: "recipient")%>
           <button class="btn btn-lg btn-danger giftee" id="block">Select Friend</button>
-          <i id="block" class="fa fa-arrow-down block"></i>
-        </div>
+<!--           <i id="block" class="fa fa-arrow-down block selection-page-arrow"></i>
+ -->        </div>
       </div>
 
       <div id="section1" class="section">
         <div id="app-setup-page-2" class="clearfix splash-page-section-wrapper"> <!-- Splash Page Second Section -->
-          <h1 class="instructions-app">Add gift ideas</h1>
+          <h1 class="instructions-app selection-page-section-instructions">Add gift ideas</h1>
           <div id="item_list" class="poll-creation-item-selection"></div>
           <div id="gift-one">
             <%=image_tag("gift_pics/stash2.jpg", alt: "Example Image")%>
@@ -28,8 +28,8 @@
           <div id="gift-three">
             <%=image_tag("gift_pics/ewok.jpg", alt: "Example Image")%>
             <h3 class="gift-name" id="gift-3-name"></h3>
-
           </div>
+
           <form class="form-inline" role="form" id="new_item_form">
             <div class="form-group">
               <input type="text" class="form-control" id="new_item_name_input" name="new_item_name_input" placeholder="Enter Gift Name" onfocus="this.placeholder=''" onfocusout="this.placeholder='enter item name'">
@@ -40,12 +40,15 @@
             </div>
             <button class="add_item_button block btn-lg center btn btn-danger">Submit Gift</button>
           </form>
+
+          <i id="block" class="fa fa-arrow-down block selection-page-section-2-arrow"></i>
+
         </div>
       </div>
 
       <div id="section3" class="section">
         <div id="splash-page-3" class="clearfix splash-page-section-wrapper"> <!-- Splash Page Third Section -->
-          <h1 class="instructions-app">Pick the friends who know them best</h1>
+          <h1 class="instructions-app selection-page-section-instructions">Pick the friends who know them best</h1>
           <div id="index-accomplices">
             <%=image_tag("friend_pics/kate.png", alt: "Example Image", id: "index-img-1")%>
             <%=image_tag("friend_pics/rashad.jpg", alt: "Example Image", id: "index-img-2")%>
@@ -53,16 +56,8 @@
             <%=image_tag("friend_pics/jtr.jpg", alt: "Example Image", id: "index-img-3")%>
             <%=image_tag("friend_pics/norman.jpg", alt: "Example Image", id: "index-img-3")%>
           </div>
-          <button class="btn btn-danger btn-lg mutual-friends-link" id="block">Select Accomplices</button>
+          <button class="btn btn-danger btn-lg mutual-friends-link" id="block">Select Friends</button>
           
-        </div>
-      </div>
-
-      <div id="section4" class="section">
-        <div id="splash-page-4" class="clearfix splash-page-section-wrapper"> <!-- Splash Page Fourth Section -->
-          <h1 class="instructions-app">See which gift gets the most votes!</h1>
-          <img src="http://placekitten.com/g/250/250" alt="">
-          <button class="btn">Sign In with Facebook to Begin</button>
         </div>
       </div>
 

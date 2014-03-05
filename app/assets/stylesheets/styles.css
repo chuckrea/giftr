@@ -36,18 +36,6 @@ padding: 0px auto;
 text-shadow: 1px 1px #f1f1f1  ;
 }
 
-.item, .accomplices {
-/*display: inline-block;*/
-/*width: 250px;*/
-height: 250px;
-background-size: cover;
-background-position: center;
-margin: 4em 1em 5em 1em;
-border: solid .3em #f1f1f1;
-border-radius: .7em;
-}
-
-
 .bigborders{
 border: solid .3em #f1f1f1  ;
 border-radius: .7em;
@@ -76,7 +64,7 @@ margin: 0 20px;
 
 body {
 padding-top: 3em;
-background-image: url('http://www.andypost.com/data/photos/490_1r11_andy_post_beverage_photography_whiskey.jpg');
+background-image: url('bg_images/disco20ball.jpg');
 background-size: cover;
 font-family: 'Gafata', sans-serif;
 }
@@ -125,8 +113,16 @@ margin-bottom: 0em;
   margin: 10px;
 }
 
-.giftee, .mutual-friends-link {
+.giftee {
 margin: -1.5em auto 1em auto;
+}
+
+
+/*================================ Navigation Styling ======================================================================================*/
+
+
+#navigation {
+	box-shadow: 0em .1em .1em #333;
 }
 
 
@@ -249,6 +245,11 @@ display: inline-block;
 background-image: url("bg_images/serenade4.jpg");
 }
 
+.selection-page-section-instructions {
+	margin-top: 2em;
+	margin-bottom: 1.3em;
+}
+
 .gift-name {
   position:absolute;
   left:0;
@@ -287,21 +288,17 @@ background-image: url("bg_images/serenade4.jpg");
   border-radius: 1em;
 */}
 
-/*============================ Accomplice Styling ===============================================
-
-
-#accomplice-photos {
-padding: 10px;
-width:80%;
-position:absolute;
-bottom:0; 
-margin:0 auto;
-border: solid 1px black;
+.selection-page-arrow {
+	margin-top: 1em;
 }
 
-.accomplice {
-border-radius: 0px;
-margin: 0 10px;
+.selection-page-section-2-arrow {
+	margin-top: .4em;
+}
+
+
+.mutual-friends-link {
+	margin: .6em auto 0 auto;
 }
 
 
@@ -369,15 +366,26 @@ border-right: 1px;
 border-left: 1px; 
 }
 
+#gift-icon {
+	height: 9em;
+	width: 9em;
+	margin-top: 3em;
+}
 
-/*.item, .accomplices {
-display: inline-block;
-width: 30%;
-height: 250px;
-background-size: cover;
-margin: 10px;
-background-position:center;
-}*/
+.image-upload > input {
+    display: none;
+}
+
+.item, .accomplices {
+	display: inline-block;
+	width: 250px;
+	height: 250px;
+	background-size: cover;
+	background-position: center;
+	margin: 4em 1em 5em 1em;
+	border: solid .8em #f1f1f1  ;
+	border-radius: 1em;
+}
 
 /*======================= File Upload Button ================================*/
 
@@ -406,10 +414,7 @@ background-position:center;
 	margin-top: .6em;
 }
 
-
-
-
-
-
-
-
+.bigborders{
+border: solid .8em #f1f1f1;
+border-radius: 1em;
+}
