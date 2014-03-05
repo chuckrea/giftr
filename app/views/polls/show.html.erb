@@ -2,7 +2,7 @@
   <div class="showvotes">
 
     <div class="row push-below-header"> <!-- Section containing Gifter & Giftee, Gift Icon, & Arrow -->
-      <div class="col-lg-4 center">
+      <div class="col-lg-3 col-lg-offset-1 center">
         <img class="bigborders" src="http://graph.facebook.com/<%= @poll.creator.uid %>/picture?type=large" alt="Creator">
       </div>
       <div class="col-lg-4 center">
@@ -11,7 +11,7 @@
         <!-- <i class="fa fa-long-arrow-right"></i> -->
         <img id="arrow" src="http://www.clker.com/cliparts/3/v/V/e/U/a/black-arrow-th.png" />
       </div>
-      <div class="col-lg-4 center">
+      <div class="col-lg-3 center">
         <img class="bigborders" src="http://graph.facebook.com/<%= @poll.recipient_fb_id %>/picture?type=large" alt="Recipient">
       </div>
     </div>
@@ -29,7 +29,7 @@
 </div><!-- END container div and voting_page div-->
 
 <div class="row">
-<div class="col-md-5 bordered voting-page" id="accomplice-photos"><span id="voters_text">Voters</span></div>
+<div class="col-md-5 voting-page" id="accomplice-photos"><span id="voters_text">Voters</span></div>
 </div>
 <%= render text: File.read("app/views/templates.txt").html_safe %>
 
