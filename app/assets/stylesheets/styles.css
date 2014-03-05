@@ -64,7 +64,7 @@ margin: 0 20px;
 
 body {
 padding-top: 3em;
-background-image: url('bg_images/disco20ball.jpg');
+background-image: url('bg_images/disco20ball-3.jpg');
 background-size: cover;
 font-family: 'Gafata', sans-serif;
 }
@@ -281,6 +281,7 @@ background-image: url("bg_images/serenade4.jpg");
   display: inline-block;
  	width: 200px;
 	height: 200px;
+	margin: 0em 1em 3em 1em;
 /*  background-size: cover;
   background-position: center;
   margin: 4em 1em 5em 1em;
@@ -378,6 +379,17 @@ border-left: 1px;
 
 .item, .accomplices {
 	display: inline-block;
+/* width: 250px; */
+height: 250px;
+background-size: cover;
+background-position: center;
+/* margin: 0em 1em 3em 1em; */
+border: solid .8em #f1f1f1;
+border-radius: 1em;
+}
+
+/*#item_list .item {
+	display: inline-block;
 	width: 250px;
 	height: 250px;
 	background-size: cover;
@@ -385,8 +397,7 @@ border-left: 1px;
 	margin: 0em 1em 3em 1em;
 	border: solid .8em #f1f1f1;
 	border-radius: 1em;
-	
-}
+}*/
 
 /*======================= File Upload Button ================================*/
 
