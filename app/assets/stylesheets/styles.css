@@ -1,11 +1,11 @@
 #accomplice-photos {
-text-align: center;
-padding: 10px;
-/*width:80%;*/
-position:absolute;
-bottom:0; 
-margin:0 auto;
-border: solid .3em #f1f1f1;
+	text-align: center;
+	padding: 10px;
+	/*width:80%;*/
+	position:absolute;
+	bottom:0; 
+	margin:0 auto;
+	border: solid .3em #f1f1f1;
 }
 
 #login-warning {
@@ -14,72 +14,74 @@ border: solid .3em #f1f1f1;
 }
 
 .accomplice {
-position: center;
-border-radius: 0px;
-margin: 0 10px;
-position: relative;
-bottom:0px;
+	position: center;
+	border-radius: 0px;
+	margin: 0 10px;
+	position: relative;
+	bottom:0px;
 }
 
 .advice {
-padding: 30px;
-text-align: center;
-vertical-align: middle;
+	padding: 30px;
+	text-align: center;
+	vertical-align: middle;
+	color: black;
+	font-family: 'Gafata', sans-serif;
 }
 
 #item_list {
-padding: 0px auto;
+	padding: 0px auto;
 }
 
 #showvotes {
-/*overflow-y: scroll; */
-text-shadow: 1px 1px #f1f1f1  ;
+	/*overflow-y: scroll; */
+	text-shadow: 1px 1px #f1f1f1;
 }
 
 .bigborders{
-border: solid .3em #f1f1f1  ;
-border-radius: .7em;
+	border: solid .3em #f1f1f1;
+	border-radius: .7em;
 }
 
 .itemholder{
-/* width: 100%;
-height: 100%;
-*/ background-color:rgba(250, 250, 250, 0.7);
+	/* width: 100%;
+	height: 100%;
+	*/ background-color:rgba(250, 250, 250, 0.7);
 }
 
 .bordered {
-border: solid 1px black;
+	border: solid 1px black;
 }
 
 .name{
-/*font-size: 30px;*/
+	/*font-size: 30px;*/
 }
 
 #toggleVoteButton {
-margin: 0 20px;
+	margin: 0 20px;
 }
 
 
 /*================== Repeatable Formatting Styles =======================================*/
 
 body {
-padding-top: 3em;
-background-image: url('bg_images/disco20ball.jpg');
-background-size: cover;
-font-family: 'Gafata', sans-serif;
+	padding-top: 3em;
+	background-image: url('bg_images/disco20ball.jpg');
+	background-size: cover;
+	font-family: 'Gafata', sans-serif;
 }
 
 .push-below-header {
-/*margin-top: 3em;*/
-padding-top: 3em;
+	/*margin-top: 3em;*/
+	padding-top: 3em;
 }
 
 .top-padding {
-margin-top: 2em; /*Pushes the top element on our app pages (any page that isn't the splash page) below the navbar*/
+	margin-top: 2em; /*Pushes the top element on our app pages (any page that isn't the splash page) below the navbar*/
 }
 
 #block { /*This command is contained in an id to override the built in settings from font awesome. I'd rather write this as a repeatable class, but this seems to do the trick*/
-display: block;
+	display: block;
 }
 
 .block { 						
@@ -98,15 +100,15 @@ display: block;
 
 
 h1 {
-font-size: 3em;
+	font-size: 3em;
 }
 
 i {
-font-size: 7em;
+	font-size: 7em;
 }
 
 #navigation{
-margin-bottom: 0em;
+	margin-bottom: 0em;
 }
 
 .home-button {
@@ -114,7 +116,7 @@ margin-bottom: 0em;
 }
 
 .giftee {
-margin: -1.5em auto 1em auto;
+	margin: -1.5em auto 1em auto;
 }
 
 
@@ -129,7 +131,7 @@ margin: -1.5em auto 1em auto;
 /*======================= fullPage Sticky Scrolling Styling ===============================================*/
 
 .table {
-margin-bottom: 0px; /* Removes gap between splash page background images*/ 
+	margin-bottom: 0px; /* Removes gap between splash page background images*/ 
 }
 
 
@@ -145,104 +147,104 @@ margin-bottom: 0px; /* Removes gap between splash page background images*/
 }
 
 .instructions {
-margin-top: 3em;
+	margin-top: 3em;
 }
 
 .splash-page-section-wrapper { /* Allows splash page background to take up full width of the page */
-height: 100%; 
-color: white;
+	height: 100%; 
+	color: white;
 }
 
 .site-wrapper {
-text-align: center;
+	text-align: center;
 }
 
 .splash-page-section-wrapper a{
-color: #fafafa  ;
+	color: #fafafa  ;
 }
 
 .splash-page-section-wrapper h1 {
-font-family: 'Gafata', sans-serif;
+	font-family: 'Gafata', sans-serif;
 
 }
 
 .splash-page-section-wrapper img {
-height: 200px;
-width: 200px;
-margin-top: 2em;
-margin-bottom: 4em;
-border: solid 0.7em #fafafa;
-border-radius: 0.7em;
+	height: 200px;
+	width: 200px;
+	margin-top: 2em;
+	margin-bottom: 4em;
+	border: solid 0.7em #fafafa;
+	border-radius: 0.7em;
 
-/* -moz-box-shadow:    3px 3px 5px 6px #ccc;
-  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
-  box-shadow:        3px 3px 5px 6px #ccc;*/
+	/* -moz-box-shadow:    3px 3px 5px 6px #ccc;
+	  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+	  box-shadow:        3px 3px 5px 6px #ccc;*/
 }
 
 .instructions ~ img { /*Selects any images that are siblings of an element with a class "instructions". This selcts tthe images in Splash Page 2, 3, & 4*/
-/*margin-top: 4em;
-margin-bottom: 5em;*/
-margin: 4em 2em 5em 2em;
+	/*margin-top: 4em;
+	margin-bottom: 5em;*/
+	margin: 4em 2em 5em 2em;
 }
 
 /*---------------------------- Splash Page 1 Styling ------------------------------------------*/
 
 #splash-page-1 { 
-/*margin-top: 3.6em;*/
-background-image: url("bg_images/picnic.jpg");
+	/*margin-top: 3.6em;*/
+	background-image: url("bg_images/picnic.jpg");
 }
 
 /*---------------------------- Splash Page 2 Styling ------------------------------------------*/
 
 #splash-page-2 { 
-background-image: url("bg_images/baseball5.jpg");
+	background-image: url("bg_images/baseball5.jpg");
 }
 
 /*---------------------------- Splash Page 3 Styling ------------------------------------------*/
 
 #splash-page-3 { 
-background-image: url("bg_images/serenade4.jpg");
+	background-image: url("bg_images/serenade4.jpg");
 }
 
 /*---------------------------- Splash Page 4 Styling ------------------------------------------*/
 
 #splash-page-4 { 
-background-image: url("bg_images/ballet2.jpg");
+	background-image: url("bg_images/ballet2.jpg");
 }
 
 #splash-page-4 button { /*Selects the sign in button on splash page four*/
-margin: 0 auto;
-display: block;
+	margin: 0 auto;
+	display: block;
 }
 
 /*=============================== Poll Creation Page Styling ========================================*/
 
 .instructions-app {
-margin-top: 1em;
+	margin-top: 1em;
 }
 
 .instructions-app ~ img {  /*Selects any images that are siblings of an element with a class "instructions". This selcts tthe images in Splash Page 2, 3, & 4*/
-margin-top: 4em;
-margin-bottom: 5em;
-margin: 4em -2em 5em 2em;
+	margin-top: 4em;
+	margin-bottom: 5em;
+	margin: 4em -2em 5em 2em;
 }
 
 #app-setup-page-2 div { /* CHANGE THIS NAME SOON */
-position: relative;
-display: inline-block;
+	position: relative;
+	display: inline-block;
 }
 
 #app-setup-page-2 {
-background-image: url("bg_images/baseball5.jpg");
+	background-image: url("bg_images/baseball5.jpg");
 }
 
 #app-setup-page-3 div { /* CHANGE THIS NAME SOON */
-position: relative;
-display: inline-block;
+	position: relative;
+	display: inline-block;
 }
 
 #app-setup-page-3 {
-background-image: url("bg_images/serenade4.jpg");
+	background-image: url("bg_images/serenade4.jpg");
 }
 
 .selection-page-section-instructions {
@@ -306,16 +308,16 @@ background-image: url("bg_images/serenade4.jpg");
 
 
 #new_item_image_input {
-display: hidden;
+	display: hidden;
 }
 
 .gift_image {
-width: 200px;
-height: 200px;
+	width: 200px;
+	height: 200px;
 }
 
 .hiddenImage {
-display: none;
+	display: none;
 }
 
 /*============================= Poll Show Page Styling ===============================================*/
@@ -356,14 +358,14 @@ display: none;
 
 
 #accomplice-photos {
-background-color: white;
-padding: 10px;
-/*width:80%;*/
-position:absolute;
-bottom:0; 
-margin:0 auto;
-border-right: 1px;
-border-left: 1px; 
+	background-color: white;
+	padding: 10px;
+	/*width:80%;*/
+	position:absolute;
+	bottom:0; 
+	margin:0 auto;
+	border-right: 1px;
+	border-left: 1px; 
 }
 
 #gift-icon {
