@@ -20,11 +20,13 @@
        <h2 class="advice">Help <%= @poll.creator.name.split(" ").shift().to_s %> choose a gift for <%= @poll.recipient_name.split(" ").shift().to_s %> </h2>
     </div>
 
-    <div class="row"> <!-- Gifts Section -->
-      <div id="item_list"></div>      
-    </div>
-
   </div>
+
+
+    <div id="item_list" class="row">
+      
+    </div>      
+
 
 </div><!-- END container div -->
 
@@ -45,6 +47,12 @@
 var voteList;
 var myvote;
 var checkVoted = function(){
+  if (user == undefined) {
+    $('#item_list button').addClass('hidden');
+    $('#login-warning').remove();
+    $('.navbar').append('<p id="login-warning" class="pull-right">Log into Facebook to register your vote</p>')
+    $('#login-warning').effect("shake", {times:10}, 6000);
+  }
   myvote = voteList.findWhere({user_id: user.id});
   // console.log(user.id);
   if (myvote != undefined) {

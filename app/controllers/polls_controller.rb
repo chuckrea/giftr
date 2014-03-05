@@ -20,8 +20,8 @@ class PollsController < ApplicationController
   end
 
   def show
-    login_callback_url = "/polls/#{params["id"]}"
-    session['login_callback_url']
+    # login_callback_url = 
+    # session['login_callback_url']
     # if session[:token]
     #   @render = true
     # else
@@ -29,6 +29,8 @@ class PollsController < ApplicationController
     # end
     @user = current_user
     @poll = Poll.find(params["id"])
+    session['login_callback_url'] = "/polls/#{@poll.id}"
+    # binding.pry
     @items = Item.where(poll_id: @poll.id)
     @voters = @poll.voters
 
