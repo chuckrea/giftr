@@ -32,16 +32,13 @@
           </div>
           <form class="form-inline" role="form" id="new_item_form">
             <div class="form-group">
-              <input type="text" class="form-control" id="new_item_name_input" name="new_item_name_input" placeholder="enter item name">
+              <input type="text" class="form-control" id="new_item_name_input" name="new_item_name_input" placeholder="enter item name" onfocus="this.placeholder=''" onfocusout="this.placeholder='enter item name'">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" id="new_item_url_input" name="new_item_url_input" placeholder="enter item url">
-            </div>
-            <div class="form-group">
-              <input type="file" class="filestyle" data-classButton="btn btn-primary" id="files" name="files[]" multiple />
+              <span class="btn btn-primary btn-file">Add Photo of Gift<input type="file" class="filestyle" data-classButton="btn btn-primary" id="files" name="files[]" multiple /></span>
               <output id="list"></output>
             </div>
-            <button class="add_item_button btn btn-danger">Add Gift</button>
+            <button class="add_item_button btn btn-danger">Submit Gift</button>
           </form>
         </div>
       </div>

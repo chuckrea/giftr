@@ -35,12 +35,9 @@ padding: 0px auto;
 text-shadow: 1px 1px #f1f1f1  ;
 }
 
-
-
-
 .bigborders{
-border: solid .8em #f1f1f1  ;
-border-radius: 1em;
+border: solid .3em #f1f1f1  ;
+border-radius: .7em;
 }
 
 .itemholder{
@@ -162,7 +159,7 @@ width: 200px;
 margin-top: 2em;
 margin-bottom: 4em;
 border: solid .8em #f1f1f1  ;
-border-radius: 1em;
+border-radius: 0.7em;
 
 /* -moz-box-shadow:    3px 3px 5px 6px #ccc;
   -webkit-box-shadow: 3px 3px 5px 6px #ccc;
@@ -339,6 +336,7 @@ display: none;
 	background-position:center;
 }*/
 
+
 .item, .accomplices {
 	display: inline-block;
 	width: 250px;
@@ -348,6 +346,33 @@ display: none;
 	margin: 4em 1em 5em 1em;
 	border: solid .8em #f1f1f1  ;
 	border-radius: 1em;
+}
+
+/*======================= File Upload Button ================================*/
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+    margin-top: 0;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 999px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+.img-spinner {
+	margin-top: .6em;
 }
 
 .bigborders{
