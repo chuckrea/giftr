@@ -1,22 +1,3 @@
-// var PotentialRecipientView = Backbone.View.extend({
-//   render: function(){
-//     FB.ui(
-//       {method: 'apprequests',
-//         message: 'My Great Request',
-//         to: []
-//       },
-//       function(){
-//         console.log(arguments)
-//       }
-//     );
-//   }
-// })
-
-
-// function showChoice(){
-//   new PotentialRecipientView({el: $('#recipient')}).render();
-// }
-
 
 function resetSelector(){
   $('#fs-user-list').empty();
@@ -80,14 +61,7 @@ function resetSelector(){
             );
             }});
         });
-      // }});
-    
-    },
-    onClose: function(){
-
-      // FB_notification(accomplices, poll.id);
     }
-
   });
 }
 
@@ -102,21 +76,6 @@ var recipient_name;
 var poll;
 var user;
 var vote;
-
-
-
-// var FB_notification = function(accomplice, poll_id){
-//     var url = "http://giftadvisor.herokuapp.com/polls/" + poll_id
-//     console.log(url)
-//     FB.ui({
-//     // console.log("facebook message fired"),
-//     method: 'send',
-//     to: [accomplice],
-//     message: "Help me Buy a Gift",
-//     link: "http://giftadvisor.herokuapp.com/polls/" + poll_id
-//   }, function(response){
-//   })
-// }
 
 
 $(document).ready(function() {    
@@ -190,121 +149,9 @@ $(document).ready(function() {
         
       }
     });
-
-  // This doesn't totally work yet.  Need to compare mutual friends with your own friends
-  // and only return mutuals
-  // $("#mutual-friends-link").fSelector({
-
-  //   // max: 5,
-  //   excludeIds: exclusions,
-  //   // getStoredFriends: mutual_friends_array,
-  //   facebookInvite: false,
-  //   lang: {
-  //     title: "Pick your mutual friends who will vote on the gifts",
-  //     buttonSubmit: "Add Accomplices",
-  //     selectedLimitResult: "Limit is {5} people."
-  //   },
-  //   closeOnSubmit: true
-  // })
 });
 
-
-
-
-// function renderMFS() {
-//  // First get the list of friends for this user with the Graph API
-//  FB.api('/me/friends', function(response) {
-//    var container = document.getElementById('mfs');
-//    var mfsForm = document.createElement('form');
-//    mfsForm.id = 'mfsForm';
-
-//    // Iterate through the array of friends object and create a checkbox for each one.
-//    for(var i = 0; i < Math.min(response.data.length, 10); i++) {
-//      var friendItem = document.createElement('div');
-//      friendItem.id = 'friend_' + response.data[i].id;
-//      friendItem.innerHTML = '<input type="checkbox" name="friends" value="'
-//        + response.data[i].id
-//        + '" />' + response.data[i].name;
-//        mfsForm.appendChild(friendItem);
-//      }
-//      container.appendChild(mfsForm);
-
-//      // Create a button to send the Request(s)
-//      var sendButton = document.createElement('input');
-//      sendButton.type = 'button';
-//      sendButton.value = 'Send Request';
-//      sendButton.onclick = sendRequest;
-//      mfsForm.appendChild(sendButton);
-//    });
-//  }
-
-
-
-
-
-
-
-// var PotentialRecipient = Backbone.Model.extend({
-
-// })
-
-// //view for form where user inputs name of gift recipient
-// var FormView = Backbone.View.extend({
-//   initialize: function(){
-
-//   },
-
-//   render: function() {
-
-//   },
-
-//   events: {
-//     "click .search_button" : "createView"
-//   },
-
-//   createView: function(e){
-//     e.preventDefault();
-
-
-//   }
-
-// })
-
-// var PotentialRecipientList = Backbone.Collection.extend({
-//   model: PotentialRecipient, 
-//   url: "/potential_recipients"
-// })
-
-// var PotentialRecipientView = Backbone.View.extend({
-//   initialize: function(){
-//     this.render();
-//   }, 
-
-//   events: {
-//     "click .show_potential_recipients_button": "showPotentialRecipients"
-//   }
-//   //html with images
-//   template: function(attrs){
-//     html_string = $('#potential_recipient_template').html();
-//     var template_function = _.template(html_string)
-//     return template_function(attrs)
-//   }, 
-
-//   render: function(){
-//     this.$el.html(this.template(this.model.attributes));
-//     return this
-//   }, 
-
-//   showPotentialRecipients: function(){
-//     recipientListView.collection.add(this.model.attributes)
-//     var html_string
-//   }
-
-// })
-
-
-
-//======================= Trying to build sticky scrolling ====================================
+//======================= Sticky Scrolling ====================================
 
 $(window).load(function(e) {
   $('.site-wrapper a').on('click', scrollToInformation);
